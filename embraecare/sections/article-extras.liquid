@@ -1,0 +1,77 @@
+{%- liquid
+  assign s = section.settings
+  assign bundle = s.bundle
+  assign price = bundle.selected_or_first_available_variant.price
+  assign value = 0
+  for p in bundle.metafields.embrae.routine_products.value
+    assign value = value | plus: p.selected_or_first_available_variant.price
+  endfor
+  capture p_price
+    render 'price', price: price
+  endcapture
+  capture p_value
+    render 'price', price: value
+  endcapture
+  assign saving = value | minus: price
+  capture p_save
+    render 'price', price: saving
+  endcapture
+  assign routine_text = s.routine_text | replace: '[price]', p_price | replace: '[value]', p_value | replace: '[saving]', p_save | strip_newlines
+-%}
+<div class="ar-quizw">
+  <aside class="ar-quiz"><div><small>{{ s.quiz_eyebrow | escape }}</small><h3>{{ s.quiz_heading | escape }}</h3></div><a class="btn" href="{{ s.quiz_link | default: '#' }}" data-cta="quiz">{{ s.quiz_button | escape }}</a></aside>
+</div>
+<section class="ar-up">
+  <div class="wrap ar-upi">
+    <div class="ar-ut">
+      <small>{{ s.routine_eyebrow | escape }}</small>
+      <h2>{{ s.routine_heading | escape }}</h2>
+      <p>{{ routine_text | escape }}</p>
+      <div class="ar-ua"><a class="btn on-dark" href="{{ bundle.url | default: '#' }}" data-cta="routine">{{ s.routine_button | escape }}</a><button class="ar-add ar-add-l" type="button" data-add="bundle">{{ 'products.add_to_cart' | t }}</button></div>
+      <p class="ar-msg ar-msg-l" role="status"></p>
+    </div>
+    <div class="ar-uv" aria-hidden="true"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-reset"/></svg><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-defend"/></svg><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-adapt"/></svg><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-protect"/></svg><svg viewBox="0 0 240 200" class="ar-pouch"><use href="#p-pouch"/></svg></div>
+  </div>
+</section>
+{%- assign related = article.metafields.embrae.related.value -%}
+{%- if related != blank -%}
+  <section class="pg ar-related">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="h2">{{ s.related_heading | escape }}</h2></div>
+      <div class="ar-rg">
+        {%- for h in related -%}
+          {%- assign r_key = blog.handle | append: '/' | append: h -%}
+          {%- assign r = articles[r_key] -%}
+          {%- if r == blank %}{% continue %}{% endif -%}
+          <a class="ar-rc" href="{{ r.url }}"><div class="ar-ri">{% render 'journal-thumb', post: r, ctx: 'related' %}</div><div class="ar-m">{% render 'journal-date', date: r.published_at, class: 'ar-d' %}<span>{{ r.metafields.embrae.read_time.value | escape }}</span></div><h3>{{ r.title | escape }}</h3></a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Article: extras",
+  "tag": "div",
+  "class": "section-article-extras",
+  "settings": [
+    { "type": "header", "content": "Quiz prompt" },
+    { "type": "text", "id": "quiz_eyebrow", "label": "Eyebrow", "default": "Not sure where to start?" },
+    { "type": "text", "id": "quiz_heading", "label": "Heading", "default": "Find your routine in ten short questions." },
+    { "type": "text", "id": "quiz_button", "label": "Button", "default": "Take the Skin Quiz →" },
+    { "type": "url", "id": "quiz_link", "label": "Link" },
+    { "type": "header", "content": "Routine band" },
+    { "type": "product", "id": "bundle", "label": "Bundle product" },
+    { "type": "text", "id": "routine_eyebrow", "label": "Eyebrow", "default": "Make it a routine" },
+    { "type": "text", "id": "routine_heading", "label": "Heading", "default": "The Daily Urban Defense Routine" },
+    { "type": "textarea", "id": "routine_text", "label": "Text", "info": "[price], [value] and [saving] are filled in from the bundle and its products." },
+    { "type": "text", "id": "routine_button", "label": "Button", "default": "Shop Daily Urban Defense Routine →" },
+    { "type": "header", "content": "Related articles" },
+    { "type": "paragraph", "content": "Each article's “Related articles” field lists up to 3 handles." },
+    { "type": "text", "id": "related_heading", "label": "Heading", "default": "More from the Journal" }
+  ],
+  "enabled_on": { "templates": ["article"] },
+  "presets": [{ "name": "Article: extras" }]
+}
+{% endschema %}

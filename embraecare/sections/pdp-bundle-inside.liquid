@@ -1,0 +1,145 @@
+{%- liquid
+  assign mf = product.metafields.embrae
+  assign s = section.settings
+  assign included = mf.routine_products.value
+-%}
+<section class="pd-sec" id="inside">
+  <div class="wrap">
+    <div class="itabs" role="tablist" aria-label="{{ 'products.about' | t: title: product.title }}">
+      <button class="itab" type="button" role="tab" id="it2" aria-selected="true" aria-controls="ip2">{{ s.use_label | escape }}</button>
+      <button class="itab" type="button" role="tab" id="it1" aria-selected="false" aria-controls="ip1">{{ s.routine_label | escape }}</button>
+      <button class="itab" type="button" role="tab" id="it3" aria-selected="false" aria-controls="ip3">{{ s.essentials_label | escape }}</button>
+    </div>
+
+    <div class="ipanel on" id="ip2" role="tabpanel" aria-labelledby="it2">
+      <div class="sec-head reveal"><h2 class="h2">{{ s.use_heading | escape }}</h2>{% if s.use_text != blank %}<p class="lead">{{ s.use_text | escape }}</p>{% endif %}</div>
+      <div class="vu reveal" data-vu>
+        <div class="vu-st">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign b = block.settings
+              assign stp = b.product.metafields.embrae.step.value | default: 'reset'
+              capture scene
+                echo 'scene' | append: forloop.index
+              endcapture
+            -%}
+            <div class="vu-s{% if forloop.first %} on{% endif %}" data-s="{{ forloop.index0 }}" role="group" aria-roledescription="slide" aria-label="{{ 'products.step_of' | t: index: forloop.index, count: forloop.length }}" {{ block.shopify_attributes }}>
+              {%- if b.video != blank -%}
+                {{ b.video | video_tag: muted: true, playsinline: true, preload: 'none', image_size: '1600x', aria-label: b.product.title }}
+              {%- endif -%}
+              {% render 'pdp-art-bundle', part: scene %}
+              <div class="vu-cap"><small>{{ 'products.step_n' | t: index: forloop.index }}</small><b>{{ stp | capitalize }}</b></div>
+            </div>
+          {%- endfor -%}
+          <div class="vu-bar"><i></i></div>
+        </div>
+        <div class="vu-cards">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign b = block.settings
+              assign pv = b.product.selected_or_first_available_variant
+              assign stp = b.product.metafields.embrae.step.value | default: 'reset'
+            -%}
+            <button type="button" class="vu-c{% if forloop.first %} on{% endif %}" data-s="{{ forloop.index0 }}" aria-label="{{ 'products.watch_step' | t: index: forloop.index, title: b.product.title }}">
+              <small>{{ 'products.step_n' | t: index: forloop.index }}. {{ stp | capitalize }}</small>
+              <span class="vu-ca"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-{{ stp }}"/></svg></span>
+              <b>{{ b.product.title | default: 'Choose a product' | escape }}</b>
+              {%- if b.text != blank %}<p>{{ b.text | escape }}</p>{% endif -%}
+              {%- if b.product != blank -%}
+                <i>{% unless b.product.has_only_default_variant %}{{ pv.title | escape }}, {% endunless %}{% render 'price', price: pv.price %}</i>
+              {%- endif -%}
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="ipanel" id="ip1" role="tabpanel" aria-labelledby="it1">
+      {% render 'pdp-art-bundle', part: 'routine' %}
+    </div>
+
+    <div class="ipanel" id="ip3" role="tabpanel" aria-labelledby="it3">
+      <div class="sec-head reveal"><h2 class="h2">{{ 'products.at_a_glance' | t: title: product.title }}</h2></div>
+      {%- if mf.claims != blank -%}
+        <ul class="isrow bd-is reveal">
+          {%- for c in mf.claims.value -%}
+            <li><span class="md ic">{% render 'pdp-icon', name: c.icon.value %}</span><b>{{ c.label.value | escape }}</b></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <div class="acc" style="max-width:980px;margin:36px auto 0">
+        <details open id="fullIng"><summary>{{ 'products.full_ingredients' | t }}</summary><div class="ab">
+          {%- for p in included -%}
+            <p style="margin-top:{% if forloop.first %}0{% else %}22px{% endif %}"><b>{{ p.title | escape }}</b></p>
+            <p class="inci-p">{{ p.metafields.embrae.inci.value | escape }}</p>
+          {%- endfor -%}
+        </div></details>
+        {%- if mf.storage != blank -%}
+          <details><summary>{{ 'products.storage' | t }}</summary><div class="ab">{{ mf.storage.value | newline_to_br }}</div></details>
+        {%- endif -%}
+        {%- if s.shipping != blank -%}
+          <details><summary>{{ 'products.shipping_returns' | t }}</summary><div class="ab">{{ s.shipping }}</div></details>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% javascript %}
+  (function () {
+    function init(root) {
+      var sec = root.querySelector('#inside'); if (!sec || sec._bd) return; sec._bd = true;
+      var it = [].slice.call(sec.querySelectorAll('.itab'));
+      it.forEach(function (b) { b.addEventListener('click', function () { it.forEach(function (x) { x.setAttribute('aria-selected', x === b); document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on', x === b); }); }); });
+      // How-to videos play one after another; a step with no video shows its scene for 7 seconds.
+      var vu = sec.querySelector('[data-vu]'); if (!vu) return;
+      var sl = [].slice.call(vu.querySelectorAll('.vu-s')), cs = [].slice.call(vu.querySelectorAll('.vu-c')), cur = 0, el = 0, DUR = 7000, last = Date.now();
+      function vid(i) { return sl[i].querySelector('video'); }
+      function go(i) {
+        cur = (i + sl.length) % sl.length; el = 0; vu.style.setProperty('--pg', 0);
+        sl.forEach(function (s, k) { s.classList.toggle('on', k === cur); var v = vid(k); if (v) { if (k === cur) { try { v.currentTime = 0; v.play(); } catch (e) {} } else v.pause(); } });
+        cs.forEach(function (c, k) { c.classList.toggle('on', k === cur); if (k === cur) c.setAttribute('aria-current', 'true'); else c.removeAttribute('aria-current'); });
+      }
+      sl.forEach(function (s, k) { var v = vid(k); if (!v) return;
+        v.addEventListener('ended', function () { if (k === cur) go(cur + 1); });
+        v.addEventListener('timeupdate', function () { if (k === cur && v.duration) vu.style.setProperty('--pg', (v.currentTime / v.duration).toFixed(4)); }); });
+      cs.forEach(function (c, k) { c.addEventListener('click', function () { go(k); }); });
+      function seen() { if (!vu.offsetParent || document.hidden) return false; var r = vu.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; }
+      var tm = setInterval(function () {
+        if (!vu.isConnected) return clearInterval(tm);
+        var now = Date.now(), dt = now - last; last = now; var v = vid(cur), ok = seen();
+        if (v) { if (!ok) { if (!v.paused) v.pause(); } else if (v.paused && !v.ended) { try { v.play(); } catch (e) {} } return; }
+        if (!ok) return;
+        el += dt; vu.style.setProperty('--pg', Math.min(1, el / DUR).toFixed(4)); if (el >= DUR) go(cur + 1);
+      }, 100);
+    }
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+    document.addEventListener('shopify:section:load', function (e) { init(e.target); });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Bundle: inside tabs",
+  "tag": "div",
+  "class": "section-pdp-inside",
+  "settings": [
+    { "type": "text", "id": "use_label", "label": "First tab label", "default": "See it in use" },
+    { "type": "text", "id": "routine_label", "label": "Second tab label", "default": "Routine" },
+    { "type": "text", "id": "essentials_label", "label": "Last tab label", "default": "Essentials" },
+    { "type": "text", "id": "use_heading", "label": "“See it in use” heading", "default": "See it in use." },
+    { "type": "textarea", "id": "use_text", "label": "“See it in use” text" },
+    { "type": "richtext", "id": "shipping", "label": "Shipping and returns", "default": "<p>Free shipping on orders above ₹999.</p><p>For returns and refunds, please read our <a href=\"/policies/refund-policy\">Return &amp; Refund Policy</a>.</p>" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "settings": [
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "video", "id": "video", "label": "How-to video", "info": "Plays muted; when it ends the next step starts. Without a video the step's illustration shows for 7 seconds." }
+    ] }
+  ],
+  "max_blocks": 4,
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Bundle: inside tabs" }]
+}
+{% endschema %}

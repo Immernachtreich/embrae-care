@@ -1,0 +1,58 @@
+{%- liquid
+  assign reels = product.metafields.embrae.reels.value
+  assign placeholders = section.settings.placeholders
+  if reels == blank and request.design_mode == false and section.settings.hide_empty
+    assign placeholders = 0
+  endif
+-%}
+{%- if reels != blank or placeholders > 0 -%}
+<section class="pd-sec alt" id="creators" style="padding:clamp(44px,5vw,72px) 0">
+  <h2 class="sr">{{ 'products.videos_heading' | t: title: product.title }}</h2>
+  <div class="reels reveal" style="margin-top:0" data-reels>
+    <button class="rl-btn p" type="button" aria-label="{{ 'products.prev_videos' | t }}" data-rl-prev><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="rl" tabindex="0" aria-label="{{ 'products.videos_scroll' | t }}">
+      {%- if reels != blank -%}
+        {%- for v in reels -%}
+          <article class="rc"><div class="vph">{{ v | video_tag: autoplay: true, muted: true, loop: true, playsinline: true, controls: false, image_size: '500x' }}</div></article>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..placeholders) -%}
+          <article class="rc"><div class="vph" role="img" aria-label="{{ 'products.video_placeholder' | t }}"><svg class="vleaf" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z"/></svg></span></div></article>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+    <button class="rl-btn n" type="button" aria-label="{{ 'products.next_videos' | t }}" data-rl-next><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</section>
+{%- endif -%}
+
+{% javascript %}
+  (function () {
+    function init(root) {
+      [].forEach.call(root.querySelectorAll('[data-reels]'), function (w) {
+        if (w._rl) return; w._rl = true;
+        var rl = w.querySelector('.rl');
+        function stp() { var c = rl.querySelector('.rc'); return c ? c.getBoundingClientRect().width + 18 : 280; }
+        w.querySelector('[data-rl-prev]').addEventListener('click', function () { rl.scrollBy({ left: -stp() * 2, behavior: 'smooth' }); });
+        w.querySelector('[data-rl-next]').addEventListener('click', function () { rl.scrollBy({ left: stp() * 2, behavior: 'smooth' }); });
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+    document.addEventListener('shopify:section:load', function (e) { init(e.target); });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product: customer videos",
+  "tag": "div",
+  "class": "section-pdp-reels",
+  "settings": [
+    { "type": "paragraph", "content": "Videos come from the product's “Customer videos” field (upload in Content → Files)." },
+    { "type": "range", "id": "placeholders", "label": "Placeholder tiles while there are no videos", "min": 0, "max": 8, "step": 1, "default": 6 },
+    { "type": "checkbox", "id": "hide_empty", "label": "Hide on the live store while there are no videos", "default": false }
+  ],
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Product: customer videos" }]
+}
+{% endschema %}

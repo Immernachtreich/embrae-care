@@ -1,0 +1,56 @@
+/* used by: climate-adapt-moisturizer.html, daily-shield-sunscreen.html, daily-urban-defense-routine.html, index.html, reset-cleanser.html, the-embrae-system.html, urban-defense-serum.html */
+:root{--skin:url("../assets/asset-00.jpg")}
+.hero .bg1{background-image:var(--skin);background-position:center 30%}
+.hero .bg2{background-image:url("../assets/asset-01.jpg");background-position:center 35%}
+.hero .bg3{background-image:url("../assets/asset-02.jpg");background-position:center 35%}
+.hero .bg4{background-image:url("../assets/asset-03.jpg");background-position:center 35%}
+.pbody .size{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:rgba(37,50,47,.6)}
+.pbody .price.real{margin-top:2px;font-size:22px;font-weight:700;letter-spacing:.01em}
+.pbody .mrp{margin-top:2px;font-size:11px;color:rgba(37,50,47,.55)}
+.pbody .mrp+.btn{margin-top:18px}
+.steps{padding:clamp(72px,9vw,128px) 0}
+.step-grid{margin-top:72px}
+.step-grid::before{top:44px}
+.step{padding:0 clamp(14px,2.2vw,40px)}
+.vph{position:relative;display:block;aspect-ratio:3/4;margin:30px auto 28px;width:100%;max-width:250px;border-radius:4px;overflow:hidden;background:linear-gradient(165deg,var(--phyto) 0%,var(--phyto-deep) 100%);box-shadow:0 22px 36px -24px rgba(4,56,47,.55)}
+.vph::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(98,192,176,.28),transparent 60%)}
+.vph.v-defend{background:linear-gradient(165deg,#0a5a4c,var(--phyto-deep))}
+.vph.v-adapt{background:linear-gradient(165deg,#0b6152,#053a31)}
+.vph.v-protect{background:linear-gradient(165deg,#09574a,#04382F)}
+.vph .vleaf{position:absolute;right:-18%;bottom:-8%;width:70%;color:var(--aqua);opacity:.14;transform:rotate(-20deg);pointer-events:none}
+.vph .play{transition:transform .35s var(--ease)}
+.vph:hover .play{transform:scale(1.1)}
+.vph .vtag{position:absolute;left:12px;top:12px;z-index:2;padding:6px 9px;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1;color:#fff;background:rgba(4,56,47,.6);border:1px solid rgba(255,255,255,.22);border-radius:2px}
+.vph .vcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:34px 14px 14px;font-size:11.5px;font-weight:500;letter-spacing:.06em;color:#fff;text-align:left;background:linear-gradient(to top,rgba(4,56,47,.85),transparent)}
+.step .role{margin-top:0}
+.steps-foot{text-align:center;margin-top:clamp(64px,7vw,104px)}
+.steps-foot .eyebrow{color:var(--phyto)}
+.steps-foot .ph-note{margin-top:18px}
+@media (max-width:600px){.vph{max-width:260px}.step-grid{margin-top:48px;row-gap:64px}}
+.scard{max-width:280px;margin:30px auto 0;background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden;box-shadow:0 24px 40px -30px rgba(4,56,47,.45)}
+.scard .vph{max-width:none;margin:0;border-radius:0;box-shadow:none}
+.step{display:flex;flex-direction:column}
+.scard{display:flex;flex-direction:column;width:100%;flex:1}
+.sbody{flex:1;padding:22px 20px 26px;text-align:center}
+.sbody .role{font-size:14px}
+.sbody .pn{margin-top:4px}
+.sbody p{margin-top:12px;font-size:13.5px;line-height:1.7}
+.steps{padding:clamp(44px,5vw,68px) 0}
+.steps .sec-head .lead{margin-top:12px}
+.step-grid{grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,26px);margin-top:36px}
+.step-grid::before{display:none}
+.step{display:grid;grid-template-columns:58px 1fr;grid-template-rows:auto auto 1fr;column-gap:14px;align-items:start;text-align:left;padding:0}
+.step .badge,.step small,.step h3{align-self:center}
+.steps .sec-head{max-width:none}
+.steps .sec-head .h2{font-size:clamp(22px,2.5vw,34px);max-width:none}
+.step .badge{grid-column:1;grid-row:1/3;width:58px;height:58px;margin:0}
+.step .badge .mi{width:28px;height:28px}
+.step small{grid-column:2;grid-row:1;align-self:end!important;line-height:1}
+.step h3{grid-column:2;grid-row:2;align-self:start!important;margin-top:6px;font-size:16px}
+.step .scard{grid-column:1/-1;grid-row:3;max-width:none;width:100%;margin:16px 0 0;align-self:stretch}
+.scard .vph{aspect-ratio:5/6}
+.sbody{padding:18px 18px 22px;text-align:left}
+.sbody p{margin-top:10px;font-size:13px;line-height:1.65}
+.steps-foot{margin-top:clamp(32px,3.5vw,48px)}
+@media (max-width:1100px){.step-grid{grid-template-columns:repeat(2,1fr);row-gap:32px}}
+@media (max-width:600px){.step-grid{grid-template-columns:1fr;row-gap:28px;margin-top:28px}.scard .vph{aspect-ratio:4/3}}

@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "skin-quiz-1",
+        "tone": "d",
+        "image_label": "Hero image: skin close-up",
+        "eyebrow": "Skin Quiz",
+        "heading": "Find where to start",
+        "text": "Answer 10 short questions and find a routine that fits your day.",
+        "button_label": "Take the quiz",
+        "button_link": "#quiz"
+      }
+    },
+    "how": {
+      "type": "quiz-how",
+      "settings": {
+        "heading": "How it works",
+        "text": "It takes about two minutes. There are no right or wrong answers."
+      },
+      "blocks": {
+        "how-1": {
+          "type": "step",
+          "settings": {
+            "title": "Answer 10 short questions",
+            "text": "About your skin, your routine and your day."
+          }
+        },
+        "how-2": {
+          "type": "step",
+          "settings": {
+            "title": "We look at your answers together",
+            "text": "No single answer decides your result."
+          }
+        },
+        "how-3": {
+          "type": "step",
+          "settings": {
+            "title": "Get your routine",
+            "text": "See the steps, the order to use them in, and why they suit you."
+          }
+        }
+      },
+      "block_order": [
+        "how-1",
+        "how-2",
+        "how-3"
+      ]
+    },
+    "quiz": {
+      "type": "skin-quiz",
+      "settings": {
+        "reset": "reset-cleanser",
+        "defend": "urban-defense-serum",
+        "adapt": "climate-adapt-moisturizer",
+        "protect": "daily-shield-sunscreen",
+        "bundle": "daily-urban-defense-routine"
+      }
+    },
+    "steps": {
+      "type": "product-steps-cards",
+      "settings": {
+        "heading": "The four steps",
+        "text": "Every routine uses some or all of these, always in this order."
+      },
+      "blocks": {
+        "steps-1": {
+          "type": "card",
+          "settings": {
+            "product": "reset-cleanser",
+            "text": "A daily gel cleanser that removes buildup and impurities while helping preserve skin comfort."
+          }
+        },
+        "steps-2": {
+          "type": "card",
+          "settings": {
+            "product": "urban-defense-serum",
+            "text": "A daily serum that supports the skin barrier and helps skin feel hydrated, calm and balanced."
+          }
+        },
+        "steps-3": {
+          "type": "card",
+          "settings": {
+            "product": "climate-adapt-moisturizer",
+            "text": "A daily moisturizer that replenishes hydration and supports the skin barrier."
+          }
+        },
+        "steps-4": {
+          "type": "card",
+          "settings": {
+            "product": "daily-shield-sunscreen",
+            "text": "SPF 50 PA++++ sun protection, the final step of your morning routine."
+          }
+        }
+      },
+      "block_order": [
+        "steps-1",
+        "steps-2",
+        "steps-3",
+        "steps-4"
+      ]
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Skip the quiz, start with all four.",
+        "text": "Meet the four-step Urban Defense System, built around heat, humidity and long days.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "how",
+    "quiz",
+    "steps",
+    "offer"
+  ]
+}

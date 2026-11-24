@@ -1,0 +1,7 @@
+/* used by: faqs.html, skin-quiz.html */
+.fq{background:var(--off);border-radius:2px}
+.fq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-size:clamp(15px,1.5vw,18px);font-weight:600;color:var(--phyto);cursor:pointer}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"";flex:0 0 auto;width:9px;height:9px;border-right:2px solid var(--phyto);border-bottom:2px solid var(--phyto);transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--ease)}
+.fq[open] summary::after{transform:rotate(225deg) translateY(-2px)}
+.fa{padding:0 26px 24px}

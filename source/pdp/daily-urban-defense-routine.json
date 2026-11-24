@@ -1,0 +1,81 @@
+{
+  "handle": "daily-urban-defense-routine",
+  "step": "bundle",
+  "eyebrow": "The complete EMBRAE skincare system",
+  "tagline": "Meet the complete EMBRAE skincare routine, bringing together four purposeful essentials designed to cleanse, strengthen, hydrate and protect.",
+  "description": "From removing everyday environmental buildup to supporting the skin barrier and providing daily sun protection, this four-step system brings your everyday skincare essentials together. Use all four in the morning, and the cleanser, serum and moisturizer at night.",
+  "claims": [
+    {
+      "icon": "asset-28.png",
+      "label": "pH balanced"
+    },
+    {
+      "icon": "asset-29.png",
+      "label": "Fragrance free"
+    },
+    {
+      "icon": "asset-30.png",
+      "label": "Lightweight"
+    },
+    {
+      "icon": "paraben-free",
+      "label": "Paraben free"
+    },
+    {
+      "icon": "asset-16.png",
+      "label": "Long lasting hydration"
+    },
+    {
+      "icon": "cruelty-free",
+      "label": "Cruelty free"
+    }
+  ],
+  "storage": "<b>Storage instructions</b><br/>Store in a cool, dry place. Protect from direct sunlight and excessive heat.<br/>Store below 30°C: Reset Cleanser, Climate Adapt Moisturizer and Daily Shield Sunscreen SPF 50 PA++++.<br/>Keep the cap closed when not in use: Climate Adapt Moisturizer and Daily Shield Sunscreen SPF 50 PA++++.<br/><br/><b>Caution</b><br/>Avoid contact with eyes. In case of contact, rinse thoroughly with water.<br/><br/><b>Note</b><br/>Perform a patch test before use. Discontinue if irritation occurs.<br/>For external use only.",
+  "info": [
+    {
+      "icon": "product-type",
+      "label": "Product type",
+      "text": "Four-step skincare routine with a complimentary Travel Pouch"
+    },
+    {
+      "icon": "net-quantity",
+      "label": "Net quantity",
+      "text": "Reset Cleanser 100 ml, Urban Defense Serum 30 ml, Climate Adapt Moisturizer 50 g, Daily Shield Sunscreen SPF 50 PA++++ 50 g"
+    },
+    {
+      "icon": "shelf-life",
+      "label": "Shelf life",
+      "text": "24 months from date of manufacture"
+    },
+    {
+      "icon": "manufacturer",
+      "label": "Manufacturer",
+      "text": "QSD Formulations Pvt. Ltd. (An GMP Certified), Plot No. 1256, Industrial Estate, HSIIDC, Rai, Distt. Sonipat-131029 (Haryana)"
+    },
+    {
+      "icon": "marketed-by",
+      "label": "Marketed by",
+      "text": "EMBRAE CARE, Venkatesh Graffiti Glover, Mundhwa, Pune-411036, Maharashtra, India"
+    },
+    {
+      "icon": "manufacturing-licence-no",
+      "label": "Manufacturing licence no.",
+      "text": "COS8HR2024000012"
+    },
+    {
+      "icon": "country-of-origin",
+      "label": "Country of origin",
+      "text": "India"
+    },
+    {
+      "icon": "customer-care",
+      "label": "Customer care",
+      "text": "Email: care@embraecare.com<br/>Phone / WhatsApp: +91 86004 11991"
+    },
+    {
+      "icon": "quality-standards",
+      "label": "Quality standards",
+      "text": "GMP Certified, FDA Registered, ISO Certified"
+    }
+  ]
+}

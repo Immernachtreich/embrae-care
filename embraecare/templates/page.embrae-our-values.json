@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "s1": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "our-values-1",
+        "tone": "d",
+        "image_label": "Hero image: skin close-up",
+        "eyebrow": "",
+        "heading": "Our Values",
+        "text": "What we stand for, and how you will feel it in your routine.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s2": {
+      "type": "values-tabs",
+      "settings": {
+        "heading": "Five values. Each one shows up in your routine.",
+        "label": "EMBRAE values",
+        "routine_label": "In your routine",
+        "button_label": "Shop Today →",
+        "button_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "s2-1": {
+          "type": "value",
+          "settings": {
+            "name": "Clarity",
+            "heading": "Make it easier to understand.",
+            "text": "You shouldn’t have to decode your skincare. Every product has a clear role and every step has a reason to be there, so you always know what you’re using and why.",
+            "routine": "Four steps, each with one clear job.",
+            "placeholder": "our-values-2",
+            "tone": "a",
+            "image_label": "Image: clarity"
+          }
+        },
+        "s2-2": {
+          "type": "value",
+          "settings": {
+            "name": "Consideration",
+            "heading": "Design for real life.",
+            "text": "Your day isn’t a controlled environment, and your skincare shouldn’t assume it is. We start with the heat, the commute, the long hours indoors and the travel in between, then build the routine around you.",
+            "routine": "Care shaped around city life and changing climates.",
+            "placeholder": "our-values-3",
+            "tone": "b",
+            "image_label": "Image: consideration"
+          }
+        },
+        "s2-3": {
+          "type": "value",
+          "settings": {
+            "name": "Consistency",
+            "heading": "Make care easier to return to.",
+            "text": "The best routine is the one you can keep coming back to. We keep ours simple enough for busy mornings and tired evenings, so showing up for your skin never feels like effort.",
+            "routine": "Short, repeatable steps, morning or night.",
+            "placeholder": "our-values-4",
+            "tone": "d",
+            "image_label": "Image: consistency"
+          }
+        },
+        "s2-4": {
+          "type": "value",
+          "settings": {
+            "name": "Honesty",
+            "heading": "Say what matters. Mean what we say.",
+            "text": "We tell you what each product is for, in plain language, and we never promise more than we can stand behind. You deserve skincare you can simply trust.",
+            "routine": "Plain language, clear roles, no exaggerated claims.",
+            "placeholder": "our-values-5",
+            "tone": "c",
+            "image_label": "Image: honesty"
+          }
+        },
+        "s2-5": {
+          "type": "value",
+          "settings": {
+            "name": "Feeling",
+            "heading": "Because care is more than what you see.",
+            "text": "Skincare is also a pause in a full day. A few minutes that belong to you, that leave you feeling looked after instead of behind.",
+            "routine": "A moment for yourself, not another task.",
+            "placeholder": "our-values-6",
+            "tone": "a",
+            "image_label": "Image: feeling"
+          }
+        }
+      },
+      "block_order": [
+        "s2-1",
+        "s2-2",
+        "s2-3",
+        "s2-4",
+        "s2-5"
+      ]
+    },
+    "s3": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Values you can feel.",
+        "text": "Clear roles, simple steps and no exaggerated claims, in all four essentials.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "s1",
+    "s2",
+    "s3"
+  ]
+}

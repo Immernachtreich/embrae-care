@@ -1,0 +1,124 @@
+<div id="CartDrawer" class="cd" aria-hidden="true" data-count="{{ cart.item_count }}">
+  <div class="cd-scrim" data-cart-close></div>
+  <div class="cd-panel" role="dialog" aria-modal="true" aria-labelledby="CartDrawerTitle">
+    <div class="cd-head">
+      <p class="cd-title" id="CartDrawerTitle">{{ 'cart.title' | t }} <span>({{ cart.item_count }})</span></p>
+      <button class="icon-btn cd-close" type="button" data-cart-close aria-label="{{ 'cart.close' | t }}">{% render 'icon', name: 'close' %}</button>
+    </div>
+
+    {%- liquid
+      assign threshold = section.settings.free_shipping_threshold | times: 100
+      assign remaining = threshold | minus: cart.total_price
+    -%}
+    {%- if threshold > 0 and cart.item_count > 0 -%}
+      <div class="cd-ship">
+        {%- if remaining > 0 -%}
+          <p>{{ 'cart.free_shipping_remaining' | t: amount: remaining | money_without_trailing_zeros }}</p>
+        {%- else -%}
+          <p>{{ 'cart.free_shipping_unlocked' | t }}</p>
+        {%- endif -%}
+        {%- assign pct = cart.total_price | times: 100 | divided_by: threshold | at_most: 100 -%}
+        <div class="cd-bar"><i style="width:{{ pct }}%"></i></div>
+      </div>
+    {%- endif -%}
+
+    <div class="cd-body">
+      {%- if cart.item_count == 0 -%}
+        <div class="cd-empty">
+          <p>{{ 'cart.empty' | t }}</p>
+          {%- if section.settings.empty_link != blank -%}
+            <a class="btn" href="{{ section.settings.empty_link }}">{{ section.settings.empty_label | escape }}</a>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        <ul class="cd-items">
+          {%- for item in cart.items -%}
+            <li class="cd-item">
+              <a class="cd-img" href="{{ item.url }}">
+                {%- if item.image -%}
+                  {{ item.image | image_url: width: 160 | image_tag: alt: item.product.title, loading: 'lazy' }}
+                {%- endif -%}
+              </a>
+              <div class="cd-info">
+                <a class="cd-name" href="{{ item.url }}">{{ item.product.title | escape }}</a>
+                {%- unless item.product.has_only_default_variant -%}<p class="cd-var">{{ item.variant.title | escape }}</p>{%- endunless -%}
+                {%- for discount in item.line_level_discount_allocations -%}<p class="cd-var">{{ discount.discount_application.title | escape }}</p>{%- endfor -%}
+                <div class="cd-row">
+                  <div class="cd-qty">
+                    <button type="button" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" aria-label="{{ 'cart.decrease' | t: title: item.product.title }}">−</button>
+                    <span>{{ item.quantity }}</span>
+                    <button type="button" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" aria-label="{{ 'cart.increase' | t: title: item.product.title }}">+</button>
+                  </div>
+                  <p class="cd-price">
+                    {%- if item.original_line_price != item.final_line_price -%}<s>{{ item.original_line_price | money_without_trailing_zeros }}</s> {% endif -%}
+                    {{- item.final_line_price | money_without_trailing_zeros -}}
+                  </p>
+                </div>
+                <button class="cd-remove" type="button" data-key="{{ item.key }}" data-qty="0">{{ 'cart.remove' | t }}</button>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <div class="cd-foot">
+        {%- for discount in cart.cart_level_discount_applications -%}
+          <p class="cd-line"><span>{{ discount.title | escape }}</span><span>−{{ discount.total_allocated_amount | money_without_trailing_zeros }}</span></p>
+        {%- endfor -%}
+        <p class="cd-line cd-total"><span>{{ 'cart.subtotal' | t }}</span><span>{{ cart.total_price | money_without_trailing_zeros }}</span></p>
+        <p class="cd-note">{{ 'cart.taxes_note' | t }}</p>
+        <form action="{{ routes.cart_url }}" method="post">
+          <button class="btn cd-checkout" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+        </form>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .cd { position: fixed; inset: 0; z-index: 200; visibility: hidden; pointer-events: none; }
+  .cd.open { visibility: visible; pointer-events: auto; }
+  .cd-scrim { position: absolute; inset: 0; background: rgba(4, 56, 47, .35); opacity: 0; transition: opacity .35s var(--ease); }
+  .cd.open .cd-scrim { opacity: 1; }
+  .cd-panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 100%); background: var(--white); display: flex; flex-direction: column; transform: translateX(100%); transition: transform .45s var(--ease); }
+  .cd.open .cd-panel { transform: none; }
+  .cd.busy .cd-body { opacity: .5; pointer-events: none; }
+  .cd-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--line); }
+  .cd-title { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--phyto); }
+  .cd-ship { padding: 14px 24px; background: var(--off); font-size: 13px; color: var(--phyto); }
+  .cd-bar { height: 4px; margin-top: 8px; border-radius: 2px; background: var(--line); overflow: hidden; }
+  .cd-bar i { display: block; height: 100%; background: var(--aqua); }
+  .cd-body { flex: 1; overflow: auto; padding: 8px 24px; transition: opacity .2s; }
+  .cd-empty { display: grid; gap: 18px; justify-items: start; padding: 32px 0; }
+  .cd-item { display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .cd-img { aspect-ratio: 1; background: var(--off2); border-radius: 10px; overflow: hidden; }
+  .cd-img img { width: 100%; height: 100%; object-fit: cover; }
+  .cd-name { font-weight: 600; color: var(--phyto); font-size: 15px; line-height: 1.35; }
+  .cd-var { font-size: 12.5px; opacity: .7; }
+  .cd-row { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+  .cd-qty { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; }
+  .cd-qty button { width: 32px; height: 32px; font-size: 16px; color: var(--phyto); }
+  .cd-qty span { min-width: 22px; text-align: center; font-size: 14px; }
+  .cd-price { font-weight: 600; font-size: 14px; }
+  .cd-price s { font-weight: 400; opacity: .55; margin-right: 4px; }
+  .cd-remove { margin-top: 6px; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; opacity: .7; }
+  .cd-foot { padding: 18px 24px 24px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+  .cd-line { display: flex; justify-content: space-between; font-size: 14px; }
+  .cd-total { font-weight: 600; font-size: 16px; color: var(--phyto); }
+  .cd-note { font-size: 12px; opacity: .7; }
+  .cd-checkout { width: 100%; justify-content: center; margin-top: 6px; }
+  html.cart-open { overflow: hidden; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": [
+    { "type": "number", "id": "free_shipping_threshold", "label": "Free shipping threshold (₹)", "info": "Shows a progress bar. Set to 0 to hide. Keep in sync with your shipping rates.", "default": 999 },
+    { "type": "text", "id": "empty_label", "label": "Empty cart button label", "default": "Shop the routine" },
+    { "type": "url", "id": "empty_link", "label": "Empty cart button link", "default": "/collections/all" }
+  ]
+}
+{% endschema %}

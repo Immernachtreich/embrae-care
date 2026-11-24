@@ -1,0 +1,178 @@
+{%- liquid
+  if section.settings.logo != blank
+    assign logo_url = section.settings.logo | image_url: width: 600
+  else
+    assign logo_url = 'embrae-logo.png' | asset_url
+  endif
+-%}
+<header class="header">
+  <div class="header-in">
+    <nav class="nav-wrap" aria-label="{{ 'header.primary_nav' | t }}">
+      <button class="icon-btn burger" aria-label="{{ 'header.open_menu' | t }}" aria-expanded="false" aria-controls="mnav">
+        {%- render 'icon', name: 'menu' -%}
+      </button>
+      <ul class="nav">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign has_tiles = false
+            for i in (1..4)
+              assign t_title = 'tile_' | append: i | append: '_title'
+              if block.settings[t_title] != blank
+                assign has_tiles = true
+              endif
+            endfor
+          -%}
+          <li {{ block.shopify_attributes }}>
+            <a class="nav-link" href="{{ block.settings.url | default: '#' }}"{% if block.settings.menu != blank %} aria-haspopup="true"{% endif %}>
+              {{- block.settings.title | escape -}}
+            </a>
+            {%- if block.settings.menu != blank -%}
+              <div class="mega" role="group" aria-label="{{ block.settings.title | escape }}">
+                <div class="mega-in{% unless has_tiles %} single{% endunless %}">
+                  <div>
+                    <ul class="mega-links">
+                      {%- for link in block.settings.menu.links -%}
+                        <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                  {%- if has_tiles -%}
+                    <div class="mega-tiles">
+                      {%- for i in (1..4) -%}
+                        {%- liquid
+                          assign k = 'tile_' | append: i
+                          assign k_title = k | append: '_title'
+                          assign k_sub = k | append: '_subtitle'
+                          assign k_url = k | append: '_url'
+                          assign k_art = k | append: '_art'
+                          assign k_img = k | append: '_image'
+                          assign t_title = block.settings[k_title]
+                          assign t_sub = block.settings[k_sub]
+                          assign t_url = block.settings[k_url]
+                          assign t_art = block.settings[k_art]
+                          assign t_img = block.settings[k_img]
+                        -%}
+                        {%- if t_title != blank -%}
+                          <a class="tile" href="{{ t_url | default: '#' }}">
+                            <div class="tile-img">
+                              {%- if t_img != blank -%}
+                                {{ t_img | image_url: width: 520 | image_tag: alt: '', loading: 'lazy', sizes: '260px' }}
+                              {%- elsif t_art == 'photo-story' -%}
+                                <img src="{{ 'about-story.jpg' | asset_url }}" alt="" width="760" height="760" loading="lazy">
+                              {%- elsif t_art == 'photo-values' -%}
+                                <img src="{{ 'about-values.jpg' | asset_url }}" alt="" width="760" height="978" loading="lazy">
+                              {%- elsif t_art != 'none' -%}
+                                <div class="mini-prod"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#{{ t_art }}"/></svg></div>
+                              {%- endif -%}
+                            </div>
+                            <b>{{ t_title | escape }}</b>
+                            {%- if t_sub != blank %}<span>{{ t_sub | escape }}</span>{% endif -%}
+                          </a>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <a href="{{ routes.root_url }}" class="logo" style="--m:url({{ logo_url }})" aria-label="{{ 'header.home' | t: shop: shop.name }}"></a>
+    <div class="hicons">
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="icon-btn" href="{{ routes.account_url }}" aria-label="{{ 'header.account' | t }}">{% render 'icon', name: 'account' %}</a>
+      {%- endif -%}
+      <a class="icon-btn" href="{{ routes.search_url }}" aria-label="{{ 'header.search' | t }}">{% render 'icon', name: 'search' %}</a>
+      <a class="icon-btn cart-btn" href="{{ routes.cart_url }}" data-cart-open aria-label="{{ 'header.cart' | t }}">
+        {%- render 'icon', name: 'cart' -%}
+        <span class="cart-count" data-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mnav">
+    <ul>
+      {%- for block in section.blocks -%}
+        <li>
+          {%- if block.settings.menu != blank -%}
+            <button class="top" aria-expanded="false">{{ block.settings.title | escape }} <span>+</span></button>
+            <div class="sub">
+              {%- for link in block.settings.menu.links -%}
+                <a href="{{ link.url }}">{{ link.title | escape }}</a>
+              {%- endfor -%}
+            </div>
+          {%- else -%}
+            <a class="top toplink" href="{{ block.settings.url | default: '#' }}">{{ block.settings.title | escape }}</a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</header>
+
+{% stylesheet %}
+  .section-header { position: sticky; top: 0; z-index: 60; }
+  .cart-btn { position: relative; }
+  .cart-count { position: absolute; top: 2px; right: 0; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: var(--phyto); color: var(--white); font-size: 10px; font-weight: 600; line-height: 16px; text-align: center; }
+  .cart-count[hidden] { display: none; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "div",
+  "class": "section-header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Transparent PNG or SVG. It is tinted with the brand colour. Leave empty to use the built-in EMBRAE logo." }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Label", "default": "Menu item" },
+        { "type": "url", "id": "url", "label": "Link" },
+        { "type": "link_list", "id": "menu", "label": "Dropdown links", "info": "Leave empty for a plain link." },
+        { "type": "header", "content": "Tile 1" },
+        { "type": "text", "id": "tile_1_title", "label": "Title" },
+        { "type": "text", "id": "tile_1_subtitle", "label": "Subtitle" },
+        { "type": "url", "id": "tile_1_url", "label": "Link" },
+        { "type": "select", "id": "tile_1_art", "label": "Built-in artwork", "default": "none", "options": [
+          { "value": "none", "label": "None" }, { "value": "p-reset", "label": "Reset Cleanser" }, { "value": "p-defend", "label": "Urban Defense Serum" },
+          { "value": "p-adapt", "label": "Climate Adapt Moisturizer" }, { "value": "p-protect", "label": "Daily Shield Sunscreen" }, { "value": "p-pouch", "label": "Travel Pouch" },
+          { "value": "photo-story", "label": "Photo: Our story" }, { "value": "photo-values", "label": "Photo: Our values" } ] },
+        { "type": "image_picker", "id": "tile_1_image", "label": "Image", "info": "Overrides the built-in artwork." },
+        { "type": "header", "content": "Tile 2" },
+        { "type": "text", "id": "tile_2_title", "label": "Title" },
+        { "type": "text", "id": "tile_2_subtitle", "label": "Subtitle" },
+        { "type": "url", "id": "tile_2_url", "label": "Link" },
+        { "type": "select", "id": "tile_2_art", "label": "Built-in artwork", "default": "none", "options": [
+          { "value": "none", "label": "None" }, { "value": "p-reset", "label": "Reset Cleanser" }, { "value": "p-defend", "label": "Urban Defense Serum" },
+          { "value": "p-adapt", "label": "Climate Adapt Moisturizer" }, { "value": "p-protect", "label": "Daily Shield Sunscreen" }, { "value": "p-pouch", "label": "Travel Pouch" },
+          { "value": "photo-story", "label": "Photo: Our story" }, { "value": "photo-values", "label": "Photo: Our values" } ] },
+        { "type": "image_picker", "id": "tile_2_image", "label": "Image" },
+        { "type": "header", "content": "Tile 3" },
+        { "type": "text", "id": "tile_3_title", "label": "Title" },
+        { "type": "text", "id": "tile_3_subtitle", "label": "Subtitle" },
+        { "type": "url", "id": "tile_3_url", "label": "Link" },
+        { "type": "select", "id": "tile_3_art", "label": "Built-in artwork", "default": "none", "options": [
+          { "value": "none", "label": "None" }, { "value": "p-reset", "label": "Reset Cleanser" }, { "value": "p-defend", "label": "Urban Defense Serum" },
+          { "value": "p-adapt", "label": "Climate Adapt Moisturizer" }, { "value": "p-protect", "label": "Daily Shield Sunscreen" }, { "value": "p-pouch", "label": "Travel Pouch" },
+          { "value": "photo-story", "label": "Photo: Our story" }, { "value": "photo-values", "label": "Photo: Our values" } ] },
+        { "type": "image_picker", "id": "tile_3_image", "label": "Image" },
+        { "type": "header", "content": "Tile 4" },
+        { "type": "text", "id": "tile_4_title", "label": "Title" },
+        { "type": "text", "id": "tile_4_subtitle", "label": "Subtitle" },
+        { "type": "url", "id": "tile_4_url", "label": "Link" },
+        { "type": "select", "id": "tile_4_art", "label": "Built-in artwork", "default": "none", "options": [
+          { "value": "none", "label": "None" }, { "value": "p-reset", "label": "Reset Cleanser" }, { "value": "p-defend", "label": "Urban Defense Serum" },
+          { "value": "p-adapt", "label": "Climate Adapt Moisturizer" }, { "value": "p-protect", "label": "Daily Shield Sunscreen" }, { "value": "p-pouch", "label": "Travel Pouch" },
+          { "value": "photo-story", "label": "Photo: Our story" }, { "value": "photo-values", "label": "Photo: Our values" } ] },
+        { "type": "image_picker", "id": "tile_4_image", "label": "Image" }
+      ]
+    }
+  ],
+  "enabled_on": { "groups": ["header"] }
+}
+{% endschema %}

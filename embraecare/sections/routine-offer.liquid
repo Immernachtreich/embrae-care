@@ -1,0 +1,57 @@
+{%- assign s = section.settings -%}
+<section class="pre{% if s.compact %} sm{% endif %}">
+  <div class="wrap pre-in">
+    <div class="reveal">
+      <h2 class="h2">{{ s.heading | escape }}</h2>
+      {%- if s.text != blank %}<p class="lead">{{ s.text | escape }}</p>{% endif -%}
+      {%- if s.offer_price != blank -%}
+        <p class="offer-line"><b>{{ s.offer_price | escape }}</b> {% if s.offer_compare != blank %}<s>{{ s.offer_compare | escape }}</s>{% endif %}</p>
+      {%- endif -%}
+      {%- if s.button_label != blank -%}
+        <a class="btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a>
+      {%- endif -%}
+    </div>
+    <div class="pre-art" aria-hidden="true">
+      {%- if s.image != blank -%}
+        {{ s.image | image_url: width: 1280 | image_tag: loading: 'lazy', alt: '' }}
+      {%- else -%}
+        <svg viewBox="0 0 640 470">
+          <polygon points="120,0 190,0 330,330 250,330" fill="url(#gRay)"/>
+          <polygon points="260,0 310,0 430,330 380,330" fill="url(#gRay)" opacity=".7"/>
+          <polygon points="420,0 480,0 560,330 500,330" fill="url(#gRay)" opacity=".55"/>
+          <g fill="#62C0B0"><use href="#leaf" x="-30" y="40" width="120" height="240" opacity=".16" transform="rotate(-20 30 160)"/><use href="#leaf" x="540" y="10" width="110" height="220" opacity=".14" transform="rotate(25 595 120)"/></g>
+          <rect x="0" y="330" width="640" height="140" fill="url(#gWater)"/>
+          <g fill="none" stroke="#62C0B0" stroke-opacity=".35"><ellipse cx="320" cy="378" rx="250" ry="14"/><ellipse cx="320" cy="396" rx="290" ry="20" stroke-opacity=".22"/><ellipse cx="320" cy="424" rx="320" ry="28" stroke-opacity=".14"/></g>
+          <ellipse cx="320" cy="372" rx="260" ry="16" fill="#000" opacity=".25"/>
+          <rect x="30" y="318" width="580" height="52" rx="16" fill="url(#gSlab)"/>
+          <rect x="30" y="318" width="580" height="9" rx="4.5" fill="#fff" opacity=".35"/>
+          <svg x="34" y="92" width="171.6" height="249.6" viewBox="0 0 220 320"><use href="#p-reset"/></svg>
+          <svg x="132" y="87.4" width="171.6" height="249.6" viewBox="0 0 220 320"><use href="#p-defend"/></svg>
+          <svg x="230" y="89" width="171.6" height="249.6" viewBox="0 0 220 320"><use href="#p-adapt"/></svg>
+          <svg x="328" y="90.5" width="171.6" height="249.6" viewBox="0 0 220 320"><use href="#p-protect"/></svg>
+          <svg x="440" y="158" width="190" height="158" viewBox="0 0 240 200"><use href="#p-pouch"/></svg>
+          <g fill="#F0C3B2" opacity=".5"><circle cx="150" cy="60" r="2"/><circle cx="470" cy="50" r="2.4"/><circle cx="580" cy="110" r="1.6"/><circle cx="80" cy="140" r="1.8"/></g>
+        </svg>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Routine offer",
+  "tag": "div",
+  "class": "section-pre",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A complete routine. A little extra, on us." },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "offer_price", "label": "Offer price", "default": "₹4,199" },
+    { "type": "text", "id": "offer_compare", "label": "Offer comparison", "info": "Shown struck through", "default": "₹4,496 bought individually" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Daily Urban Defense Routine →" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Replaces the product lineup illustration when set." },
+    { "type": "checkbox", "id": "compact", "label": "Compact (inner pages)", "default": false }
+  ],
+  "presets": [{ "name": "Routine offer" }]
+}
+{% endschema %}

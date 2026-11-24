@@ -1,0 +1,32 @@
+{%- assign info = product.metafields.embrae.info.value -%}
+{%- if info != blank -%}
+<section class="pd-sec" id="more">
+  <div class="wrap">
+    <div class="bars">
+      <details class="bar"{% if section.settings.open %} open{% endif %}><summary>{{ section.settings.heading | escape }}</summary><div class="bb"><div class="info">
+        {%- for ii in info -%}
+          {%- assign quality = false -%}
+          {%- if ii.icon.value == 'quality-standards' %}{% assign quality = true %}{% endif -%}
+          <div class="ii{% if quality %} qsx{% endif %}"><span class="md ic">{% render 'pdp-icon', name: ii.icon.value %}</span><div><b>{{ ii.label.value | escape }}</b><p>{{ ii.text.value | escape | newline_to_br }}</p>
+            {%- if quality %}<div class="qmk">{% render 'pdp-icon', name: 'quality-marks' %}</div>{% endif -%}
+          </div></div>
+        {%- endfor -%}
+      </div></div></details>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product: additional info",
+  "tag": "div",
+  "class": "section-pdp-more",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Additional information" },
+    { "type": "checkbox", "id": "open", "label": "Open by default", "default": true }
+  ],
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Product: additional info" }]
+}
+{% endschema %}

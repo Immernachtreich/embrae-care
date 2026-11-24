@@ -1,0 +1,142 @@
+{%- liquid
+  if section.settings.logo != blank
+    assign logo_url = section.settings.logo | image_url: width: 600
+  else
+    assign logo_url = 'embrae-logo.png' | asset_url
+  endif
+-%}
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'newsletter' -%}
+              <p class="f-h">{{ block.settings.heading | escape }}</p>
+              {{ block.settings.text }}
+              {%- form 'customer', class: 'lead-form', id: 'leadForm', novalidate: 'novalidate' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <label class="sr" for="leadInput-{{ block.id }}">{{ block.settings.placeholder | escape }}</label>
+                <input id="leadInput-{{ block.id }}" type="email" name="contact[email]" placeholder="{{ block.settings.placeholder | escape }}" autocomplete="email" required>
+                <button class="btn btn-sm on-dark" type="submit">{{ block.settings.button | escape }}</button>
+                {%- if form.posted_successfully? -%}
+                  <p class="lead-msg is-on" role="status">{{ block.settings.success | escape }}</p>
+                {%- elsif form.errors -%}
+                  <p class="lead-msg is-on" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+                {%- endif -%}
+              {%- endform -%}
+            {%- when 'links' -%}
+              <p class="f-h">{{ block.settings.heading | default: block.settings.menu.title | escape }}</p>
+              <ul>
+                {%- for link in block.settings.menu.links -%}
+                  <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                {%- endfor -%}
+              </ul>
+            {%- when 'contact' -%}
+              <p class="f-h">{{ block.settings.heading | escape }}</p>
+              <ul class="contact">
+                {%- if block.settings.phone != blank -%}
+                  {%- assign wa = block.settings.phone | remove: ' ' | remove: '+' | remove: '-' -%}
+                  <li><span>{{ block.settings.phone_label | escape }}</span><a href="https://wa.me/{{ wa }}">{{ block.settings.phone | escape }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.email != blank -%}
+                  <li><span>{{ block.settings.email_label | escape }}</span><a href="mailto:{{ block.settings.email | escape }}">{{ block.settings.email | escape }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.hours != blank -%}
+                  <li><span>{{ block.settings.hours_label | escape }}</span><p>{{ block.settings.hours | escape | newline_to_br }}</p></li>
+                {%- endif -%}
+              </ul>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="f-meta">
+      <div>
+        <h4>{{ section.settings.payment_heading | escape }}</h4>
+        {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+          <div class="f-pay">
+            {%- for type in shop.enabled_payment_types -%}{{ type | payment_type_svg_tag: class: 'f-pay-icon' }}{%- endfor -%}
+          </div>
+        {%- else -%}
+          <span class="slot">{{ section.settings.payment_text | escape }}</span>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.gst_text != blank -%}
+        <div><h4>{{ section.settings.gst_heading | escape }}</h4><span class="slot">{{ section.settings.gst_text | escape }}</span></div>
+      {%- endif -%}
+    </div>
+    <div class="f-brand">
+      <a href="{{ routes.root_url }}" class="logo" style="--m:url({{ logo_url }})" aria-label="{{ shop.name | escape }}"></a>
+      {%- if section.settings.tagline != blank -%}<p class="tag">{{ section.settings.tagline | escape }}</p>{%- endif -%}
+      <div class="social">
+        {%- assign networks = 'instagram,youtube,facebook,x' | split: ',' -%}
+        {%- for net in networks -%}
+          {%- assign key = 'social_' | append: net -%}
+          {%- if settings[key] != blank -%}
+            <a href="{{ settings[key] }}" target="_blank" rel="noopener" aria-label="{{ 'footer.social' | t: network: net | capitalize }}">{% render 'icon', name: net %}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <p class="copy">© {{ 'now' | date: '%Y' }} {{ section.settings.copyright | escape }}</p>
+    </div>
+  </div>
+</footer>
+
+{% stylesheet %}
+  .lead-msg.is-on { display: block; }
+  .f-pay { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .f-pay-icon { width: 38px; height: 24px; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "div",
+  "class": "section-footer",
+  "settings": [
+    { "type": "header", "content": "Payment and tax" },
+    { "type": "text", "id": "payment_heading", "label": "Payment heading", "default": "Payment methods" },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Show payment icons", "default": true },
+    { "type": "text", "id": "payment_text", "label": "Text when no payment icons are shown", "default": "To be added: the payment options supported by Shopify checkout" },
+    { "type": "text", "id": "gst_heading", "label": "GST heading", "default": "GST" },
+    { "type": "text", "id": "gst_text", "label": "GST text", "default": "To be added once confirmed" },
+    { "type": "header", "content": "Brand" },
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Leave empty to use the built-in EMBRAE logo." },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Embrace the feeling" },
+    { "type": "text", "id": "copyright", "label": "Copyright text", "default": "EMBRAE. All rights reserved." },
+    { "type": "paragraph", "content": "Social links are set in Theme settings > Social media." }
+  ],
+  "blocks": [
+    {
+      "type": "newsletter", "name": "Newsletter", "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Stay in the know" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Thoughtful skincare guidance, product stories and selected updates from EMBRAE.</p>" },
+        { "type": "text", "id": "placeholder", "label": "Placeholder", "default": "Email address" },
+        { "type": "text", "id": "button", "label": "Button label", "default": "Subscribe" },
+        { "type": "text", "id": "success", "label": "Success message", "default": "Thank you. You’re on the list." }
+      ]
+    },
+    {
+      "type": "links", "name": "Link list",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    },
+    {
+      "type": "contact", "name": "Contact", "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Contact us" },
+        { "type": "text", "id": "phone_label", "label": "Phone label", "default": "Phone / WhatsApp" },
+        { "type": "text", "id": "phone", "label": "Phone / WhatsApp number", "default": "+91 86004 11991" },
+        { "type": "text", "id": "email_label", "label": "Email label", "default": "Email" },
+        { "type": "text", "id": "email", "label": "Email", "default": "care@embraecare.com" },
+        { "type": "text", "id": "hours_label", "label": "Hours label", "default": "Business hours" },
+        { "type": "textarea", "id": "hours", "label": "Hours", "default": "Monday–Friday: 10:00 AM–6:00 PM\nSaturday–Sunday: Closed" }
+      ]
+    }
+  ],
+  "enabled_on": { "groups": ["footer"] }
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+{%- paginate metaobjects.embrae_faq.values by 250 -%}
+{%- liquid
+  # Sort by the "sort" field: build "0007|position" keys (positions index into the loaded list; see ingredient-library).
+  assign keys = ''
+  for f in metaobjects.embrae_faq.values
+    assign n = f.sort.value | default: 9999 | plus: 10000 | append: ''
+    assign keys = keys | append: n | append: '|' | append: forloop.index0 | append: '^'
+  endfor
+  assign keys = keys | split: '^' | sort
+-%}
+<section class="pg" style="padding-top:0">
+  <div class="wrap">
+    <div class="ftabs" role="tablist" aria-label="{{ section.settings.label | escape }}">
+      {%- for block in section.blocks -%}
+        <button class="ftab" type="button" role="tab" id="ft-{{ block.settings.topic }}" aria-controls="fp-{{ block.settings.topic }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</button>
+      {%- endfor -%}
+    </div>
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign topic = block.settings.topic
+        assign cats = ''
+        for k in keys
+          assign pos = k | split: '|' | last | plus: 0
+          for f in metaobjects.embrae_faq.values offset: pos limit: 1
+            if f.topic.value == topic
+              assign c = f.category.value | default: '-'
+              assign marker = '^' | append: c | append: '^'
+              unless cats contains marker
+                assign cats = cats | append: marker
+              endunless
+            endif
+          endfor
+        endfor
+        assign cat_list = cats | split: '^' | compact
+      -%}
+      <div class="fpanel{% if forloop.first %} on{% endif %}" role="tabpanel" id="fp-{{ topic }}" aria-labelledby="ft-{{ topic }}">
+        {%- for c in cat_list -%}
+          {%- if c == blank %}{% continue %}{% endif -%}
+          <div class="fq-grp">{% if c != '-' %}<h2 class="fq-cat">{{ c | escape }}</h2>{% endif %}<div class="fq-list">
+            {%- for k in keys -%}
+              {%- assign pos = k | split: '|' | last | plus: 0 -%}
+              {%- for f in metaobjects.embrae_faq.values offset: pos limit: 1 -%}
+                {%- assign fc = f.category.value | default: '-' -%}
+                {%- if f.topic.value == topic and fc == c -%}
+                  <details class="fq"><summary>{{ f.question.value | escape }}</summary><div class="fa">{{ f.answer | metafield_tag }}</div></details>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          </div></div>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endpaginate -%}
+
+{% javascript %}
+  (function () {
+    function init() {
+      var t = [].slice.call(document.querySelectorAll('.ftab')), p = [].slice.call(document.querySelectorAll('.fpanel'));
+      if (!t.length || t[0]._ft) return; t[0]._ft = true;
+      function go(i, f, u) {
+        t.forEach(function (b, k) { b.setAttribute('aria-selected', k === i); b.tabIndex = k === i ? 0 : -1; p[k].classList.toggle('on', k === i); });
+        if (f) t[i].focus();
+        if (f || u) { var bar = t[i].parentNode; bar.scrollLeft = t[i].offsetLeft - (bar.clientWidth - t[i].offsetWidth) / 2; }
+        if (u && history.replaceState) { try { history.replaceState(null, '', '#' + t[i].id.slice(3)); } catch (e) {} }
+      }
+      t.forEach(function (b, i) {
+        b.addEventListener('click', function () { go(i, 0, 1); });
+        b.addEventListener('keydown', function (e) { var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (n) { e.preventDefault(); go((i + n + t.length) % t.length, 1, 1); } });
+      });
+      var h = (location.hash || '').slice(1), s = 0; t.forEach(function (b, k) { if (b.id === 'ft-' + h) s = k; }); go(s, 0, 0);
+      window.addEventListener('hashchange', function () { var h = (location.hash || '').slice(1); t.forEach(function (b, k) { if (b.id === 'ft-' + h) go(k, 0, 0); }); });
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('shopify:section:load', init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "FAQ tabs",
+  "tag": "div",
+  "class": "section-faq-tabs",
+  "settings": [
+    { "type": "paragraph", "content": "Questions come from Content → Metaobjects → EMBRAE FAQ. Each tab shows the FAQs whose Topic matches it." },
+    { "type": "text", "id": "label", "label": "Tab bar label (screen readers)", "default": "FAQ topics" }
+  ],
+  "blocks": [
+    { "type": "tab", "name": "Tab", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "General" },
+      { "type": "text", "id": "topic", "label": "Topic", "default": "general", "info": "Matches the FAQ entries' Topic field, e.g. general or reset-cleanser. Also used as the #link." }
+    ] }
+  ],
+  "max_blocks": 10,
+  "presets": [{ "name": "FAQ tabs" }]
+}
+{% endschema %}

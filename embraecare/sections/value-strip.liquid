@@ -1,0 +1,30 @@
+<section class="strip" aria-label="{{ section.settings.label | escape }}">
+  <div class="wrap strip-in">
+    {%- for block in section.blocks -%}
+      <div class="strip-item" {{ block.shopify_attributes }}><small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small><b>{{ block.settings.title | escape }}</b></div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Value strip",
+  "tag": "div",
+  "class": "section-strip",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Strip label (screen readers)", "default": "Why EMBRAE" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Value", "settings": [
+      { "type": "text", "id": "title", "label": "Text", "default": "Four step system" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Value strip", "blocks": [
+    { "type": "item", "settings": { "title": "Four step system" } },
+    { "type": "item", "settings": { "title": "Barrier conscious" } },
+    { "type": "item", "settings": { "title": "Climate responsive" } },
+    { "type": "item", "settings": { "title": "Purposeful care" } }
+  ] }]
+}
+{% endschema %}

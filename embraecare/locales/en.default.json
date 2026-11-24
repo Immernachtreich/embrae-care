@@ -1,0 +1,195 @@
+{
+  "404": {
+    "title": "404",
+    "not_found": "Page not found.",
+    "back_to_shopping": "Back to shopping"
+  },
+  "blog": {
+    "article_comments": "Comments",
+    "article_metadata_html": "{{ date }} by {{ author }}",
+    "comment_form_body": "Comment",
+    "comment_form_email": "Email",
+    "comment_form_name": "Name",
+    "comment_form_submit": "Post",
+    "comment_form_title": "Add a comment"
+  },
+  "cart": {
+    "checkout": "Checkout",
+    "title": "Your bag",
+    "update": "Update",
+    "remove": "Remove",
+    "close": "Close bag",
+    "empty": "Your bag is empty.",
+    "subtotal": "Subtotal",
+    "taxes_note": "MRP inclusive of all taxes. Shipping calculated at checkout.",
+    "decrease": "Decrease quantity of {{ title }}",
+    "increase": "Increase quantity of {{ title }}",
+    "free_shipping_remaining": "You are {{ amount }} away from free shipping.",
+    "free_shipping_unlocked": "You have unlocked free shipping."
+  },
+  "customers": {
+    "login": {
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "title": "Login"
+    }
+  },
+  "collections": {
+    "title": "Collections"
+  },
+  "gift_card": {
+    "add_to_apple_wallet": "Add to Apple Wallet",
+    "card": "Gift card",
+    "expired": "This gift card has expired",
+    "expires_on": "Expires on {{ expires_on }}",
+    "use_at_checkout": "Use this gift card at checkout"
+  },
+  "password": {
+    "title": "This shop is private",
+    "password": "Password",
+    "enter": "Enter"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search articles, pages, or products",
+    "submit": "Search",
+    "no_results_html": "No results found for {{ terms }}",
+    "results_for_html": "{{ count }} results found for {{ terms }}"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content"
+  },
+  "header": {
+    "primary_nav": "Primary",
+    "open_menu": "Open menu",
+    "home": "{{ shop }} home",
+    "account": "Account",
+    "search": "Search",
+    "cart": "Cart"
+  },
+  "footer": {
+    "social": "EMBRAE on {{ network }}"
+  },
+  "products": {
+    "mrp_note": "MRP (incl. of all taxes)",
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "shop": "Shop",
+    "prev_image": "Previous image",
+    "next_image": "Next image",
+    "key_benefits": "Key benefits",
+    "key_benefits_html": "Key<br>benefits",
+    "ingredients": "Ingredients",
+    "images": "Product images",
+    "product": "Product",
+    "mrp_inclusive": "MRP inclusive of all taxes",
+    "size": "Size",
+    "texture": "Texture / Finish",
+    "when_to_use": "When to use",
+    "ingredients_or_howto": "Ingredients or how to use",
+    "how_to_use": "How to use",
+    "key_ingredients": "Key ingredients",
+    "see_full_ingredients": "See full ingredient list →",
+    "see_how_to_use": "See how to use in detail →",
+    "made_for": "Made for",
+    "only": "{{ title }} only",
+    "quantity": "Quantity",
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "add_to_cart": "Add to cart",
+    "buy_now": "Buy it now",
+    "sold_out": "Sold out",
+    "about": "About {{ title }}",
+    "at_a_glance": "{{ title }}, at a glance.",
+    "full_ingredients": "Full ingredients",
+    "storage": "Storage and precautions",
+    "shipping_returns": "Shipping and returns",
+    "moments": "Moments where {{ title }} fits in",
+    "videos_heading": "Videos from people using {{ title }}",
+    "prev_videos": "Previous videos",
+    "next_videos": "Next videos",
+    "videos_scroll": "Videos, scroll horizontally",
+    "video_placeholder": "Customer video coming soon",
+    "reviews_count": {
+      "one": "{{ count }} review",
+      "other": "{{ count }} reviews"
+    },
+    "no_reviews": "No reviews yet",
+    "customer_photos": "Photos from customers",
+    "reviews_note": "Customer reviews and photos will appear here as customers share their experiences with {{ title }}.",
+    "whats_inside": "What's inside",
+    "whats_inside_html": "What's<br>inside",
+    "you_save": "You save {{ amount }}",
+    "complimentary": "Complimentary",
+    "free": "Free",
+    "individual_value": "Individual product value",
+    "you_save_label": "You save",
+    "routine_price": "Routine price",
+    "n_products": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "step_of": "Step {{ index }} of {{ count }}",
+    "step_n": "Step {{ index }}",
+    "watch_step": "Watch step {{ index }}: {{ title }}",
+    "bought_separately": "Bought separately",
+    "this_routine": "This routine"
+  },
+  "sections": {
+    "hero": {
+      "slide_position": "{{ index }} of {{ count }}",
+      "choose_slide": "Choose slide",
+      "go_to_slide": "Slide {{ index }} of {{ count }}",
+      "scroll_down": "Scroll to next section"
+    },
+    "steps": {
+      "creator_video": "Creator video",
+      "placeholder_note": "Placeholder videos only. Replace with approved creator content before launch."
+    },
+    "day_night": {
+      "am_label": "Morning routine, AM",
+      "pm_label": "Night routine, PM",
+      "toggle_label": "Choose sunrise or night routine",
+      "sunrise": "Sunrise routine",
+      "night": "Night routine"
+    },
+    "ingredients": {
+      "learn_more": "Learn more →",
+      "search_label": "Search ingredients",
+      "search_placeholder": "Search by ingredient name or INCI name",
+      "filter_label": "Explore by product",
+      "all_products": "All products",
+      "jump": "Jump to letter",
+      "col_name": "Ingredient",
+      "col_what": "What it is",
+      "col_why": "Why we use it",
+      "col_found": "Found in",
+      "inci": "INCI name",
+      "none": "No ingredients match your search. Try another name or choose All products."
+    },
+    "system": {
+      "step_of": "Step {{ index }} of {{ count }}",
+      "feels_like": "Feels like",
+      "use": "Use",
+      "where": "Where it fits",
+      "what_it_does": "What it does for your skin",
+      "ingredients": "The ingredients behind it",
+      "idea": "The idea behind {{ step }}",
+      "shop": "Shop {{ title }} →",
+      "next": "Next: {{ step }}",
+      "next_label": "Next step: {{ step }}"
+    },
+    "quiz": {
+      "back": "Back",
+      "skip": "Skip this question",
+      "continue": "Continue"
+    }
+  },
+  "blogs": {
+    "article": {
+      "by": "By {{ author }}",
+      "image_placeholder": "Image placeholder"
+    }
+  }
+}

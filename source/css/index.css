@@ -1,0 +1,6 @@
+/* used by: index.html */
+.tg-row{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:32px}
+.tg-row .toggle{margin:0}
+.tg-side{font-size:13px;font-weight:700;letter-spacing:.3em;color:var(--fg);opacity:.45;padding:8px 4px;transition:opacity .5s var(--ease),color .8s var(--ease)}
+.dn[data-theme="day"] .tg-am,.dn[data-theme="night"] .tg-pm{opacity:1}
+.s-art>svg.line.one{max-width:300px}

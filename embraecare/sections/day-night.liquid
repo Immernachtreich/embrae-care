@@ -1,0 +1,82 @@
+{%- liquid
+  assign day_blocks = section.blocks | where: 'type', 'day'
+  assign night_blocks = section.blocks | where: 'type', 'night'
+-%}
+<section class="dn" data-theme="day" data-daynight>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank %}<p class="lead">{{ section.settings.text | escape }}</p>{% endif -%}
+    </div>
+    <div class="tg-row">
+      <button class="tg-side tg-am" type="button" data-mode="day" aria-label="{{ 'sections.day_night.am_label' | t }}">AM</button>
+      <div class="toggle" role="group" aria-label="{{ 'sections.day_night.toggle_label' | t }}">
+        <span class="knob"></span>
+        <button class="sun" type="button" aria-label="{{ 'sections.day_night.sunrise' | t }}" aria-pressed="true" data-mode="day"><svg viewBox="0 0 24 24" stroke-width="0"><circle cx="12" cy="12" r="4.4"/><g stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg></button>
+        <button class="moon" type="button" aria-label="{{ 'sections.day_night.night' | t }}" aria-pressed="false" data-mode="night"><svg viewBox="0 0 24 24" stroke-width="0"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/></svg></button>
+      </div>
+      <button class="tg-side tg-pm" type="button" data-mode="night" aria-label="{{ 'sections.day_night.pm_label' | t }}">PM</button>
+    </div>
+    <p class="routine-label" aria-live="polite" data-day="{{ section.settings.day_label | escape }}" data-night="{{ section.settings.night_label | escape }}">{{ section.settings.day_label | escape }}</p>
+    <div class="dn-stage">
+      <div class="dn-panel on" data-panel="day">
+        {%- for block in day_blocks -%}
+          {%- capture num %}STEP {{ forloop.index }}{% endcapture -%}
+          {%- render 'step-product-card', product: block.settings.product, step: block.settings.step, num: num, step_label: block.settings.step_label, text: block.settings.text, button_label: block.settings.button_label, attrs: block.shopify_attributes -%}
+        {%- endfor -%}
+      </div>
+      <div class="dn-panel" data-panel="night">
+        {%- for block in night_blocks -%}
+          {%- capture num %}STEP {{ forloop.index }}{% endcapture -%}
+          {%- render 'step-product-card', product: block.settings.product, step: block.settings.step, num: num, step_label: block.settings.step_label, text: block.settings.text, button_label: block.settings.button_label, attrs: block.shopify_attributes -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sunrise to Moonlight",
+  "tag": "div",
+  "class": "section-daynight",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From first light to lights out." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Four steps to start your day. Three to wind it down." },
+    { "type": "text", "id": "day_label", "label": "Morning label", "default": "MORNING ROUTINE" },
+    { "type": "text", "id": "night_label", "label": "Night label", "default": "NIGHT ROUTINE" }
+  ],
+  "blocks": [
+    { "type": "day", "name": "Morning step", "settings": [
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "select", "id": "step", "label": "Step (sets art)", "default": "reset", "options": [
+        { "value": "reset", "label": "Reset" }, { "value": "defend", "label": "Defend" },
+        { "value": "adapt", "label": "Adapt" }, { "value": "protect", "label": "Protect" }
+      ] },
+      { "type": "text", "id": "step_label", "label": "Step name", "default": "Reset" },
+      { "type": "text", "id": "text", "label": "Short description" },
+      { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now →" }
+    ] },
+    { "type": "night", "name": "Night step", "settings": [
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "select", "id": "step", "label": "Step (sets art)", "default": "reset", "options": [
+        { "value": "reset", "label": "Reset" }, { "value": "defend", "label": "Defend" },
+        { "value": "adapt", "label": "Adapt" }, { "value": "protect", "label": "Protect" }
+      ] },
+      { "type": "text", "id": "step_label", "label": "Step name", "default": "Reset" },
+      { "type": "text", "id": "text", "label": "Short description" },
+      { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now →" }
+    ] }
+  ],
+  "max_blocks": 10,
+  "presets": [{ "name": "Sunrise to Moonlight", "blocks": [
+    { "type": "day", "settings": { "step": "reset", "step_label": "Reset" } },
+    { "type": "day", "settings": { "step": "defend", "step_label": "Defend" } },
+    { "type": "day", "settings": { "step": "adapt", "step_label": "Adapt" } },
+    { "type": "day", "settings": { "step": "protect", "step_label": "Protect" } },
+    { "type": "night", "settings": { "step": "reset", "step_label": "Reset" } },
+    { "type": "night", "settings": { "step": "defend", "step_label": "Defend" } },
+    { "type": "night", "settings": { "step": "adapt", "step_label": "Adapt" } }
+  ] }]
+}
+{% endschema %}

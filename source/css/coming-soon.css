@@ -1,0 +1,5 @@
+/* used by: coming-soon.html */
+.cs{padding:clamp(80px,12vw,160px) 0;text-align:center}
+.cs h1{font-size:clamp(30px,4.2vw,54px);font-weight:600;line-height:1.15;color:var(--phyto);margin:0}
+.cs p{max-width:520px;margin:20px auto 0;font-size:clamp(16px,1.4vw,19px);line-height:1.75;color:var(--ink)}
+.cs .btn{margin-top:32px}

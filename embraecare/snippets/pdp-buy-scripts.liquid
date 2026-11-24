@@ -1,0 +1,53 @@
+{% doc %}
+  Buy-box behaviour shared by the product and bundle sections: gallery, ingredient/how-to toggle,
+  quantity, live routine total, sticky bar and [data-open] links.
+{% enddoc %}
+{% javascript %}
+  (function () {
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+    function fmt(cents) { return '₹' + Math.round(cents / 100).toLocaleString('en-IN'); }
+    function init(root) {
+      var top = $('.pd-top', root); if (!top || top._pdp) return; top._pdp = true;
+      var sec = top.parentNode;
+      // gallery
+      var pans = $$('.pd-pan', top), ths = $$('.pd-th', top), gi = 0;
+      function g(i) { gi = (i + pans.length) % pans.length; pans.forEach(function (p, k) { p.classList.toggle('on', k === gi); }); ths.forEach(function (t, k) { t.classList.toggle('on', k === gi); t.setAttribute('aria-selected', k === gi); }); }
+      ths.forEach(function (t, k) { t.addEventListener('click', function () { g(k); }); });
+      $('[data-gal-prev]', top).addEventListener('click', function () { g(gi - 1); });
+      $('[data-gal-next]', top).addEventListener('click', function () { g(gi + 1); });
+      // ingredients / how to use
+      var sg = $$('.seg button', top);
+      sg.forEach(function (b) { b.addEventListener('click', function () { sg.forEach(function (x) { x.setAttribute('aria-selected', x === b); document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on', x === b); }); }); });
+      // quantity + routine total
+      var form = $('[data-pdp-form]', top), qIn = $('[data-qty-input]', form), qView = $('[data-qty-view]', form), rb = $('[data-routine]', top), sbTotal = $('[data-sb-total]', sec);
+      function total() {
+        var q = +qIn.value, base = rb ? +rb.getAttribute('data-base') : 0, t = base, c = 0;
+        if (!rb) return;
+        $$('input[name="addon"]', rb).forEach(function (i) { if (i.checked) { t += +i.getAttribute('data-price'); c++; } });
+        $('[data-rb-total]', rb).textContent = fmt(t * q);
+        if (sbTotal) sbTotal.textContent = fmt(t * q);
+        var title = rb.getAttribute('data-title');
+        var lab = $('[data-rb-label]', rb); if (lab) lab.textContent = c ? title + ' + ' + c + ' more' : title + ' only';
+      }
+      if (rb) $$('input[name="addon"]', rb).forEach(function (i) { i.addEventListener('change', total); });
+      $$('[data-qty-step]', form).forEach(function (b) { b.addEventListener('click', function () {
+        qIn.value = Math.min(9, Math.max(1, +qIn.value + +b.getAttribute('data-qty-step'))); qView.textContent = qIn.value; total();
+      }); });
+      // sticky bar once the buy box has scrolled away
+      var sb = $('[data-sbar]', sec), end = $('[data-buy-end]', top);
+      if (sb && end) {
+        var chk = function () { var past = end.getBoundingClientRect().top < 0; sb.classList.toggle('on', past); sb.setAttribute('aria-hidden', !past); $$('button', sb).forEach(function (b) { b.tabIndex = past ? 0 : -1; }); };
+        window.addEventListener('scroll', chk, { passive: true }); window.addEventListener('resize', chk); chk();
+      }
+    }
+    // "See full ingredient list" style links: open the target tab and <details>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('[data-open]'); if (!a) return;
+      var b = document.getElementById(a.getAttribute('data-open')); if (b) b.click();
+      var h = a.getAttribute('href'); if (h && h.charAt(0) === '#') { var d = document.querySelector(h); if (d && d.tagName === 'DETAILS') d.open = true; }
+    });
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+    document.addEventListener('shopify:section:load', function (e) { init(e.target); });
+  })();
+{% endjavascript %}

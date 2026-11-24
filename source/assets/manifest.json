@@ -1,0 +1,564 @@
+[
+  {
+    "id": 0,
+    "file": "asset-00.jpg",
+    "mime": "image/jpeg",
+    "bytes": 150425,
+    "used_in": [
+      "climate-adapt-moisturizer.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "index.html",
+      "reset-cleanser.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 1,
+    "file": "asset-01.jpg",
+    "mime": "image/jpeg",
+    "bytes": 193256,
+    "used_in": [
+      "climate-adapt-moisturizer.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "index.html",
+      "reset-cleanser.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 2,
+    "file": "asset-02.jpg",
+    "mime": "image/jpeg",
+    "bytes": 234859,
+    "used_in": [
+      "climate-adapt-moisturizer.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "index.html",
+      "reset-cleanser.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 3,
+    "file": "asset-03.jpg",
+    "mime": "image/jpeg",
+    "bytes": 173246,
+    "used_in": [
+      "climate-adapt-moisturizer.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "index.html",
+      "reset-cleanser.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 4,
+    "file": "asset-04.png",
+    "mime": "image/png",
+    "bytes": 28538,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 5,
+    "file": "helvena-400.woff",
+    "mime": "font/woff",
+    "bytes": 40260,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 6,
+    "file": "helvena-500.woff",
+    "mime": "font/woff",
+    "bytes": 40916,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 7,
+    "file": "helvena-600.woff",
+    "mime": "font/woff",
+    "bytes": 40668,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 8,
+    "file": "helvena-700.woff",
+    "mime": "font/woff",
+    "bytes": 40800,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 9,
+    "file": "helvena-800.woff",
+    "mime": "font/woff",
+    "bytes": 44436,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 10,
+    "file": "asset-10.jpg",
+    "mime": "image/jpeg",
+    "bytes": 39567,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 11,
+    "file": "asset-11.jpg",
+    "mime": "image/jpeg",
+    "bytes": 92024,
+    "used_in": [
+      "a-note-from-the-founder.html",
+      "climate-adapt-moisturizer.html",
+      "coming-soon.html",
+      "daily-shield-sunscreen.html",
+      "daily-urban-defense-routine.html",
+      "faqs.html",
+      "gel-or-cream-choosing-a-moisturizer-for-humid-weather.html",
+      "how-to-patch-test-a-new-product.html",
+      "index.html",
+      "journal.html",
+      "monsoon-skin-care-keep-it-simple.html",
+      "our-ingredients.html",
+      "our-philosophy.html",
+      "our-story.html",
+      "our-values.html",
+      "reset-cleanser.html",
+      "reset-defend-adapt-protect-the-four-steps-explained.html",
+      "simple-routine-or-ten-steps.html",
+      "skin-quiz.html",
+      "the-embrae-system.html",
+      "urban-defense-serum.html",
+      "what-a-long-hot-commute-does-to-your-skin.html",
+      "what-goes-first-serum-or-moisturizer.html",
+      "why-skin-feels-oily-and-dry-at-the-same-time.html",
+      "why-sunscreen-feels-heavy-in-humid-weather.html",
+      "why-we-begin-with-a-gentle-cleanser.html",
+      "why-we-exist.html",
+      "why-your-face-feels-tight-in-an-air-conditioned-office.html",
+      "your-first-week-with-the-embrae-routine.html"
+    ]
+  },
+  {
+    "id": 12,
+    "file": "asset-12.png",
+    "mime": "image/png",
+    "bytes": 7878,
+    "used_in": [
+      "climate-adapt-moisturizer.html"
+    ]
+  },
+  {
+    "id": 13,
+    "file": "asset-13.png",
+    "mime": "image/png",
+    "bytes": 18300,
+    "used_in": [
+      "climate-adapt-moisturizer.html"
+    ]
+  },
+  {
+    "id": 14,
+    "file": "asset-14.png",
+    "mime": "image/png",
+    "bytes": 19206,
+    "used_in": [
+      "climate-adapt-moisturizer.html"
+    ]
+  },
+  {
+    "id": 15,
+    "file": "asset-15.png",
+    "mime": "image/png",
+    "bytes": 17033,
+    "used_in": [
+      "climate-adapt-moisturizer.html"
+    ]
+  },
+  {
+    "id": 16,
+    "file": "asset-16.png",
+    "mime": "image/png",
+    "bytes": 19375,
+    "used_in": [
+      "climate-adapt-moisturizer.html",
+      "daily-urban-defense-routine.html"
+    ]
+  },
+  {
+    "id": 17,
+    "file": "asset-17.png",
+    "mime": "image/png",
+    "bytes": 14226,
+    "used_in": [
+      "climate-adapt-moisturizer.html"
+    ]
+  },
+  {
+    "id": 18,
+    "file": "asset-18.png",
+    "mime": "image/png",
+    "bytes": 12048,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 19,
+    "file": "asset-19.png",
+    "mime": "image/png",
+    "bytes": 9994,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 20,
+    "file": "asset-20.png",
+    "mime": "image/png",
+    "bytes": 10664,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 21,
+    "file": "asset-21.png",
+    "mime": "image/png",
+    "bytes": 4354,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 22,
+    "file": "asset-22.png",
+    "mime": "image/png",
+    "bytes": 7686,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 23,
+    "file": "asset-23.png",
+    "mime": "image/png",
+    "bytes": 13174,
+    "used_in": [
+      "daily-shield-sunscreen.html"
+    ]
+  },
+  {
+    "id": 24,
+    "file": "asset-24.png",
+    "mime": "image/png",
+    "bytes": 2464,
+    "used_in": [
+      "index.html",
+      "the-embrae-system.html"
+    ]
+  },
+  {
+    "id": 25,
+    "file": "asset-25.png",
+    "mime": "image/png",
+    "bytes": 1865,
+    "used_in": [
+      "index.html",
+      "the-embrae-system.html"
+    ]
+  },
+  {
+    "id": 26,
+    "file": "asset-26.png",
+    "mime": "image/png",
+    "bytes": 1863,
+    "used_in": [
+      "index.html",
+      "the-embrae-system.html"
+    ]
+  },
+  {
+    "id": 27,
+    "file": "asset-27.png",
+    "mime": "image/png",
+    "bytes": 2051,
+    "used_in": [
+      "index.html",
+      "the-embrae-system.html"
+    ]
+  },
+  {
+    "id": 28,
+    "file": "asset-28.png",
+    "mime": "image/png",
+    "bytes": 6202,
+    "used_in": [
+      "daily-urban-defense-routine.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 29,
+    "file": "asset-29.png",
+    "mime": "image/png",
+    "bytes": 16666,
+    "used_in": [
+      "daily-urban-defense-routine.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 30,
+    "file": "asset-30.png",
+    "mime": "image/png",
+    "bytes": 14882,
+    "used_in": [
+      "daily-urban-defense-routine.html",
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 31,
+    "file": "asset-31.png",
+    "mime": "image/png",
+    "bytes": 8915,
+    "used_in": [
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 32,
+    "file": "asset-32.png",
+    "mime": "image/png",
+    "bytes": 16367,
+    "used_in": [
+      "urban-defense-serum.html"
+    ]
+  },
+  {
+    "id": 33,
+    "file": "asset-33.png",
+    "mime": "image/png",
+    "bytes": 16596,
+    "used_in": [
+      "urban-defense-serum.html"
+    ]
+  }
+]

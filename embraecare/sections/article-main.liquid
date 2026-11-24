@@ -1,0 +1,99 @@
+{%- liquid
+  assign s = section.settings
+  assign keys = 'reset,defend,adapt,protect,bundle' | split: ','
+  # Table of contents from the <h2 id="…"> headings in the article body.
+  assign parts = article.content | split: '<h2 id="'
+-%}
+<article>
+  <header class="ar-head">
+    <div class="wrap">
+      <a class="ar-back" href="{{ blog.url }}">← {{ blog.title | escape }}</a>
+      <h1 class="ar-h1">{{ article.title | escape }}</h1>
+      {%- if article.excerpt != blank %}<p class="ar-sub">{{ article.excerpt | strip_html | strip }}</p>{% endif -%}
+      <div class="ar-meta">{% render 'journal-date', date: article.published_at, class: 'ar-d' %}{% if article.metafields.embrae.read_time != blank %}<span>{{ article.metafields.embrae.read_time.value | escape }}</span>{% endif %}<span>{{ 'blogs.article.by' | t: author: article.author }}</span></div>
+    </div>
+  </header>
+  <div class="ar-hero"><div class="ar-img">
+    {%- if article.image -%}
+      {{ article.image | image_url: width: 1800 | image_tag: alt: article.image.alt, sizes: '100vw' }}
+    {%- else -%}
+      {%- capture key %}{{ article.handle | split: '/' | last }}-hero{% endcapture -%}
+      {% render 'journal-art', key: key %}<span class="ar-ph">{{ 'blogs.article.image_placeholder' | t }}</span>
+    {%- endif -%}
+  </div></div>
+  <div class="ar-wrap">
+    {%- if parts.size > 1 -%}
+      <nav class="ar-toc" aria-label="{{ s.toc_label | escape }}"><p>{{ s.toc_label | escape }}</p><ol>
+        {%- for p in parts offset: 1 -%}
+          {%- assign id = p | split: '"' | first -%}
+          {%- assign title = p | split: '</h2>' | first | split: '>' | last -%}
+          <li><a href="#{{ id }}">{{ title }}</a></li>
+        {%- endfor -%}
+      </ol></nav>
+    {%- endif -%}
+    <div class="ar-body" id="ar-body">{{ article.content }}</div>
+  </div>
+</article>
+<script>
+  window.EmbraeArticle = {
+    root: {{ routes.root_url | append: '/' | replace: '//', '/' | json }},
+    variants: {
+      {%- for k in keys -%}{{ k | json }}: {{ s[k].selected_or_first_available_variant.id | append: '' | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+    },
+    prices: {
+      {%- for k in keys -%}{%- capture pr %}{% render 'price', price: s[k].selected_or_first_available_variant.price %}{% endcapture -%}{{ k | json }}: {{ pr | strip | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+    }
+  };
+</script>
+
+{% javascript %}
+  (function () {
+    function track(e, d) { window.dataLayer = window.dataLayer || []; d = d || {}; d.event = e; window.dataLayer.push(d); }
+    function add(btn, key) {
+      var C = window.EmbraeArticle || { variants: {} }, box = btn.closest('.ar-ban,.ar-ut'), msg = box && box.querySelector('.ar-msg'), id = C.variants[key];
+      track('article_add_to_cart', { product: key, placement: btn.closest('.ar-ban') ? 'inline_banner' : 'routine_band' });
+      if (!id) { if (msg) msg.textContent = 'This product is not available right now.'; return; }
+      if (msg) msg.textContent = 'Adding to your cart...';
+      fetch(C.root + 'cart/add.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: [{ id: Number(id), quantity: 1 }] }) })
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .then(function () { if (msg) msg.innerHTML = 'Added to your cart. <a href="' + C.root + 'cart">View cart</a>'; if (window.EmbraeCart) EmbraeCart.refresh().then(function () { EmbraeCart.open(); }); })
+        .catch(function () { if (msg) msg.textContent = 'Sorry, we could not add that to your cart. Please try again.'; });
+    }
+    function init() {
+      var body = document.getElementById('ar-body'); if (!body || body._ar) return; body._ar = true;
+      var C = window.EmbraeArticle || { prices: {} };
+      // keep inline product banners' prices in sync with the store
+      [].forEach.call(document.querySelectorAll('.ar-ban'), function (b) { var k = b.querySelector('[data-add]'), p = b.querySelector('.ar-bp'); if (k && p && C.prices[k.getAttribute('data-add')]) p.textContent = C.prices[k.getAttribute('data-add')]; });
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('[data-add]'); if (a) { add(a, a.getAttribute('data-add')); return; }
+        var l = e.target.closest('a[data-p],a[data-cta]');
+        if (l) track('article_cta_click', { product: l.getAttribute('data-p') || l.getAttribute('data-cta'), placement: l.closest('.ar-ban') ? 'inline_banner' : l.closest('.ar-ut') ? 'routine_band' : l.closest('.ar-quiz') ? 'quiz_banner' : 'text_link' });
+      });
+      var links = [].slice.call(document.querySelectorAll('.ar-toc a')), secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+      function spy() { var y = window.scrollY + 150, cur = 0; secs.forEach(function (s, i) { if (s && s.offsetTop + s.offsetParent.offsetTop <= y) cur = i; }); links.forEach(function (a, i) { a.classList.toggle('on', i === cur); }); }
+      window.addEventListener('scroll', spy, { passive: true }); spy();
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('shopify:section:load', init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "div",
+  "class": "section-article",
+  "settings": [
+    { "type": "text", "id": "toc_label", "label": "Contents heading", "default": "In this note" },
+    { "type": "header", "content": "Add-to-cart buttons in articles" },
+    { "type": "paragraph", "content": "Buttons in an article body with data-add=\"reset\" etc. add these products." },
+    { "type": "product", "id": "reset", "label": "Reset product" },
+    { "type": "product", "id": "defend", "label": "Defend product" },
+    { "type": "product", "id": "adapt", "label": "Adapt product" },
+    { "type": "product", "id": "protect", "label": "Protect product" },
+    { "type": "product", "id": "bundle", "label": "Complete routine (bundle)" }
+  ],
+  "enabled_on": { "templates": ["article"] },
+  "presets": [{ "name": "Article" }]
+}
+{% endschema %}

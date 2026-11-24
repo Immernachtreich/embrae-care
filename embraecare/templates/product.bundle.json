@@ -1,0 +1,152 @@
+{
+  "sections": {
+    "main": {
+      "type": "pdp-bundle-main",
+      "settings": {
+        "shop_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "shipping",
+            "text": "Free shipping above ₹999"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "secure",
+            "text": "Secure checkout"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "support",
+            "text": "EMBRAE care on WhatsApp"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "tracking",
+            "text": "Easy order tracking"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    "inside": {
+      "type": "pdp-bundle-inside",
+      "settings": {
+        "use_text": "Meet the four products and watch each step in order, from Reset to Protect."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "product": "reset-cleanser",
+            "text": "Helps remove daily impurities, sweat and environmental buildup while maintaining skin comfort."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "product": "urban-defense-serum",
+            "text": "Helps strengthen and support the skin barrier while providing hydration."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "product": "climate-adapt-moisturizer",
+            "text": "Replenishes hydration, helps reduce moisture loss and supports skin comfort."
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "product": "daily-shield-sunscreen",
+            "text": "Provides broad-spectrum SPF 50 PA++++ protection against UVA and UVB exposure."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "why": {
+      "type": "pdp-bundle-why",
+      "settings": {},
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "step": "reset",
+            "title": "Cleanse",
+            "text": "Clears daily impurities, sweat and buildup."
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "step": "defend",
+            "title": "Strengthen",
+            "text": "Supports the skin barrier while hydrating."
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "step": "adapt",
+            "title": "Hydrate",
+            "text": "Replenishes hydration and helps reduce moisture loss."
+          }
+        },
+        "c4": {
+          "type": "card",
+          "settings": {
+            "step": "protect",
+            "title": "Protect",
+            "text": "Broad-spectrum SPF 50 PA++++ protection."
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ]
+    },
+    "reels": {
+      "type": "pdp-reels",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "pdp-reviews",
+      "settings": {}
+    },
+    "more": {
+      "type": "pdp-more",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "inside",
+    "why",
+    "reels",
+    "reviews",
+    "more"
+  ]
+}

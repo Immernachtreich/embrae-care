@@ -1,0 +1,364 @@
+a-note-from-the-founder [d] height src=4644 shop=4604
+  00 y=    0 diff=  0.0  a-note-from-the-founder.d.00.png
+  01 y= 1400 diff=  0.0  a-note-from-the-founder.d.01.png
+  02 y= 2800 diff=  0.0  a-note-from-the-founder.d.02.png
+  03 y= 4200 diff=  1.7  a-note-from-the-founder.d.03.png
+a-note-from-the-founder [m] height src=5825 shop=5785
+  00 y=    0 diff=  0.0  a-note-from-the-founder.m.00.png
+  01 y= 1600 diff=  0.0  a-note-from-the-founder.m.01.png
+  02 y= 3200 diff=  0.1  a-note-from-the-founder.m.02.png
+  03 y= 4800 diff=  1.6  a-note-from-the-founder.m.03.png
+climate-adapt-moisturizer [d] height src=7485 shop=7445
+  00 y=    0 diff=  0.0  climate-adapt-moisturizer.d.00.png
+  01 y= 1400 diff=  0.0  climate-adapt-moisturizer.d.01.png
+  02 y= 2800 diff=  1.2  climate-adapt-moisturizer.d.02.png
+  03 y= 4200 diff=  1.4  climate-adapt-moisturizer.d.03.png
+  04 y= 5600 diff=  0.7  climate-adapt-moisturizer.d.04.png
+  05 y= 7000 diff=  1.7  climate-adapt-moisturizer.d.05.png
+climate-adapt-moisturizer [m] height src=9016 shop=8926
+  00 y=    0 diff=  0.0  climate-adapt-moisturizer.m.00.png
+  01 y= 1600 diff=  0.0  climate-adapt-moisturizer.m.01.png
+  02 y= 3200 diff=  1.3  climate-adapt-moisturizer.m.02.png
+  03 y= 4800 diff=  5.7  climate-adapt-moisturizer.m.03.png
+  04 y= 6400 diff= 17.4  climate-adapt-moisturizer.m.04.png
+  05 y= 8000 diff=  7.8  climate-adapt-moisturizer.m.05.png
+daily-shield-sunscreen [d] height src=7526 shop=7486
+  00 y=    0 diff=  0.8  daily-shield-sunscreen.d.00.png
+  01 y= 1400 diff=  0.0  daily-shield-sunscreen.d.01.png
+  02 y= 2800 diff=  0.8  daily-shield-sunscreen.d.02.png
+  03 y= 4200 diff=  1.4  daily-shield-sunscreen.d.03.png
+  04 y= 5600 diff=  0.9  daily-shield-sunscreen.d.04.png
+  05 y= 7000 diff=  1.7  daily-shield-sunscreen.d.05.png
+daily-shield-sunscreen [m] height src=9260 shop=9170
+  00 y=    0 diff=  0.9  daily-shield-sunscreen.m.00.png
+  01 y= 1600 diff=  0.0  daily-shield-sunscreen.m.01.png
+  02 y= 3200 diff=  1.4  daily-shield-sunscreen.m.02.png
+  03 y= 4800 diff=  4.3  daily-shield-sunscreen.m.03.png
+  04 y= 6400 diff= 17.6  daily-shield-sunscreen.m.04.png
+  05 y= 8000 diff=  9.1  daily-shield-sunscreen.m.05.png
+daily-urban-defense-routine [d] height src=7172 shop=7132
+  00 y=    0 diff=  0.0  daily-urban-defense-routine.d.00.png
+  01 y= 1400 diff=  0.0  daily-urban-defense-routine.d.01.png
+  02 y= 2800 diff=  0.4  daily-urban-defense-routine.d.02.png
+  03 y= 4200 diff=  1.1  daily-urban-defense-routine.d.03.png
+  04 y= 5600 diff=  0.0  daily-urban-defense-routine.d.04.png
+  05 y= 7000 diff=  1.7  daily-urban-defense-routine.d.05.png
+daily-urban-defense-routine [m] height src=9877 shop=9787
+  00 y=    0 diff=  0.0  daily-urban-defense-routine.m.00.png
+  01 y= 1600 diff=  0.0  daily-urban-defense-routine.m.01.png
+  02 y= 3200 diff=  0.9  daily-urban-defense-routine.m.02.png
+  03 y= 4800 diff=  0.1  daily-urban-defense-routine.m.03.png
+  04 y= 6400 diff= 11.9  daily-urban-defense-routine.m.04.png
+  05 y= 8000 diff= 15.5  daily-urban-defense-routine.m.05.png
+  06 y= 9600 diff=  4.5  daily-urban-defense-routine.m.06.png
+faqs [d] height src=5319 shop=5279
+  00 y=    0 diff=  0.0  faqs.d.00.png
+  01 y= 1400 diff=  0.0  faqs.d.01.png
+  02 y= 2800 diff=  0.0  faqs.d.02.png
+  03 y= 4200 diff=  1.7  faqs.d.03.png
+faqs [m] height src=5560 shop=5520
+  00 y=    0 diff=  0.0  faqs.m.00.png
+  01 y= 1600 diff=  0.0  faqs.m.01.png
+  02 y= 3200 diff=  0.1  faqs.m.02.png
+  03 y= 4800 diff=  1.6  faqs.m.03.png
+gel-or-cream-choosing-a-moisturizer-for-humid-weather [d] height src=6610 shop=6570
+  00 y=    0 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.d.00.png
+  01 y= 1400 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.d.01.png
+  02 y= 2800 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.d.02.png
+  03 y= 4200 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.d.03.png
+  04 y= 5600 diff=  1.7  gel-or-cream-choosing-a-moisturizer-for-humid-weather.d.04.png
+gel-or-cream-choosing-a-moisturizer-for-humid-weather [m] height src=8030 shop=7990
+  00 y=    0 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.00.png
+  01 y= 1600 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.01.png
+  02 y= 3200 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.02.png
+  03 y= 4800 diff=  0.0  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.03.png
+  04 y= 6400 diff=  0.7  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.04.png
+  05 y= 8000 diff=  1.1  gel-or-cream-choosing-a-moisturizer-for-humid-weather.m.05.png
+how-to-patch-test-a-new-product [d] height src=6404 shop=6364
+  00 y=    0 diff=  0.0  how-to-patch-test-a-new-product.d.00.png
+  01 y= 1400 diff=  0.0  how-to-patch-test-a-new-product.d.01.png
+  02 y= 2800 diff=  0.0  how-to-patch-test-a-new-product.d.02.png
+  03 y= 4200 diff=  0.0  how-to-patch-test-a-new-product.d.03.png
+  04 y= 5600 diff=  1.7  how-to-patch-test-a-new-product.d.04.png
+how-to-patch-test-a-new-product [m] height src=7871 shop=7831
+  00 y=    0 diff=  0.0  how-to-patch-test-a-new-product.m.00.png
+  01 y= 1600 diff=  0.0  how-to-patch-test-a-new-product.m.01.png
+  02 y= 3200 diff=  0.0  how-to-patch-test-a-new-product.m.02.png
+  03 y= 4800 diff=  0.0  how-to-patch-test-a-new-product.m.03.png
+  04 y= 6400 diff=  1.7  how-to-patch-test-a-new-product.m.04.png
+index [d] height src=7175 shop=7082
+  00 y=    0 diff=  0.2  index.d.00.png
+  01 y= 1400 diff=  0.0  index.d.01.png
+  02 y= 2800 diff=  6.2  index.d.02.png
+  03 y= 4200 diff= 24.3  index.d.03.png
+  04 y= 5600 diff= 29.2  index.d.04.png
+  05 y= 7000 diff=  3.9  index.d.05.png
+index [m] height src=11439 shop=11330
+  00 y=    0 diff=  0.2  index.m.00.png
+  01 y= 1600 diff=  0.0  index.m.01.png
+  02 y= 3200 diff=  0.0  index.m.02.png
+  03 y= 4800 diff=  9.9  index.m.03.png
+  04 y= 6400 diff= 45.2  index.m.04.png
+  05 y= 8000 diff= 34.4  index.m.05.png
+  06 y= 9600 diff= 21.5  index.m.06.png
+  07 y=11200 diff=  4.8  index.m.07.png
+journal [d] height src=5188 shop=5148
+  00 y=    0 diff=  0.0  journal.d.00.png
+  01 y= 1400 diff=  0.0  journal.d.01.png
+  02 y= 2800 diff=  0.0  journal.d.02.png
+  03 y= 4200 diff=  1.7  journal.d.03.png
+journal [m] height src=8719 shop=8679
+  00 y=    0 diff=  0.0  journal.m.00.png
+  01 y= 1600 diff=  0.0  journal.m.01.png
+  02 y= 3200 diff=  0.0  journal.m.02.png
+  03 y= 4800 diff=  0.0  journal.m.03.png
+  04 y= 6400 diff=  0.1  journal.m.04.png
+  05 y= 8000 diff=  1.6  journal.m.05.png
+monsoon-skin-care-keep-it-simple [d] height src=6223 shop=6183
+  00 y=    0 diff=  0.0  monsoon-skin-care-keep-it-simple.d.00.png
+  01 y= 1400 diff=  0.0  monsoon-skin-care-keep-it-simple.d.01.png
+  02 y= 2800 diff=  0.0  monsoon-skin-care-keep-it-simple.d.02.png
+  03 y= 4200 diff=  0.0  monsoon-skin-care-keep-it-simple.d.03.png
+  04 y= 5600 diff=  1.7  monsoon-skin-care-keep-it-simple.d.04.png
+monsoon-skin-care-keep-it-simple [m] height src=7595 shop=7555
+  00 y=    0 diff=  0.0  monsoon-skin-care-keep-it-simple.m.00.png
+  01 y= 1600 diff=  0.0  monsoon-skin-care-keep-it-simple.m.01.png
+  02 y= 3200 diff=  0.0  monsoon-skin-care-keep-it-simple.m.02.png
+  03 y= 4800 diff=  0.1  monsoon-skin-care-keep-it-simple.m.03.png
+  04 y= 6400 diff=  1.6  monsoon-skin-care-keep-it-simple.m.04.png
+our-ingredients [d] height src=11221 shop=11181
+  00 y=    0 diff=  0.0  our-ingredients.d.00.png
+  01 y= 1400 diff=  0.0  our-ingredients.d.01.png
+  02 y= 2800 diff=  0.0  our-ingredients.d.02.png
+  03 y= 4200 diff=  0.0  our-ingredients.d.03.png
+  04 y= 5600 diff=  0.0  our-ingredients.d.04.png
+  05 y= 7000 diff=  0.0  our-ingredients.d.05.png
+  06 y= 8400 diff=  0.0  our-ingredients.d.06.png
+  07 y= 9800 diff=  0.9  our-ingredients.d.07.png
+  08 y=11200 diff=  0.8  our-ingredients.d.08.png
+our-ingredients [m] height src=23603 shop=23563
+  00 y=    0 diff=  0.0  our-ingredients.m.00.png
+  01 y= 1600 diff=  0.0  our-ingredients.m.01.png
+  02 y= 3200 diff=  0.0  our-ingredients.m.02.png
+  03 y= 4800 diff=  0.0  our-ingredients.m.03.png
+  04 y= 6400 diff=  0.0  our-ingredients.m.04.png
+  05 y= 8000 diff=  0.0  our-ingredients.m.05.png
+  06 y= 9600 diff=  0.0  our-ingredients.m.06.png
+  07 y=11200 diff=  0.0  our-ingredients.m.07.png
+  08 y=12800 diff=  0.0  our-ingredients.m.08.png
+  09 y=14400 diff=  0.0  our-ingredients.m.09.png
+  10 y=16000 diff=  0.0  our-ingredients.m.10.png
+  11 y=17600 diff=  0.0  our-ingredients.m.11.png
+  12 y=19200 diff=  0.0  our-ingredients.m.12.png
+  13 y=20800 diff=  0.1  our-ingredients.m.13.png
+  14 y=22400 diff=  1.6  our-ingredients.m.14.png
+our-philosophy [d] height src=3877 shop=3837
+  00 y=    0 diff=  0.0  our-philosophy.d.00.png
+  01 y= 1400 diff=  0.1  our-philosophy.d.01.png
+  02 y= 2800 diff=  1.7  our-philosophy.d.02.png
+our-philosophy [m] height src=5333 shop=5293
+  00 y=    0 diff=  0.0  our-philosophy.m.00.png
+  01 y= 1600 diff=  0.3  our-philosophy.m.01.png
+  02 y= 3200 diff=  0.1  our-philosophy.m.02.png
+  03 y= 4800 diff=  1.6  our-philosophy.m.03.png
+our-story [d] height src=4327 shop=4287
+  00 y=    0 diff=  0.2  our-story.d.00.png
+  01 y= 1400 diff=  0.1  our-story.d.01.png
+  02 y= 2800 diff=  0.0  our-story.d.02.png
+  03 y= 4200 diff=  1.7  our-story.d.03.png
+our-story [m] height src=5538 shop=5498
+  00 y=    0 diff=  0.5  our-story.m.00.png
+  01 y= 1600 diff=  0.2  our-story.m.01.png
+  02 y= 3200 diff=  0.1  our-story.m.02.png
+  03 y= 4800 diff=  1.6  our-story.m.03.png
+our-values [d] height src=2687 shop=2647
+  00 y=    0 diff=  0.1  our-values.d.00.png
+  01 y= 1400 diff=  1.7  our-values.d.01.png
+our-values [m] height src=3529 shop=3489
+  00 y=    0 diff=  0.2  our-values.m.00.png
+  01 y= 1600 diff=  0.1  our-values.m.01.png
+  02 y= 3200 diff=  1.6  our-values.m.02.png
+reset-cleanser [d] height src=7594 shop=7554
+  00 y=    0 diff=  0.0  reset-cleanser.d.00.png
+  01 y= 1400 diff=  0.0  reset-cleanser.d.01.png
+  02 y= 2800 diff=  0.7  reset-cleanser.d.02.png
+  03 y= 4200 diff=  2.5  reset-cleanser.d.03.png
+  04 y= 5600 diff=  1.1  reset-cleanser.d.04.png
+  05 y= 7000 diff=  1.7  reset-cleanser.d.05.png
+reset-cleanser [m] height src=8802 shop=8712
+  00 y=    0 diff=  0.0  reset-cleanser.m.00.png
+  01 y= 1600 diff=  0.0  reset-cleanser.m.01.png
+  02 y= 3200 diff=  0.6  reset-cleanser.m.02.png
+  03 y= 4800 diff=  6.8  reset-cleanser.m.03.png
+  04 y= 6400 diff= 17.0  reset-cleanser.m.04.png
+  05 y= 8000 diff=  6.9  reset-cleanser.m.05.png
+reset-defend-adapt-protect-the-four-steps-explained [d] height src=6931 shop=6891
+  00 y=    0 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.d.00.png
+  01 y= 1400 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.d.01.png
+  02 y= 2800 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.d.02.png
+  03 y= 4200 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.d.03.png
+  04 y= 5600 diff=  1.7  reset-defend-adapt-protect-the-four-steps-explained.d.04.png
+reset-defend-adapt-protect-the-four-steps-explained [m] height src=8635 shop=8595
+  00 y=    0 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.m.00.png
+  01 y= 1600 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.m.01.png
+  02 y= 3200 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.m.02.png
+  03 y= 4800 diff=  0.0  reset-defend-adapt-protect-the-four-steps-explained.m.03.png
+  04 y= 6400 diff=  0.1  reset-defend-adapt-protect-the-four-steps-explained.m.04.png
+  05 y= 8000 diff=  1.6  reset-defend-adapt-protect-the-four-steps-explained.m.05.png
+simple-routine-or-ten-steps [d] height src=7139 shop=7099
+  00 y=    0 diff=  0.0  simple-routine-or-ten-steps.d.00.png
+  01 y= 1400 diff=  0.0  simple-routine-or-ten-steps.d.01.png
+  02 y= 2800 diff=  0.0  simple-routine-or-ten-steps.d.02.png
+  03 y= 4200 diff=  0.0  simple-routine-or-ten-steps.d.03.png
+  04 y= 5600 diff=  0.0  simple-routine-or-ten-steps.d.04.png
+  05 y= 7000 diff=  1.7  simple-routine-or-ten-steps.d.05.png
+simple-routine-or-ten-steps [m] height src=8879 shop=8839
+  00 y=    0 diff=  0.0  simple-routine-or-ten-steps.m.00.png
+  01 y= 1600 diff=  0.0  simple-routine-or-ten-steps.m.01.png
+  02 y= 3200 diff=  0.0  simple-routine-or-ten-steps.m.02.png
+  03 y= 4800 diff=  0.0  simple-routine-or-ten-steps.m.03.png
+  04 y= 6400 diff=  0.1  simple-routine-or-ten-steps.m.04.png
+  05 y= 8000 diff=  1.6  simple-routine-or-ten-steps.m.05.png
+skin-quiz [d] height src=3966 shop=3926
+  00 y=    0 diff=  0.0  skin-quiz.d.00.png
+  01 y= 1400 diff=  0.0  skin-quiz.d.01.png
+  02 y= 2800 diff=  1.7  skin-quiz.d.02.png
+skin-quiz [m] height src=4853 shop=4813
+  00 y=    0 diff=  0.0  skin-quiz.m.00.png
+  01 y= 1600 diff=  0.0  skin-quiz.m.01.png
+  02 y= 3200 diff=  0.2  skin-quiz.m.02.png
+  03 y= 4800 diff=  1.5  skin-quiz.m.03.png
+the-embrae-system [d] height src=8790 shop=8750
+  00 y=    0 diff=  0.0  the-embrae-system.d.00.png
+  01 y= 1400 diff=  0.0  the-embrae-system.d.01.png
+  02 y= 2800 diff=  0.0  the-embrae-system.d.02.png
+  03 y= 4200 diff=  0.0  the-embrae-system.d.03.png
+  04 y= 5600 diff=  0.0  the-embrae-system.d.04.png
+  05 y= 7000 diff=  0.1  the-embrae-system.d.05.png
+  06 y= 8400 diff=  1.7  the-embrae-system.d.06.png
+the-embrae-system [m] height src=11889 shop=11849
+  00 y=    0 diff=  0.0  the-embrae-system.m.00.png
+  01 y= 1600 diff=  0.0  the-embrae-system.m.01.png
+  02 y= 3200 diff=  0.0  the-embrae-system.m.02.png
+  03 y= 4800 diff=  0.0  the-embrae-system.m.03.png
+  04 y= 6400 diff=  0.0  the-embrae-system.m.04.png
+  05 y= 8000 diff=  0.0  the-embrae-system.m.05.png
+  06 y= 9600 diff=  0.1  the-embrae-system.m.06.png
+  07 y=11200 diff=  1.6  the-embrae-system.m.07.png
+urban-defense-serum [d] height src=7641 shop=7601
+  00 y=    0 diff=  0.0  urban-defense-serum.d.00.png
+  01 y= 1400 diff=  0.0  urban-defense-serum.d.01.png
+  02 y= 2800 diff=  0.8  urban-defense-serum.d.02.png
+  03 y= 4200 diff=  1.4  urban-defense-serum.d.03.png
+  04 y= 5600 diff=  1.1  urban-defense-serum.d.04.png
+  05 y= 7000 diff=  1.7  urban-defense-serum.d.05.png
+urban-defense-serum [m] height src=8508 shop=8418
+  00 y=    0 diff=  0.0  urban-defense-serum.m.00.png
+  01 y= 1600 diff=  0.0  urban-defense-serum.m.01.png
+  02 y= 3200 diff=  0.5  urban-defense-serum.m.02.png
+  03 y= 4800 diff=  9.3  urban-defense-serum.m.03.png
+  04 y= 6400 diff= 15.9  urban-defense-serum.m.04.png
+  05 y= 8000 diff=  5.5  urban-defense-serum.m.05.png
+what-a-long-hot-commute-does-to-your-skin [d] height src=6336 shop=6296
+  00 y=    0 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.d.00.png
+  01 y= 1400 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.d.01.png
+  02 y= 2800 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.d.02.png
+  03 y= 4200 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.d.03.png
+  04 y= 5600 diff=  1.7  what-a-long-hot-commute-does-to-your-skin.d.04.png
+what-a-long-hot-commute-does-to-your-skin [m] height src=7830 shop=7790
+  00 y=    0 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.m.00.png
+  01 y= 1600 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.m.01.png
+  02 y= 3200 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.m.02.png
+  03 y= 4800 diff=  0.0  what-a-long-hot-commute-does-to-your-skin.m.03.png
+  04 y= 6400 diff=  1.7  what-a-long-hot-commute-does-to-your-skin.m.04.png
+what-goes-first-serum-or-moisturizer [d] height src=6459 shop=6419
+  00 y=    0 diff=  0.0  what-goes-first-serum-or-moisturizer.d.00.png
+  01 y= 1400 diff=  0.0  what-goes-first-serum-or-moisturizer.d.01.png
+  02 y= 2800 diff=  0.0  what-goes-first-serum-or-moisturizer.d.02.png
+  03 y= 4200 diff=  0.0  what-goes-first-serum-or-moisturizer.d.03.png
+  04 y= 5600 diff=  1.7  what-goes-first-serum-or-moisturizer.d.04.png
+what-goes-first-serum-or-moisturizer [m] height src=7969 shop=7929
+  00 y=    0 diff=  0.0  what-goes-first-serum-or-moisturizer.m.00.png
+  01 y= 1600 diff=  0.0  what-goes-first-serum-or-moisturizer.m.01.png
+  02 y= 3200 diff=  0.0  what-goes-first-serum-or-moisturizer.m.02.png
+  03 y= 4800 diff=  0.0  what-goes-first-serum-or-moisturizer.m.03.png
+  04 y= 6400 diff=  1.7  what-goes-first-serum-or-moisturizer.m.04.png
+why-skin-feels-oily-and-dry-at-the-same-time [d] height src=7534 shop=7494
+  00 y=    0 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.d.00.png
+  01 y= 1400 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.d.01.png
+  02 y= 2800 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.d.02.png
+  03 y= 4200 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.d.03.png
+  04 y= 5600 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.d.04.png
+  05 y= 7000 diff=  1.7  why-skin-feels-oily-and-dry-at-the-same-time.d.05.png
+why-skin-feels-oily-and-dry-at-the-same-time [m] height src=9304 shop=9264
+  00 y=    0 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.m.00.png
+  01 y= 1600 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.m.01.png
+  02 y= 3200 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.m.02.png
+  03 y= 4800 diff=  0.0  why-skin-feels-oily-and-dry-at-the-same-time.m.03.png
+  04 y= 6400 diff=  0.1  why-skin-feels-oily-and-dry-at-the-same-time.m.04.png
+  05 y= 8000 diff=  1.6  why-skin-feels-oily-and-dry-at-the-same-time.m.05.png
+why-sunscreen-feels-heavy-in-humid-weather [d] height src=7037 shop=6997
+  00 y=    0 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.d.00.png
+  01 y= 1400 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.d.01.png
+  02 y= 2800 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.d.02.png
+  03 y= 4200 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.d.03.png
+  04 y= 5600 diff=  0.2  why-sunscreen-feels-heavy-in-humid-weather.d.04.png
+  05 y= 7000 diff=  1.5  why-sunscreen-feels-heavy-in-humid-weather.d.05.png
+why-sunscreen-feels-heavy-in-humid-weather [m] height src=8713 shop=8673
+  00 y=    0 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.m.00.png
+  01 y= 1600 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.m.01.png
+  02 y= 3200 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.m.02.png
+  03 y= 4800 diff=  0.0  why-sunscreen-feels-heavy-in-humid-weather.m.03.png
+  04 y= 6400 diff=  0.1  why-sunscreen-feels-heavy-in-humid-weather.m.04.png
+  05 y= 8000 diff=  1.6  why-sunscreen-feels-heavy-in-humid-weather.m.05.png
+why-we-begin-with-a-gentle-cleanser [d] height src=6269 shop=6229
+  00 y=    0 diff=  0.0  why-we-begin-with-a-gentle-cleanser.d.00.png
+  01 y= 1400 diff=  0.0  why-we-begin-with-a-gentle-cleanser.d.01.png
+  02 y= 2800 diff=  0.0  why-we-begin-with-a-gentle-cleanser.d.02.png
+  03 y= 4200 diff=  0.0  why-we-begin-with-a-gentle-cleanser.d.03.png
+  04 y= 5600 diff=  1.7  why-we-begin-with-a-gentle-cleanser.d.04.png
+why-we-begin-with-a-gentle-cleanser [m] height src=7638 shop=7598
+  00 y=    0 diff=  0.0  why-we-begin-with-a-gentle-cleanser.m.00.png
+  01 y= 1600 diff=  0.0  why-we-begin-with-a-gentle-cleanser.m.01.png
+  02 y= 3200 diff=  0.0  why-we-begin-with-a-gentle-cleanser.m.02.png
+  03 y= 4800 diff=  0.1  why-we-begin-with-a-gentle-cleanser.m.03.png
+  04 y= 6400 diff=  1.6  why-we-begin-with-a-gentle-cleanser.m.04.png
+why-we-exist [d] height src=4328 shop=4288
+  00 y=    0 diff=  0.0  why-we-exist.d.00.png
+  01 y= 1400 diff=  0.2  why-we-exist.d.01.png
+  02 y= 2800 diff=  0.1  why-we-exist.d.02.png
+  03 y= 4200 diff=  1.7  why-we-exist.d.03.png
+why-we-exist [m] height src=5360 shop=5320
+  00 y=    0 diff=  0.7  why-we-exist.m.00.png
+  01 y= 1600 diff=  0.8  why-we-exist.m.01.png
+  02 y= 3200 diff=  0.1  why-we-exist.m.02.png
+  03 y= 4800 diff=  1.6  why-we-exist.m.03.png
+why-your-face-feels-tight-in-an-air-conditioned-office [d] height src=9634 shop=9594
+  00 y=    0 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.00.png
+  01 y= 1400 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.01.png
+  02 y= 2800 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.02.png
+  03 y= 4200 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.03.png
+  04 y= 5600 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.04.png
+  05 y= 7000 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.d.05.png
+  06 y= 8400 diff=  1.7  why-your-face-feels-tight-in-an-air-conditioned-office.d.06.png
+why-your-face-feels-tight-in-an-air-conditioned-office [m] height src=12309 shop=12269
+  00 y=    0 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.00.png
+  01 y= 1600 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.01.png
+  02 y= 3200 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.02.png
+  03 y= 4800 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.03.png
+  04 y= 6400 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.04.png
+  05 y= 8000 diff=  0.0  why-your-face-feels-tight-in-an-air-conditioned-office.m.05.png
+  06 y= 9600 diff=  0.1  why-your-face-feels-tight-in-an-air-conditioned-office.m.06.png
+  07 y=11200 diff=  1.6  why-your-face-feels-tight-in-an-air-conditioned-office.m.07.png
+your-first-week-with-the-embrae-routine [d] height src=6488 shop=6448
+  00 y=    0 diff=  0.0  your-first-week-with-the-embrae-routine.d.00.png
+  01 y= 1400 diff=  0.0  your-first-week-with-the-embrae-routine.d.01.png
+  02 y= 2800 diff=  0.0  your-first-week-with-the-embrae-routine.d.02.png
+  03 y= 4200 diff=  0.9  your-first-week-with-the-embrae-routine.d.03.png
+  04 y= 5600 diff=  1.7  your-first-week-with-the-embrae-routine.d.04.png
+your-first-week-with-the-embrae-routine [m] height src=7826 shop=7786
+  00 y=    0 diff=  0.0  your-first-week-with-the-embrae-routine.m.00.png
+  01 y= 1600 diff=  0.0  your-first-week-with-the-embrae-routine.m.01.png
+  02 y= 3200 diff=  0.0  your-first-week-with-the-embrae-routine.m.02.png
+  03 y= 4800 diff=  2.8  your-first-week-with-the-embrae-routine.m.03.png
+  04 y= 6400 diff=  1.7  your-first-week-with-the-embrae-routine.m.04.png

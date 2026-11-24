@@ -1,0 +1,21 @@
+{% doc %}
+  Step icon (Reset/Defend/Adapt/Protect) drawn as a CSS mask, as in the source design.
+
+  @param {string} step - reset, defend, adapt or protect
+  @param {string} [class] - Extra classes, e.g. 'shape'
+  @param {string} [style] - Extra inline style
+  @param {boolean} [bare] - Omit the base .mi class (for elements styled by their own class, e.g. .sy-ic)
+{% enddoc %}
+{%- liquid
+  case step
+    when 'defend'
+      assign file = 'asset-25.png'
+    when 'adapt'
+      assign file = 'asset-26.png'
+    when 'protect'
+      assign file = 'asset-27.png'
+    else
+      assign file = 'asset-24.png'
+  endcase
+-%}
+<span class="{% unless bare %}mi {% endunless %}{{ class }}" style="--m:url({{ file | asset_url }});{{ style }}" aria-hidden="true"></span>

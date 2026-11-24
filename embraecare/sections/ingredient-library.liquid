@@ -1,0 +1,105 @@
+{%- paginate metaobjects.embrae_ingredient.values by 250 -%}
+{%- liquid
+  assign s = section.settings
+  # Sort library entries (those with "What it is") by name: build "name|position" keys, sort, then fetch each by position.
+  # (handle lookups via metaobjects.type[handle] are capped per page, so they can't be used for 60+ entries)
+  assign keys = ''
+  for ing in metaobjects.embrae_ingredient.values
+    if ing.what != blank
+      assign keys = keys | append: ing.name.value | append: '|' | append: forloop.index0 | append: '^'
+    endif
+  endfor
+  assign keys = keys | split: '^' | sort_natural
+  assign letters = ''
+  for k in keys
+    assign l = k | slice: 0 | upcase
+    unless letters contains l
+      assign letters = letters | append: l
+    endunless
+  endfor
+-%}
+<section class="pg" id="directory" style="padding-top:clamp(36px,5vw,64px)">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2">{{ s.heading | escape }}</h2></div>
+    <div class="ix-bar">
+      <div><label for="ix-q">{{ 'sections.ingredients.search_label' | t }}</label><input id="ix-q" type="search" placeholder="{{ 'sections.ingredients.search_placeholder' | t }}" autocomplete="off"></div>
+      <div><label for="ix-p">{{ 'sections.ingredients.filter_label' | t }}</label><select id="ix-p"><option value="all">{{ 'sections.ingredients.all_products' | t }}</option>
+        {%- for p in s.products -%}<option value="{{ p.metafields.embrae.step.value }}">{{ p.title | escape }}</option>{%- endfor -%}
+      </select></div>
+    </div>
+    <nav class="ix-az" id="ix-az" aria-label="{{ 'sections.ingredients.jump' | t }}">
+      {%- assign ls = letters | split: '' -%}
+      {%- for l in ls %}<a href="#letter-{{ l }}" data-L="{{ l }}">{{ l }}</a>{% endfor -%}
+    </nav>
+    <div id="ix-list">
+      {%- for l in ls -%}
+        <section class="ix-grp" id="letter-{{ l }}" data-L="{{ l }}"><div class="ix-stick"><h2 class="ix-L">{{ l }}</h2><div class="ix-head"><span>{{ 'sections.ingredients.col_name' | t }}</span><span>{{ 'sections.ingredients.col_what' | t }}</span><span>{{ 'sections.ingredients.col_why' | t }}</span><span>{{ 'sections.ingredients.col_found' | t }}</span></div></div>
+        {%- for k in keys -%}
+          {%- assign kl = k | slice: 0 | upcase -%}
+          {%- if kl != l %}{% continue %}{% endif -%}
+          {%- liquid
+            assign pos = k | split: '|' | last | plus: 0
+            for m in metaobjects.embrae_ingredient.values offset: pos limit: 1
+              assign ing = m
+            endfor
+            assign name = ing.name.value
+            assign inci = ing.inci.value
+            if inci == blank
+              assign search = name | append: ' ' | append: name | downcase
+            else
+              assign search = name | append: ' ' | append: inci | downcase
+            endif
+            assign steps = ''
+            for p in ing.products.value
+              assign steps = steps | append: ' ' | append: p.metafields.embrae.step.value
+            endfor
+          -%}
+          <article class="ix-row" data-p="{{ steps | strip }}" data-s="{{ search | escape }}"><div class="ix-c ix-n"><h3>{{ name | escape }}</h3>{% if inci != blank %}<p><span>{{ 'sections.ingredients.inci' | t }}</span>{{ inci | escape }}</p>{% endif %}</div><div class="ix-c" data-l="{{ 'sections.ingredients.col_what' | t }}"><p>{{ ing.what.value | escape }}</p></div><div class="ix-c" data-l="{{ 'sections.ingredients.col_why' | t }}"><p>{{ ing.why.value | escape }}</p></div><div class="ix-c ix-f" data-l="{{ 'sections.ingredients.col_found' | t }}"><div>{% for p in ing.products.value %}<a href="{{ p.url }}">{{ p.title | escape }}</a>{% endfor %}</div></div></article>
+        {%- endfor -%}
+        </section>
+      {%- endfor -%}
+      <p class="ix-none" id="ix-none">{{ 'sections.ingredients.none' | t }}</p>
+    </div>
+  </div>
+</section>
+{%- endpaginate -%}
+
+{% javascript %}
+  (function () {
+    function init() {
+      var q = document.getElementById('ix-q'), s = document.getElementById('ix-p'); if (!q || q._ix) return; q._ix = true;
+      var rows = [].slice.call(document.querySelectorAll('.ix-row')), grps = [].slice.call(document.querySelectorAll('.ix-grp')),
+          az = [].slice.call(document.querySelectorAll('#ix-az a')), none = document.getElementById('ix-none'), names = {};
+      [].slice.call(s.options).forEach(function (o) { names[o.value] = o.text; });
+      function run() {
+        var t = q.value.trim().toLowerCase(), p = s.value, n = 0;
+        rows.forEach(function (r) { var ok = (!t || r.getAttribute('data-s').indexOf(t) > -1) && (p === 'all' || r.getAttribute('data-p').split(' ').indexOf(p) > -1); r.hidden = !ok; if (ok) n++; });
+        grps.forEach(function (g) { var v = g.querySelector('.ix-row:not([hidden])'); g.hidden = !v; az.forEach(function (a) { if (a.getAttribute('data-L') === g.getAttribute('data-L')) a.style.display = v ? '' : 'none'; }); });
+        none.style.display = n ? 'none' : 'block';
+        if (window.dataLayer && t.length > 2) { clearTimeout(run.t); run.t = setTimeout(function () { window.dataLayer.push({ event: 'ingredient_search', search_term: t, results: n }); }, 700); }
+      }
+      q.addEventListener('input', run);
+      s.addEventListener('change', function () { run(); if (history.replaceState) { try { history.replaceState(null, '', s.value === 'all' ? location.pathname : '#' + s.value); } catch (e) {} } });
+      function pos() { var h = document.querySelector('header'); document.documentElement.style.setProperty('--ixt', (h ? h.offsetHeight : 84) + 'px'); }
+      pos(); window.addEventListener('resize', pos);
+      function fromHash() { var h = (location.hash || '').slice(1); if (h && names[h]) { s.value = h; run(); } }
+      window.addEventListener('hashchange', fromHash); fromHash(); run();
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('shopify:section:load', init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Ingredient library",
+  "tag": "div",
+  "class": "section-ingredient-library",
+  "settings": [
+    { "type": "paragraph", "content": "Lists every EMBRAE ingredient entry that has “What it is” filled in (Content → Metaobjects → EMBRAE ingredient)." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ingredient library" },
+    { "type": "product_list", "id": "products", "label": "Products in the filter", "limit": 8 }
+  ],
+  "presets": [{ "name": "Ingredient library" }]
+}
+{% endschema %}

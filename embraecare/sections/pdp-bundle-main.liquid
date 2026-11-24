@@ -1,0 +1,168 @@
+{%- liquid
+  assign mf = product.metafields.embrae
+  assign s = section.settings
+  assign variant = product.selected_or_first_available_variant
+  assign form_id = 'pdp-form-' | append: section.id
+  assign included = mf.routine_products.value
+  assign value = 0
+  for p in included
+    assign value = value | plus: p.selected_or_first_available_variant.price
+  endfor
+  assign saving = value | minus: variant.price
+-%}
+<section class="pd-top" id="buy">
+  <div class="wrap">
+    <nav class="pd-crumb" aria-label="{{ 'products.breadcrumb' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'products.home' | t }}</a><span>/</span><a href="{{ s.shop_link | default: routes.all_products_collection_url }}">{{ 'products.shop' | t }}</a><span>/</span>{{ product.title | escape }}
+    </nav>
+    <div class="pd-grid">
+      <div class="pd-gal">
+        <div class="pd-stage">
+          <button class="pd-arr p" type="button" aria-label="{{ 'products.prev_image' | t }}" data-gal-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="pd-arr n" type="button" aria-label="{{ 'products.next_image' | t }}" data-gal-next><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          <div class="pd-pan pan1 on" data-i="0" role="img" aria-label="{{ product.featured_media.alt | default: product.title | escape }}">
+            {%- if product.featured_media -%}
+              {{ product.featured_media.preview_image | image_url: width: 1400 | image_tag: class: 'bd-lu', alt: '', sizes: '(min-width: 990px) 45vw, 100vw' }}
+            {%- else -%}
+              <svg class="bd-lu" viewBox="0 0 640 340" aria-hidden="true"><use href="#lineup4pouch"/></svg>
+              <span class="bd-steps" aria-hidden="true">{% for p in included %}<i>{{ p.metafields.embrae.step.value | capitalize }}</i>{% endfor %}</span>
+            {%- endif -%}
+            <span class="wm" role="img" aria-label="EMBRAE"></span>
+          </div>
+          <div class="pd-pan pan2 dark" data-i="1">
+            <h3>{{ 'products.whats_inside' | t }}</h3>
+            <ul>
+              {%- for p in included -%}
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>{{ p.title | escape }}{% unless p.has_only_default_variant %}, {{ p.selected_or_first_available_variant.title | escape }}{% endunless %}</li>
+              {%- endfor -%}
+              {%- if s.gift_title != blank %}<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>{{ s.gift_line | escape }}</li>{% endif -%}
+            </ul>
+            <span class="wm" role="img" aria-label="EMBRAE"></span>
+          </div>
+          {%- if s.gift_title != blank -%}
+            <div class="pd-pan pan4 bd-pouch" data-i="2" role="img" aria-label="{{ s.gift_line | escape }}">
+              <span class="cap">{{ s.gift_caption | escape }}</span>
+              <svg viewBox="0 0 240 200" aria-hidden="true"><use href="#p-pouch"/></svg>
+              <span class="wm" role="img" aria-label="EMBRAE"></span>
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="pd-thumbs" role="tablist" aria-label="{{ 'products.images' | t }}">
+          <button class="pd-th on" type="button" role="tab" aria-label="{{ 'products.product' | t }}" data-i="0"><svg viewBox="0 0 640 340" style="width:88%" aria-hidden="true"><use href="#lineup4pouch"/></svg></button>
+          <button class="pd-th t2" type="button" role="tab" aria-label="{{ 'products.whats_inside' | t }}" data-i="1"><span class="tx">{{ 'products.whats_inside_html' | t }}</span></button>
+          {%- if s.gift_title != blank -%}
+            <button class="pd-th t4" type="button" role="tab" aria-label="{{ s.gift_title | escape }}" data-i="2"><span style="width:66%;display:block;line-height:0"><svg viewBox="0 0 240 200" aria-hidden="true"><use href="#p-pouch"/></svg></span></button>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="pd-info">
+        {%- if mf.eyebrow != blank %}<p class="eyebrow">{{ mf.eyebrow.value | escape }}</p>{% endif %}
+        <h1>{{ product.title | escape }}</h1>
+        {%- if mf.tagline != blank %}<p class="pd-tag">{{ mf.tagline.value | escape }}</p>{% endif %}
+        <div class="pd-price"><b>{% render 'price', price: variant.price %}</b><small>{{ 'products.mrp_inclusive' | t }}</small></div>
+        {%- if saving > 0 -%}
+          {%- capture saving_str %}{% render 'price', price: saving %}{% endcapture -%}
+          {%- assign saving_str = saving_str | strip -%}
+          <p class="bd-save"><b>{{ 'products.you_save' | t: amount: saving_str }}</b> {{ s.save_text | escape }}</p>
+        {%- endif -%}
+        {%- if product.description != blank %}<p class="pd-desc">{{ product.description | strip_html | strip }}</p>{% endif %}
+        <div class="glance">
+          {%- for i in (1..3) -%}
+            {%- liquid
+              assign lk = 'glance_' | append: i | append: '_label'
+              assign vk = 'glance_' | append: i | append: '_value'
+            -%}
+            {%- if s[vk] != blank %}<div><small>{{ s[lk] | escape }}</small><b>{{ s[vk] | escape }}</b></div>{% endif -%}
+          {%- endfor -%}
+        </div>
+        <div class="rb" data-routine data-base="{{ variant.price }}" data-title="{{ product.title | escape }}">
+          <h3>{{ 'products.whats_inside' | t }}</h3>
+          <div class="bd-in">
+            {%- for p in included -%}
+              {%- assign pv = p.selected_or_first_available_variant -%}
+              <div class="bd-ir"><span class="aoimg"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-{{ p.metafields.embrae.step.value }}"/></svg></span><span class="aot"><b>{{ p.title | escape }}</b><small>{{ p.metafields.embrae.step.value | capitalize }}{% unless p.has_only_default_variant %}, {{ pv.title | escape }}{% endunless %}</small><em>{% for ing in p.metafields.embrae.key_ingredients.value %}{{ ing.name.value | escape }}{% unless forloop.last %}, {% endunless %}{% endfor %}</em></span><span class="aop">{% render 'price', price: pv.price %}</span></div>
+            {%- endfor -%}
+            {%- if s.gift_title != blank -%}
+              <div class="bd-ir"><span class="aoimg bp"><svg viewBox="0 0 240 200" aria-hidden="true"><use href="#p-pouch"/></svg></span><span class="aot"><b>{{ s.gift_title | escape }}</b><small>{{ 'products.complimentary' | t }}</small></span><span class="aop">{{ 'products.free' | t }}</span></div>
+            {%- endif -%}
+          </div>
+          {%- if saving > 0 -%}
+            <div class="bd-val"><div><span>{{ 'products.individual_value' | t }}</span><b>{% render 'price', price: value %}</b></div><div><span>{{ 'products.you_save_label' | t }}</span><b>{% render 'price', price: saving %}</b></div></div>
+          {%- endif -%}
+          <div class="rb-total"><span>{{ 'products.routine_price' | t }}</span><b data-rb-total>{% render 'price', price: variant.price %}</b></div>
+        </div>
+
+        {%- form 'product', product, id: form_id, class: 'buy', data-pdp-form: '' -%}
+          <input type="hidden" name="id" value="{{ variant.id }}">
+          <input type="hidden" name="quantity" value="1" data-qty-input>
+          <div class="qty" aria-label="{{ 'products.quantity' | t }}"><button type="button" data-qty-step="-1" aria-label="{{ 'products.decrease' | t }}">−</button><span data-qty-view>1</span><button type="button" data-qty-step="1" aria-label="{{ 'products.increase' | t }}">+</button></div>
+          {%- if variant.available -%}
+            <button class="btn ghost" type="submit">{{ 'products.add_to_cart' | t }}</button>
+            <button class="btn" type="submit" data-buy-now>{{ 'products.buy_now' | t }}</button>
+          {%- else -%}
+            <button class="btn ghost" type="button" disabled>{{ 'products.sold_out' | t }}</button>
+          {%- endif -%}
+        {%- endform -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="trust">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>{% render 'trust-icon', name: block.settings.icon %}<span>{{ block.settings.text | escape }}</span></li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        <div data-buy-end></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sbar" data-sbar aria-hidden="true">
+  <div class="sbar-in">
+    <span class="th"><svg viewBox="0 0 640 340" aria-hidden="true"><use href="#lineup4pouch"/></svg></span>
+    <div class="sp"><span class="wm" role="img" aria-label="EMBRAE"></span><div><b>{{ product.title | escape }}</b><small>{{ 'products.n_products' | t: count: included.size }}, <span data-sb-total>{% render 'price', price: variant.price %}</span></small></div></div>
+    {%- if variant.available -%}
+      <button class="btn ghost" type="submit" form="{{ form_id }}" tabindex="-1">{{ 'products.add_to_cart' | t }}</button>
+      <button class="btn" type="submit" form="{{ form_id }}" data-buy-now tabindex="-1">{{ 'products.buy_now' | t }}</button>
+    {%- endif -%}
+  </div>
+</div>
+{% render 'pdp-buy-scripts' %}
+
+{% schema %}
+{
+  "name": "Bundle: buy box",
+  "tag": "div",
+  "class": "section-pdp-main",
+  "settings": [
+    { "type": "paragraph", "content": "Included products, their prices and the saving come from the product's “Routine add-ons” field." },
+    { "type": "url", "id": "shop_link", "label": "Breadcrumb “Shop” link" },
+    { "type": "text", "id": "save_text", "label": "Text after the saving", "default": "on the four products, plus a complimentary Travel Pouch." },
+    { "type": "header", "content": "At a glance" },
+    { "type": "text", "id": "glance_1_label", "label": "Item 1 label", "default": "Includes" },
+    { "type": "text", "id": "glance_1_value", "label": "Item 1 value", "default": "4 products" },
+    { "type": "text", "id": "glance_2_label", "label": "Item 2 label", "default": "Routine" },
+    { "type": "text", "id": "glance_2_value", "label": "Item 2 value", "default": "Morning and night" },
+    { "type": "text", "id": "glance_3_label", "label": "Item 3 label", "default": "Free with it" },
+    { "type": "text", "id": "glance_3_value", "label": "Item 3 value", "default": "Travel Pouch" },
+    { "type": "header", "content": "Complimentary gift" },
+    { "type": "text", "id": "gift_title", "label": "Gift name", "default": "EMBRAE Travel Pouch", "info": "Leave empty to hide the gift." },
+    { "type": "text", "id": "gift_line", "label": "Gift line in “What's inside”", "default": "Complimentary EMBRAE Travel Pouch" },
+    { "type": "text", "id": "gift_caption", "label": "Gift image caption", "default": "Complimentary Travel Pouch" }
+  ],
+  "blocks": [
+    { "type": "trust", "name": "Trust point", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "shipping", "options": [
+        { "value": "shipping", "label": "Shipping" },
+        { "value": "secure", "label": "Secure checkout" },
+        { "value": "support", "label": "Support" },
+        { "value": "tracking", "label": "Order tracking" }
+      ] },
+      { "type": "text", "id": "text", "label": "Text", "default": "Free shipping above ₹999" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Bundle: buy box" }]
+}
+{% endschema %}

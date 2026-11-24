@@ -1,0 +1,207 @@
+{
+  "handle": "reset-cleanser",
+  "step": "reset",
+  "eyebrow": "Daily gel cleanser",
+  "tagline": "A daily gel cleanser that removes environmental buildup and impurities while helping preserve the skin’s comfort.",
+  "description": "Designed for everyday use, RESET CLEANSER helps wash away daily impurities and environmental buildup while preserving the skin barrier. Its gentle, pollution-lifting gel formula leaves skin feeling clean, balanced and refreshed without unnecessarily stripping the skin.",
+  "glance": [
+    [
+      "Size",
+      "100 ml"
+    ],
+    [
+      "Texture / Finish",
+      "Gel Based"
+    ],
+    [
+      "When to use",
+      "AM + PM"
+    ]
+  ],
+  "image_alt": "EMBRAE Reset Cleanser, 100 ml gel cleanser with pump",
+  "benefits": [
+    "Removes environmental buildup and impurities",
+    "Cleanses without unnecessarily stripping the skin",
+    "Helps preserve the skin barrier",
+    "Leaves skin feeling clean, balanced and refreshed"
+  ],
+  "gallery_ingredients": [
+    "niacinamide",
+    "panthenol",
+    "ectoin",
+    "sodium-hyaluronate",
+    "beta-glucan",
+    "ceramide-np"
+  ],
+  "texture_caption": "Clear gel texture",
+  "key_ingredients": [
+    {
+      "key": "niacinamide",
+      "name": "Niacinamide",
+      "benefit": "Balances",
+      "descriptor": "Vitamin B3"
+    },
+    {
+      "key": "panthenol",
+      "name": "Panthenol",
+      "benefit": "Hydrates",
+      "descriptor": "Provitamin B5"
+    },
+    {
+      "key": "ectoin",
+      "name": "Ectoin",
+      "benefit": "Resilience",
+      "descriptor": "Our signature ingredient"
+    }
+  ],
+  "quick_steps": [
+    {
+      "icon": "pump",
+      "label": "Pump"
+    },
+    {
+      "icon": "massage",
+      "label": "Massage"
+    },
+    {
+      "icon": "rinse",
+      "label": "Rinse"
+    }
+  ],
+  "made_for": [
+    {
+      "icon": "daily-buildup",
+      "label": "Daily buildup"
+    },
+    {
+      "icon": "hot-humid-days",
+      "label": "Hot, humid days"
+    },
+    {
+      "icon": "post-commute-cleansing",
+      "label": "Post-commute cleansing"
+    }
+  ],
+  "routine_heading": "Reset is only the beginning",
+  "routine_text": "Follow with Defend, Adapt and Protect.",
+  "tabs": [
+    "Craft",
+    "Reset",
+    "Essentials"
+  ],
+  "essentials_heading": "Reset Cleanser, at a glance.",
+  "claims": [
+    {
+      "icon": "ph-balanced",
+      "label": "pH balanced"
+    },
+    {
+      "icon": "sulphate-free",
+      "label": "Sulphate free"
+    },
+    {
+      "icon": "soap-free",
+      "label": "Soap free"
+    },
+    {
+      "icon": "biome-friendly",
+      "label": "Biome friendly"
+    },
+    {
+      "icon": "fragrance-free",
+      "label": "Fragrance free"
+    },
+    {
+      "icon": "paraben-free",
+      "label": "Paraben free"
+    },
+    {
+      "icon": "cruelty-free",
+      "label": "Cruelty free"
+    }
+  ],
+  "howto_pills": [
+    "AM + PM",
+    "First step of your routine"
+  ],
+  "howto": [
+    {
+      "icon": "pump",
+      "title": "Pump",
+      "text": "Dispense 1–2 pumps into wet hands."
+    },
+    {
+      "icon": "massage",
+      "title": "Massage",
+      "text": "Massage gently over damp face and neck for <strong>30–60 seconds</strong>, avoiding the eye area."
+    },
+    {
+      "icon": "rinse",
+      "title": "Rinse",
+      "text": "Rinse thoroughly and pat dry."
+    }
+  ],
+  "inci": "Aqua, Sodium Lauroyl Sarcosinate, Glycerin, Decyl Glucoside, Coco-Glucoside, Cocamidopropyl Betaine, Hydroxyethyl Urea, Anhydroxylitol, Xylitol, Xylitylglucoside, Betaine, Sodium Hyaluronate, Niacinamide, Aloe Barbadensis Leaf Extract, Panthenol, Inulin, Beta-Glucan, Sodium Hydroxide, Ectoin, Allantoin, Ceramide NP, Copolymer.",
+  "storage": "<b>Storage instructions</b><br/>Store below 30°C in a cool, dry place. Protect from direct sunlight and excessive heat.<br/><br/><b>Caution</b><br/>Avoid contact with eyes. In case of contact, rinse thoroughly with water.<br/><br/><b>Note</b><br/>Perform a patch test before use. Discontinue if irritation occurs.<br/><br/><b>For external use only.</b>",
+  "scenes": [
+    {
+      "title": "After the commute",
+      "text": "Wash away everyday buildup after time out in the city."
+    },
+    {
+      "title": "At home",
+      "text": "A fresh gel cleanse before the next steps in your routine."
+    },
+    {
+      "title": "Morning and night",
+      "text": "Start fresh in the morning. Reset again at the end of the day."
+    }
+  ],
+  "info": [
+    {
+      "icon": "product-type",
+      "label": "Product type",
+      "text": "Daily gel face cleanser"
+    },
+    {
+      "icon": "net-quantity",
+      "label": "Net quantity",
+      "text": "100 ml"
+    },
+    {
+      "icon": "shelf-life",
+      "label": "Shelf life",
+      "text": "24 months from date of manufacture"
+    },
+    {
+      "icon": "manufacturer",
+      "label": "Manufacturer",
+      "text": "QSD Formulations Pvt. Ltd. (An GMP Certified), Plot No. 1256, Industrial Estate, HSIIDC, Rai, Distt. Sonipat-131029 (Haryana)"
+    },
+    {
+      "icon": "marketed-by",
+      "label": "Marketed by",
+      "text": "EMBRAE CARE, Venkatesh Graffiti Glover, Mundhwa, Pune-411036, Maharashtra, India"
+    },
+    {
+      "icon": "manufacturing-licence-no",
+      "label": "Manufacturing licence no.",
+      "text": "COS8HR2024000012"
+    },
+    {
+      "icon": "country-of-origin",
+      "label": "Country of origin",
+      "text": "India"
+    },
+    {
+      "icon": "customer-care",
+      "label": "Customer care",
+      "text": "Email: care@embraecare.com<br/>Phone / WhatsApp: +91 86004 11991"
+    },
+    {
+      "icon": "quality-standards",
+      "label": "Quality standards",
+      "text": "GMP Certified, FDA Registered, ISO Certified"
+    }
+  ]
+}

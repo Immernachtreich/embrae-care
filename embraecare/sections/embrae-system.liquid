@@ -1,0 +1,64 @@
+{%- liquid
+  # decorative leaf placement per card, cycled, as in the source design
+  assign leaves = 'left:-20px;bottom:-30px;width:130px;transform:rotate(35deg)|right:-24px;top:-20px;width:120px;transform:rotate(-140deg)|left:-26px;top:10px;width:120px;transform:rotate(60deg)|right:-20px;bottom:-24px;width:130px;transform:rotate(-30deg)' | split: '|'
+-%}
+<section class="system">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif -%}
+    </div>
+    <div class="system-grid">
+      {%- for block in section.blocks -%}
+        {%- assign leaf = forloop.index0 | modulo: 4 -%}
+        {%- capture num %}{{ forloop.index | prepend: '0' | slice: -2, 2 }}{% endcapture -%}
+        {%- render 'step-product-card',
+          product: block.settings.product,
+          step: block.settings.step,
+          num: num,
+          text: block.settings.text,
+          button_label: block.settings.button_label,
+          leaf_style: leaves[leaf],
+          attrs: block.shopify_attributes
+        -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.button_label != blank -%}
+      <div class="system-cta reveal"><a class="btn" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a></div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EMBRAE System",
+  "tag": "div",
+  "class": "section-system",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The EMBRAE System" },
+    { "type": "text", "id": "eyebrow", "label": "Subheading", "default": "Four steps. One considered routine." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the EMBRAE System" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    { "type": "product", "name": "Product", "settings": [
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "select", "id": "step", "label": "Step (sets art and icon)", "default": "reset", "options": [
+        { "value": "reset", "label": "Reset" },
+        { "value": "defend", "label": "Defend" },
+        { "value": "adapt", "label": "Adapt" },
+        { "value": "protect", "label": "Protect" }
+      ] },
+      { "type": "textarea", "id": "text", "label": "Short description" },
+      { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now →" }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "EMBRAE System", "blocks": [
+    { "type": "product", "settings": { "step": "reset" } },
+    { "type": "product", "settings": { "step": "defend" } },
+    { "type": "product", "settings": { "step": "adapt" } },
+    { "type": "product", "settings": { "step": "protect" } }
+  ] }]
+}
+{% endschema %}

@@ -1,0 +1,1 @@
+/home/immernachtreich/Work/shop/embrae/embraecare/AGENTS.md

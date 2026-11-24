@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "s1": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "our-philosophy-1",
+        "tone": "a",
+        "image_label": "Hero image: botanicals and water",
+        "eyebrow": "",
+        "heading": "Our Philosophy",
+        "text": "Less to figure out. More to feel good about.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s2": {
+      "type": "page-prose",
+      "settings": {
+        "tint": false,
+        "no_top": false
+      },
+      "blocks": {
+        "s2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We don’t believe you need an overflowing shelf to care for your skin well. We believe every product should earn its place. Every formula should have a purpose. And your routine should make sense as a whole.</p><p>That is why EMBRAE is built around a simple routine, not an ever-growing list of products. Skincare should leave you with less to think about, and more to feel good about.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s2-1"
+      ]
+    },
+    "s3": {
+      "type": "page-cards",
+      "settings": {
+        "tint": false,
+        "no_top": true,
+        "style": "pr",
+        "heading": "",
+        "button_label": "Shop Today →",
+        "button_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "s3-1": {
+          "type": "card",
+          "settings": {
+            "title": "Barrier-conscious",
+            "text": "We keep the skin barrier at the heart of everyday care.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "s3-2": {
+          "type": "card",
+          "settings": {
+            "title": "Climate-conscious",
+            "text": "Heat, humidity, pollution, UV, air conditioning, changing seasons. Our thinking starts there.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "s3-3": {
+          "type": "card",
+          "settings": {
+            "title": "Purposeful",
+            "text": "Every product earns its place. Every formula has a purpose.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "s3-4": {
+          "type": "card",
+          "settings": {
+            "title": "Routine-led",
+            "text": "Reset, Defend, Adapt, Protect: four steps, each with a clear role.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "s3-5": {
+          "type": "card",
+          "settings": {
+            "title": "Everyday-ready",
+            "text": "Made for ordinary days, busy days and travel days.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "s3-6": {
+          "type": "card",
+          "settings": {
+            "title": "Clear",
+            "text": "You deserve to know what you’re using and why.",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "s3-1",
+        "s3-2",
+        "s3-3",
+        "s3-4",
+        "s3-5",
+        "s3-6"
+      ]
+    },
+    "s4": {
+      "type": "page-split",
+      "settings": {
+        "placeholder": "our-philosophy-2",
+        "tone": "d",
+        "image_label": "Still life: botanicals and texture",
+        "wide": false,
+        "reverse": false,
+        "eyebrow": "",
+        "heading": "We’ll never make skincare feel harder than it needs to be.",
+        "text": "<p>Skincare can sometimes make you feel like you’re not doing enough. Not enough products. Not enough steps. Not enough actives. Not enough time.</p><p>We don’t want to add to that noise. At EMBRAE, we choose clarity over confusion and thoughtful care over unnecessary complexity.</p><p>A routine doesn’t have to be long to be considered. It has to make sense for you, and for the days you actually have.</p>",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s5": {
+      "type": "page-band",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "text": "You don’t need a perfect routine. You need care that fits your life."
+      }
+    },
+    "s6": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Less to figure out.",
+        "text": "Reset, Defend, Adapt and Protect, each step with a clear purpose.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6"
+  ]
+}

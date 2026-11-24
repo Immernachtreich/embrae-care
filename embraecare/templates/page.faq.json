@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "intro": {
+      "type": "page-intro",
+      "settings": {
+        "style": "fq-top",
+        "heading": "Frequently asked questions",
+        "text": "Answers about EMBRAE, our products, your routine and your orders."
+      }
+    },
+    "faqs": {
+      "type": "faq-tabs",
+      "settings": {
+        "label": "FAQ topics"
+      },
+      "blocks": {
+        "faqs-1": {
+          "type": "tab",
+          "settings": {
+            "label": "General",
+            "topic": "general"
+          }
+        },
+        "faqs-2": {
+          "type": "tab",
+          "settings": {
+            "label": "Reset Cleanser",
+            "topic": "reset-cleanser"
+          }
+        },
+        "faqs-3": {
+          "type": "tab",
+          "settings": {
+            "label": "Urban Defense Serum",
+            "topic": "urban-defense-serum"
+          }
+        },
+        "faqs-4": {
+          "type": "tab",
+          "settings": {
+            "label": "Climate Adapt Moisturizer",
+            "topic": "climate-adapt-moisturizer"
+          }
+        },
+        "faqs-5": {
+          "type": "tab",
+          "settings": {
+            "label": "Daily Shield Sunscreen",
+            "topic": "daily-shield-sunscreen"
+          }
+        },
+        "faqs-6": {
+          "type": "tab",
+          "settings": {
+            "label": "Daily Urban Defense Routine",
+            "topic": "daily-urban-defense-routine"
+          }
+        }
+      },
+      "block_order": [
+        "faqs-1",
+        "faqs-2",
+        "faqs-3",
+        "faqs-4",
+        "faqs-5",
+        "faqs-6"
+      ]
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Still have a question?",
+        "text": "Write to care@embraecare.com or message us on WhatsApp at +91 86004 11991.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "faqs",
+    "offer"
+  ]
+}

@@ -1,0 +1,18 @@
+{% doc %}
+  Article image for journal listings: the article's image, or its placeholder illustration for this spot.
+
+  @param {object} post - The article
+  @param {string} ctx - lead, thumb, card, pick or related
+{% enddoc %}
+{%- if post.image -%}
+  {{ post.image | image_url: width: 900 | image_tag: alt: '', loading: 'lazy' }}
+{%- else -%}
+  {%- capture key %}{{ post.handle | split: '/' | last }}-{{ ctx }}{% endcapture -%}
+  {%- capture art %}{% render 'journal-art', key: key %}{% endcapture -%}
+  {%- if art == blank -%}
+    {%- comment -%} no illustration made for this spot: fall back to the article's hero illustration {%- endcomment -%}
+    {%- capture key %}{{ post.handle | split: '/' | last }}-hero{% endcapture -%}
+    {%- capture art %}{% render 'journal-art', key: key %}{% endcapture -%}
+  {%- endif -%}
+  {{ art }}
+{%- endif -%}

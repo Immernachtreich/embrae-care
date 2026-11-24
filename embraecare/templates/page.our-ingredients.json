@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "intro": {
+      "type": "page-intro",
+      "settings": {
+        "style": "ix-top",
+        "heading": "Our Ingredients",
+        "text": "Explore the ingredients used across EMBRAE formulations: what they are, why we use them and where you'll find them."
+      }
+    },
+    "library": {
+      "type": "ingredient-library",
+      "settings": {
+        "heading": "Ingredient library",
+        "products": [
+          "reset-cleanser",
+          "urban-defense-serum",
+          "climate-adapt-moisturizer",
+          "daily-shield-sunscreen"
+        ]
+      }
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Understand what you use.",
+        "text": "Meet the four-step Urban Defense System, built around heat, humidity and long days.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "library",
+    "offer"
+  ]
+}

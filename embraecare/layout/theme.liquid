@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <script>document.documentElement.classList.add('js');</script>
+    {% render 'meta-tags' %}
+    {{ 'helvena-400.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: true }}
+    {{ 'helvena-500.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: true }}
+    {%- liquid
+      # Pages built from a source page load that page's complete CSS in source order instead of the shared base
+      # (loading base first and page rules after would reorder the cascade). See tools/build_pdp_css.py.
+      assign page_css = 'embrae-base.css'
+      assign pdp_step = product.metafields.embrae.step.value
+      if template.name == 'product' and pdp_step != blank
+        assign page_css = 'embrae-pdp-' | append: pdp_step | append: '.css'
+      elsif template.name == 'index'
+        assign page_css = 'embrae-sections.css'
+      elsif template.name == 'page' and template.suffix != blank
+        # existing store pages use embrae-<name> suffixes so the live theme's own page templates are never picked up
+        assign css_page = template.suffix
+        assign prefix = css_page | slice: 0, 7
+        if prefix == 'embrae-'
+          assign css_page = css_page | slice: 7, 100
+        endif
+        assign built = 'the-embrae-system skin-quiz our-ingredients faq our-story why-we-exist our-philosophy our-values a-note-from-the-founder' | split: ' '
+        if built contains css_page
+          assign page_css = 'embrae-page-' | append: css_page | append: '.css'
+        endif
+      elsif template.name == 'blog' and template.suffix == 'journal'
+        assign page_css = 'embrae-page-journal.css'
+      elsif template.name == 'article' and template.suffix == 'journal'
+        assign page_css = 'embrae-page-article.css'
+      endif
+      echo page_css | asset_url | stylesheet_tag: preload: true
+    -%}
+    {% render 'css-variables' %}
+    <script src="{{ 'embrae.js' | asset_url }}" defer></script>
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name }}">
+    <a class="sr skip" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
+    {% render 'svg-sprite' %}
+    {% sections 'header-group' %}
+
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+    {% section 'cart-drawer' %}
+  </body>
+</html>

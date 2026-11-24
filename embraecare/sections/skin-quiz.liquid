@@ -1,0 +1,57 @@
+{%- liquid
+  assign s = section.settings
+  assign keys = 'reset,defend,adapt,protect' | split: ','
+  assign bundle_value = 0
+-%}
+<section class="qz" id="quiz">
+  <div class="wrap qz-in"><div class="qcard">
+    <div class="qz-screen on" id="qz-qs" aria-live="polite">
+      <div class="qz-top"><button class="qz-back" type="button" id="qz-back">{{ 'sections.quiz.back' | t }}</button><span id="qz-count"></span></div>
+      <div class="qz-bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="qz-pg"><i id="qz-fill"></i></div>
+      <fieldset style="border:0;min-width:0"><legend class="qz-q" id="qz-qt"></legend><p class="qz-h" id="qz-qh"></p>
+        <div class="qz-opts" id="qz-opts" role="radiogroup" aria-labelledby="qz-qt"></div></fieldset>
+      <p class="qz-need" id="qz-need" role="alert"></p>
+      <div class="qz-foot"><button class="qz-skip" type="button" id="qz-skip" hidden>{{ 'sections.quiz.skip' | t }}</button><button class="btn qz-next" type="button" id="qz-next">{{ 'sections.quiz.continue' | t }}</button></div>
+    </div>
+    <div class="qz-screen" id="qz-res" aria-live="polite"></div>
+  </div></div>
+</section>
+{%- comment -%} Cart data for assets/embrae-quiz.js: variant ids, prices (rupees) and URLs from the chosen products. {%- endcomment -%}
+<script>
+  window.EmbraeQuiz = {
+    root: {{ routes.root_url | append: '/' | replace: '//', '/' | json }},
+    variants: {
+      {%- for k in keys -%}
+        {%- assign p = s[k] -%}{{ k | json }}: {{ p.selected_or_first_available_variant.id | append: '' | json }},
+        {%- assign bundle_value = bundle_value | plus: p.selected_or_first_available_variant.price -%}
+      {%- endfor -%}
+      "bundle": {{ s.bundle.selected_or_first_available_variant.id | append: '' | json }}
+    },
+    prices: {
+      {%- for k in keys -%}{{ k | json }}: {{ s[k].selected_or_first_available_variant.price | divided_by: 100 | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+    },
+    urls: {
+      {%- for k in keys -%}{{ k | json }}: {{ s[k].url | default: '#' | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+    },
+    bundlePrice: {{ s.bundle.selected_or_first_available_variant.price | divided_by: 100 | json }},
+    bundleValue: {{ bundle_value | divided_by: 100 | json }}
+  };
+</script>
+<script src="{{ 'embrae-quiz.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Skin quiz",
+  "tag": "div",
+  "class": "section-quiz",
+  "settings": [
+    { "type": "paragraph", "content": "Questions and results live in assets/embrae-quiz.js (generated from the source page). Products below set the cart, prices and links." },
+    { "type": "product", "id": "reset", "label": "Reset product" },
+    { "type": "product", "id": "defend", "label": "Defend product" },
+    { "type": "product", "id": "adapt", "label": "Adapt product" },
+    { "type": "product", "id": "protect", "label": "Protect product" },
+    { "type": "product", "id": "bundle", "label": "Complete routine (bundle)" }
+  ],
+  "presets": [{ "name": "Skin quiz" }]
+}
+{% endschema %}

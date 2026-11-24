@@ -1,0 +1,6 @@
+{% doc %}
+  Prints a price the way the design shows it (₹1,299), whatever the shop money format is.
+
+  @param {number} price - Amount in cents, e.g. product.price
+{% enddoc %}
+₹{{ price | money_without_currency | remove: '.00' }}

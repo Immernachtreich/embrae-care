@@ -1,0 +1,19 @@
+/* used by: faqs.html */
+.fq-top{padding:clamp(48px,7vw,96px) 0 clamp(20px,3vw,36px)}
+.fq-top .sec-head{max-width:760px}
+.fq-top .lead{margin-top:18px}
+.ftabs{display:flex;justify-content:flex-start;gap:6px;margin:0 auto clamp(36px,5vw,56px);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}
+.ftabs::-webkit-scrollbar{display:none}
+.ftab:first-child{margin-left:auto}
+.ftab:last-child{margin-right:auto}
+.ftab{flex:0 0 auto;white-space:nowrap;padding:12px 15px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:all .3s}
+.ftab:hover{border-color:var(--phyto)}
+.ftab[aria-selected=true]{background:var(--phyto);border-color:var(--phyto);color:#fff}
+.fpanel{display:none;max-width:860px;margin:0 auto}
+.fpanel.on{display:block}
+.fq-grp+.fq-grp{margin-top:clamp(36px,5vw,56px)}
+.fq-cat{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua);margin-bottom:14px}
+.fq-list{display:grid;gap:12px}
+.fa p{font-size:15px;line-height:1.75;color:rgba(37,50,47,.88);white-space:pre-line}
+.fa a{color:var(--phyto);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:720px){.ftabs{margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding:2px var(--pad)}.ftab{padding:12px 18px}.fq summary{padding:18px 18px}.fa{padding:0 18px 20px}}

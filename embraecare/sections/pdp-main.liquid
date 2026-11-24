@@ -1,0 +1,199 @@
+{%- liquid
+  assign mf = product.metafields.embrae
+  assign step = mf.step.value | default: 'reset'
+  assign variant = product.selected_or_first_available_variant
+  assign form_id = 'pdp-form-' | append: section.id
+  assign key_ings = mf.key_ingredients.value
+  assign gal_ings = mf.gallery_ingredients.value
+  assign media = product.featured_media
+-%}
+<section class="pd-top" id="buy">
+  <div class="wrap">
+    <nav class="pd-crumb" aria-label="{{ 'products.breadcrumb' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'products.home' | t }}</a><span>/</span><a href="{{ section.settings.shop_link | default: routes.all_products_collection_url }}">{{ 'products.shop' | t }}</a><span>/</span>{{ product.title | escape }}
+    </nav>
+    <div class="pd-grid">
+      <div class="pd-gal">
+        <div class="pd-stage">
+          <button class="pd-arr p" type="button" aria-label="{{ 'products.prev_image' | t }}" data-gal-prev><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="pd-arr n" type="button" aria-label="{{ 'products.next_image' | t }}" data-gal-next><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+          <div class="pd-pan pan1 on" data-i="0" role="img" aria-label="{{ media.alt | default: product.title | escape }}">
+            <div class="arc"></div><div class="arc2"></div><svg class="lf" style="left:-7%;top:6%;width:30%;transform:rotate(30deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg><svg class="lf" style="right:-6%;bottom:10%;width:26%;transform:rotate(-150deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+            <div class="sh"></div>
+            {%- if media -%}
+              {{ media.preview_image | image_url: width: 1200 | image_tag: class: 'prod', alt: '', sizes: '(min-width: 990px) 45vw, 100vw' }}
+            {%- else -%}
+              <svg class="prod" viewBox="0 0 220 320"><use href="#p-{{ step }}"/></svg>
+            {%- endif -%}
+            <span class="wm" role="img" aria-label="EMBRAE"></span>
+          </div>
+          <div class="pd-pan pan2 dark" data-i="1"><svg class="lf" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+            <h3>{{ 'products.key_benefits' | t }}</h3>
+            <ul>
+              {%- for b in mf.benefits.value -%}
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>{{ b | escape }}</li>
+              {%- endfor -%}
+            </ul><span class="wm" role="img" aria-label="EMBRAE"></span>
+          </div>
+          <div class="pd-pan pan3" data-i="2">
+            <h3>{{ 'products.ingredients' | t }}</h3>
+            <div class="g">
+              {%- for ing in gal_ings -%}
+                <div><span class="md">{% render 'ingredient-art', name: ing.art.value %}</span><b>{{ ing.name.value | escape }}</b></div>
+              {%- endfor -%}
+            </div><span class="wm" role="img" aria-label="EMBRAE"></span>
+          </div>
+          <div class="pd-pan pan4" data-i="3" role="img" aria-label="{{ mf.texture_caption.value | escape }}">
+            {%- case step -%}
+              {%- when 'defend' %}{% render 'pdp-art-defend', part: 'texture' %}
+              {%- when 'adapt' %}{% render 'pdp-art-adapt', part: 'texture' %}
+              {%- when 'protect' %}{% render 'pdp-art-protect', part: 'texture' %}
+              {%- else %}{% render 'pdp-art-reset', part: 'texture' %}
+            {%- endcase -%}
+          </div>
+        </div>
+        <div class="pd-thumbs" role="tablist" aria-label="{{ 'products.images' | t }}">
+          <button class="pd-th on" type="button" role="tab" aria-label="{{ 'products.product' | t }}" data-i="0">
+            {%- if media -%}
+              {{ media.preview_image | image_url: width: 200 | image_tag: alt: '' }}
+            {%- else -%}
+              <svg viewBox="0 0 220 320"><use href="#p-{{ step }}"/></svg>
+            {%- endif -%}
+          </button>
+          <button class="pd-th t2" type="button" role="tab" aria-label="{{ 'products.key_benefits' | t }}" data-i="1"><span class="tx">{{ 'products.key_benefits_html' | t }}</span></button>
+          <button class="pd-th t3" type="button" role="tab" aria-label="{{ 'products.ingredients' | t }}" data-i="2"><span style="width:92%;display:block;line-height:0;text-align:center">
+            {%- for ing in gal_ings limit: 3 -%}
+              <span class="md" style="width:30%;height:auto;aspect-ratio:1/1;margin:1%;display:inline-grid">{% render 'ingredient-art', name: ing.art.value %}</span>
+            {%- endfor -%}
+          </span></button>
+          <button class="pd-th t4" type="button" role="tab" aria-label="{{ mf.texture_caption.value | escape }}" data-i="3">
+            {%- case step -%}
+              {%- when 'defend' %}{% render 'pdp-art-defend', part: 'texture_thumb' %}
+              {%- when 'adapt' %}{% render 'pdp-art-adapt', part: 'texture_thumb' %}
+              {%- when 'protect' %}{% render 'pdp-art-protect', part: 'texture_thumb' %}
+              {%- else %}{% render 'pdp-art-reset', part: 'texture_thumb' %}
+            {%- endcase -%}
+          </button>
+        </div>
+      </div>
+
+      <div class="pd-info">
+        {%- if mf.eyebrow != blank %}<p class="eyebrow">{{ mf.eyebrow.value | escape }}</p>{% endif %}
+        <h1>{{ product.title | escape }}</h1>
+        {%- if mf.tagline != blank %}<p class="pd-tag">{{ mf.tagline.value | escape }}</p>{% endif %}
+        <div class="pd-price"><b>{% render 'price', price: variant.price %}</b><small>{{ 'products.mrp_inclusive' | t }}</small></div>
+        {%- if product.description != blank %}<p class="pd-desc">{{ product.description | strip_html | strip }}</p>{% endif %}
+        <div class="glance">
+          {%- unless product.has_only_default_variant %}<div><small>{{ 'products.size' | t }}</small><b>{{ variant.title | escape }}</b></div>{% endunless -%}
+          {%- if mf.texture != blank %}<div><small>{{ 'products.texture' | t }}</small><b>{{ mf.texture.value | escape }}</b></div>{% endif -%}
+          {%- if mf.when_to_use != blank %}<div><small>{{ 'products.when_to_use' | t }}</small><b>{{ mf.when_to_use.value | escape }}</b></div>{% endif -%}
+        </div>
+        <div>
+          <div class="sw-bar">
+            <div class="seg" role="tablist" aria-label="{{ 'products.ingredients_or_howto' | t }}">
+              <button type="button" role="tab" id="sg1-{{ section.id }}" aria-selected="true" aria-controls="sp1-{{ section.id }}">{{ 'products.ingredients' | t }}</button>
+              <button type="button" role="tab" id="sg2-{{ section.id }}" aria-selected="false" aria-controls="sp2-{{ section.id }}">{{ 'products.how_to_use' | t }}</button>
+            </div>
+          </div>
+          <div class="spanel on" id="sp1-{{ section.id }}" role="tabpanel" aria-labelledby="sg1-{{ section.id }}">
+            <p class="lvh">{{ 'products.key_ingredients' | t }}</p>
+            <ul class="igrid ihl">
+              {%- for ing in key_ings -%}
+                <li><div class="md">{% render 'ingredient-art', name: ing.art.value %}</div><div class="tx"><b>{{ ing.name.value | escape }}</b><em class="ow">{{ ing.benefit.value | escape }}</em><small>{{ ing.descriptor.value | escape }}</small></div></li>
+              {%- endfor -%}
+            </ul>
+            <p class="cta-c"><a class="seeall" href="#fullIng" data-open="it3">{{ 'products.see_full_ingredients' | t }}</a></p>
+          </div>
+          <div class="spanel" id="sp2-{{ section.id }}" role="tabpanel" aria-labelledby="sg2-{{ section.id }}">
+            <ul class="hgrid rt">
+              {%- for s in mf.quick_steps.value -%}
+                <li><span class="md ic">{% render 'pdp-icon', name: s.icon.value %}</span><div class="tx"><b><i>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</i>{{ s.label.value | escape }}</b></div></li>
+              {%- endfor -%}
+            </ul>
+            <p class="cta-c"><a class="seeall" href="#howto" data-open="it3">{{ 'products.see_how_to_use' | t }}</a></p>
+          </div>
+          {%- if mf.made_for != blank -%}
+            <div class="blk"><h2>{{ 'products.made_for' | t }}</h2><ul class="mrow m{{ mf.made_for.value | size }}">
+              {%- for x in mf.made_for.value -%}
+                <li><span class="md ic">{% render 'pdp-icon', name: x.icon.value %}</span><b>{{ x.label.value | escape }}</b></li>
+              {%- endfor -%}
+            </ul></div>
+          {%- endif -%}
+        </div>
+
+        {%- assign addons = mf.routine_products.value -%}
+        {%- if addons != blank -%}
+          <div class="rb" data-routine data-base="{{ variant.price }}" data-title="{{ product.title | escape }}">
+            <h3>{{ mf.routine_heading.value | escape }}</h3>
+            <p>{{ mf.routine_text.value | escape }}</p>
+            {%- for p in addons -%}
+              {%- assign pv = p.selected_or_first_available_variant -%}
+              <label class="ao"><input type="checkbox" name="addon" value="{{ pv.id }}" form="{{ form_id }}" data-price="{{ pv.price }}"{% unless pv.available %} disabled{% endunless %}><span class="cb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span><span class="aoimg"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-{{ p.metafields.embrae.step.value }}"/></svg></span><span class="aot"><b>{{ p.title | escape }}</b><small>{{ p.metafields.embrae.step.value | capitalize }}{% unless p.has_only_default_variant %}, {{ pv.title | escape }}{% endunless %}</small></span><span class="aop">{% render 'price', price: pv.price %}</span></label>
+            {%- endfor -%}
+            <div class="rb-total"><span data-rb-label>{{ 'products.only' | t: title: product.title }}</span><b data-rb-total>{% render 'price', price: variant.price %}</b></div>
+            {%- if section.settings.kit_line != blank %}<p class="rb-kit">{{ section.settings.kit_line }}</p>{% endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- form 'product', product, id: form_id, class: 'buy', data-pdp-form: '' -%}
+          <input type="hidden" name="id" value="{{ variant.id }}">
+          <input type="hidden" name="quantity" value="1" data-qty-input>
+          <div class="qty" aria-label="{{ 'products.quantity' | t }}"><button type="button" data-qty-step="-1" aria-label="{{ 'products.decrease' | t }}">−</button><span data-qty-view>1</span><button type="button" data-qty-step="1" aria-label="{{ 'products.increase' | t }}">+</button></div>
+          {%- if variant.available -%}
+            <button class="btn ghost" type="submit">{{ 'products.add_to_cart' | t }}</button>
+            <button class="btn" type="submit" data-buy-now>{{ 'products.buy_now' | t }}</button>
+          {%- else -%}
+            <button class="btn ghost" type="button" disabled>{{ 'products.sold_out' | t }}</button>
+          {%- endif -%}
+        {%- endform -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="trust">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>{% render 'trust-icon', name: block.settings.icon %}<span>{{ block.settings.text | escape }}</span></li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        <div data-buy-end></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sbar" data-sbar aria-hidden="true">
+  <div class="sbar-in">
+    <span class="th"><svg viewBox="0 0 220 320"><use href="#p-{{ step }}"/></svg></span>
+    <div class="sp"><span class="wm" role="img" aria-label="EMBRAE"></span><div><b>{{ product.title | escape }}</b><small>{% unless product.has_only_default_variant %}{{ variant.title | escape }}, {% endunless %}<span data-sb-total>{% render 'price', price: variant.price %}</span></small></div></div>
+    {%- if variant.available -%}
+      <button class="btn ghost" type="submit" form="{{ form_id }}" tabindex="-1">{{ 'products.add_to_cart' | t }}</button>
+      <button class="btn" type="submit" form="{{ form_id }}" data-buy-now tabindex="-1">{{ 'products.buy_now' | t }}</button>
+    {%- endif -%}
+  </div>
+</div>
+
+{% render 'pdp-buy-scripts' %}
+
+{% schema %}
+{
+  "name": "Product: buy box",
+  "tag": "div",
+  "class": "section-pdp-main",
+  "settings": [
+    { "type": "url", "id": "shop_link", "label": "Breadcrumb “Shop” link" },
+    { "type": "inline_richtext", "id": "kit_line", "label": "Routine offer line", "default": "All four with a complimentary EMBRAE Travel Pouch: ₹4,199 instead of ₹4,496. <a href=\"#offer\">Save ₹297.</a>" }
+  ],
+  "blocks": [
+    { "type": "trust", "name": "Trust point", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "shipping", "options": [
+        { "value": "shipping", "label": "Shipping" },
+        { "value": "secure", "label": "Secure checkout" },
+        { "value": "support", "label": "Support" },
+        { "value": "tracking", "label": "Order tracking" }
+      ] },
+      { "type": "text", "id": "text", "label": "Text", "default": "Free shipping above ₹999" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Product: buy box" }]
+}
+{% endschema %}

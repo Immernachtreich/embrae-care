@@ -1,0 +1,56 @@
+<section class="env">
+  <svg class="env-leaf" style="left:-90px;top:30px;transform:rotate(25deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+  <svg class="env-leaf" style="right:-80px;bottom:10px;transform:rotate(-160deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank %}<p class="lead">{{ section.settings.text | escape }}</p>{% endif -%}
+    </div>
+    {%- if section.settings.label != blank %}<p class="eyebrow env-label reveal">{{ section.settings.label | escape }}</p>{% endif -%}
+    <ul class="stress reveal">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <div class="ico">{% render 'home-icon', name: block.settings.icon %}</div>
+          <h3>{{ block.settings.title | escape }}</h3>
+          <p>{{ block.settings.text | escape }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Climate grid",
+  "tag": "div",
+  "class": "section-env",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your day has many climates. Your skin feels every one." },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "label", "label": "Label above the grid", "default": "Six everyday challenges your skin faces" }
+  ],
+  "blocks": [
+    { "type": "stressor", "name": "Stressor", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "pollution", "options": [
+        { "value": "pollution", "label": "Pollution" },
+        { "value": "uv", "label": "UV rays" },
+        { "value": "heat", "label": "Heat" },
+        { "value": "dry-air", "label": "Dry air" },
+        { "value": "blue-light", "label": "Blue light" },
+        { "value": "stress", "label": "Stress" }
+      ] },
+      { "type": "text", "id": "title", "label": "Title", "default": "Pollution" },
+      { "type": "textarea", "id": "text", "label": "Text" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [{ "name": "Climate grid", "blocks": [
+    { "type": "stressor", "settings": { "icon": "pollution", "title": "Pollution" } },
+    { "type": "stressor", "settings": { "icon": "uv", "title": "UV Rays" } },
+    { "type": "stressor", "settings": { "icon": "heat", "title": "Heat" } },
+    { "type": "stressor", "settings": { "icon": "dry-air", "title": "Dry Air" } },
+    { "type": "stressor", "settings": { "icon": "blue-light", "title": "Blue Light" } },
+    { "type": "stressor", "settings": { "icon": "stress", "title": "Stress" } }
+  ] }]
+}
+{% endschema %}

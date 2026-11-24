@@ -1,0 +1,44 @@
+{% doc %}
+  Product card used by the EMBRAE System grid (.pcard) and the Sunrise/Moonlight panels (.dcard).
+  Name, size, price and link come from the Shopify product; art comes from the step.
+
+  @param {product} product - The product (may be blank in the editor)
+  @param {string} step - reset, defend, adapt or protect
+  @param {string} num - Number label, e.g. '01' or 'STEP 1'
+  @param {string} [text] - Short description
+  @param {string} [button_label] - Button text
+  @param {string} [step_label] - Step name shown above the title (.dcard only)
+  @param {string} [leaf_style] - Inline style for the decorative leaf (.pcard only)
+  @param {string} [attrs] - block.shopify_attributes
+{% enddoc %}
+{%- liquid
+  if leaf_style
+    assign card_class = 'pcard reveal'
+  else
+    assign card_class = 'dcard'
+  endif
+  assign variant = product.selected_or_first_available_variant
+-%}
+<article class="{{ card_class }}" {{ attrs }}>
+  <div class="pimg">
+    {%- if leaf_style -%}
+      <svg class="pl" style="{{ leaf_style }}" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+    {%- endif -%}
+    <span class="num">{{ num }}</span>
+    {%- if leaf_style %}{% render 'step-icon', step: step, class: 'shape' %}{% endif -%}
+    <svg class="prod" viewBox="0 0 220 320" role="img" aria-label="{{ product.title | escape }}"><use href="#p-{{ step }}"/></svg>
+  </div>
+  <div class="pbody">
+    {%- if step_label != blank %}<span class="step">{{ step_label | escape }}</span>{% endif -%}
+    <h3>{{ product.title | default: 'Choose a product' | escape }}</h3>
+    {%- if text != blank %}<p>{{ text | escape }}</p>{% endif -%}
+    {%- if product != blank -%}
+      {%- unless product.has_only_default_variant %}<div class="size">{{ variant.title | escape }}</div>{% endunless -%}
+      <div class="price real">{% render 'price', price: variant.price %}</div>
+      <div class="mrp">{{ 'products.mrp_note' | t }}</div>
+    {%- endif -%}
+    {%- if button_label != blank -%}
+      <a class="btn btn-sm" href="{{ product.url | default: '#' }}">{{ button_label | escape }}</a>
+    {%- endif -%}
+  </div>
+</article>

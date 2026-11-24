@@ -1,0 +1,7 @@
+{% doc %}
+  Journal date badge: day number over "Mon YYYY".
+
+  @param {object} date - article.published_at
+  @param {string} class - ar-d (article) or jr-d (journal)
+{% enddoc %}
+<span class="{{ class }}"><b>{{ date | date: '%d' }}</b><i>{{ date | date: '%b %Y' }}</i></span>

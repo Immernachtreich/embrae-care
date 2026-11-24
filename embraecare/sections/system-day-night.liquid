@@ -1,0 +1,48 @@
+{%- liquid
+  assign s = section.settings
+  assign steps = 'reset,defend,adapt,protect' | split: ','
+-%}
+<section class="sy-band" id="day">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      {%- if s.eyebrow != blank %}<p class="eyebrow">{{ s.eyebrow | escape }}</p>{% endif -%}
+      <h2 class="h2">{{ s.heading | escape }}</h2>
+      {%- if s.text != blank %}<p class="lead">{{ s.text | escape }}</p>{% endif -%}
+    </div>
+    <div class="sy-tl reveal">
+      <div class="sy-tr"><div class="lab"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></svg><b>{{ s.morning | escape }}</b><small>{{ s.morning_steps | escape }}</small></div><div class="sy-nodes">
+        {%- for st in steps -%}
+          <div class="sy-n"><div class="c">{% render 'step-icon', step: st, class: 'sy-ic', bare: true %}<i>{{ forloop.index }}</i></div><b>{{ st | capitalize }}</b></div>
+        {%- endfor -%}
+      </div></div>
+      <div class="sy-tr night"><div class="lab"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M38 30A16 16 0 0 1 18 10a16 16 0 1 0 20 20z"/></svg><b>{{ s.night | escape }}</b><small>{{ s.night_steps | escape }}</small></div><div class="sy-nodes">
+        {%- for st in steps -%}
+          {%- if st == 'protect' -%}
+            <div class="sy-n off"><div class="c">{% render 'step-icon', step: st, class: 'sy-ic', bare: true %}</div><b>{{ st | capitalize }}</b><small>{{ s.morning_only | escape }}</small></div>
+          {%- else -%}
+            <div class="sy-n"><div class="c">{% render 'step-icon', step: st, class: 'sy-ic', bare: true %}<i>{{ forloop.index }}</i></div><b>{{ st | capitalize }}</b></div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "System: day and night",
+  "tag": "div",
+  "class": "section-sy-band",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "One routine, day and night" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Simple enough to repeat every day." },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "morning", "label": "Morning label", "default": "Morning" },
+    { "type": "text", "id": "morning_steps", "label": "Morning count", "default": "4 steps" },
+    { "type": "text", "id": "night", "label": "Night label", "default": "Night" },
+    { "type": "text", "id": "night_steps", "label": "Night count", "default": "3 steps" },
+    { "type": "text", "id": "morning_only", "label": "Note on Protect at night", "default": "Morning only" }
+  ],
+  "presets": [{ "name": "System: day and night" }]
+}
+{% endschema %}

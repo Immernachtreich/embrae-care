@@ -1,0 +1,65 @@
+{%- liquid
+  assign mf = product.metafields.embrae
+  assign step = mf.step.value | default: 'reset'
+  assign scenes = mf.scenes.value
+-%}
+{%- if scenes != blank -%}
+<section class="pd-sec alt" id="reallife">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 class="h2">{{ section.settings.heading | escape }}</h2></div>
+  </div>
+  <div class="rdb run" data-rdb role="region" aria-roledescription="carousel" aria-label="{{ 'products.moments' | t: title: product.title }}">
+    {%- for sc in scenes -%}
+      {%- capture part %}scene{{ forloop.index }}{% endcapture -%}
+      <div class="rds{% if forloop.first %} on{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+        {%- if sc.image != blank -%}
+          {{ sc.image.value | image_url: width: 2000 | image_tag: alt: sc.title.value, loading: 'lazy', sizes: '100vw' }}
+        {%- else -%}
+          {%- case step -%}
+            {%- when 'defend' %}{% render 'pdp-art-defend', part: part %}
+            {%- when 'adapt' %}{% render 'pdp-art-adapt', part: part %}
+            {%- when 'protect' %}{% render 'pdp-art-protect', part: part %}
+            {%- else %}{% render 'pdp-art-reset', part: part %}
+          {%- endcase -%}
+        {%- endif -%}
+        <div class="rdt"><small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small><b>{{ sc.title.value | escape }}</b>{% if sc.text != blank %}<p>{{ sc.text.value | escape }}</p>{% endif %}</div>
+      </div>
+    {%- endfor -%}
+    <div class="rd-bar"><i></i></div>
+  </div>
+</section>
+{%- endif -%}
+
+{% javascript %}
+  (function () {
+    function init(root) {
+      [].forEach.call(root.querySelectorAll('[data-rdb]'), function (b) {
+        if (b._rdb) return; b._rdb = true;
+        var sl = [].slice.call(b.querySelectorAll('.rds')), k = 0, tm = null;
+        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function go(n) { k = (n + sl.length) % sl.length; sl.forEach(function (x, i) { x.classList.toggle('on', i === k); });
+          b.classList.remove('run'); void b.offsetWidth; if (!rm && !b.classList.contains('paused')) b.classList.add('run'); }
+        function play() { clearInterval(tm); if (rm || sl.length < 2) return; tm = setInterval(function () { if (!b.isConnected) return clearInterval(tm); go(k + 1); }, 6000); }
+        b.addEventListener('mouseenter', function () { b.classList.add('paused'); b.classList.remove('run'); clearInterval(tm); });
+        b.addEventListener('mouseleave', function () { b.classList.remove('paused'); go(k); play(); });
+        if (rm) b.classList.remove('run'); else play();
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+    document.addEventListener('shopify:section:load', function (e) { init(e.target); });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product: real days",
+  "tag": "div",
+  "class": "section-pdp-real-days",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Made for real days" },
+    { "type": "paragraph", "content": "Slides come from the product's “Made for real days” field. Add an image to a scene to replace its illustration." }
+  ],
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Product: real days" }]
+}
+{% endschema %}

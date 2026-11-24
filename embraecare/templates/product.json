@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "main": {
+      "type": "pdp-main",
+      "settings": {
+        "shop_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "shipping",
+            "text": "Free shipping above ₹999"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "secure",
+            "text": "Secure checkout"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "support",
+            "text": "EMBRAE care on WhatsApp"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "tracking",
+            "text": "Easy order tracking"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    "offer": {
+      "type": "pdp-offer-banner",
+      "settings": {
+        "button_link": "/products/daily-urban-defense-routine"
+      }
+    },
+    "inside": {
+      "type": "pdp-inside",
+      "settings": {}
+    },
+    "real_days": {
+      "type": "pdp-real-days",
+      "settings": {}
+    },
+    "reels": {
+      "type": "pdp-reels",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "pdp-reviews",
+      "settings": {}
+    },
+    "more": {
+      "type": "pdp-more",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "offer",
+    "inside",
+    "real_days",
+    "reels",
+    "reviews",
+    "more"
+  ]
+}

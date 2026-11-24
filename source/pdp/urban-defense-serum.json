@@ -1,0 +1,207 @@
+{
+  "handle": "urban-defense-serum",
+  "step": "defend",
+  "eyebrow": "Daily serum",
+  "tagline": "A daily serum designed to strengthen the skin barrier, build lasting resilience, and leave skin calm, hydrated and balanced.",
+  "description": "Designed for everyday use, URBAN DEFENSE SERUM helps strengthen the skin barrier and support lasting resilience. Its lightweight, fast-absorbing formula delivers hydration while helping keep skin calm, balanced and comfortable, making it suitable for daily use in humid conditions.",
+  "glance": [
+    [
+      "Size",
+      "30 ml"
+    ],
+    [
+      "Texture / Finish",
+      "Transparent-Water Based"
+    ],
+    [
+      "When to use",
+      "AM + PM"
+    ]
+  ],
+  "image_alt": "EMBRAE Urban Defense Serum, 30 ml serum bottle",
+  "benefits": [
+    "Helps strengthen the skin barrier",
+    "Supports lasting skin resilience",
+    "Lightweight, fast-absorbing hydration",
+    "Leaves skin calm, hydrated and balanced"
+  ],
+  "gallery_ingredients": [
+    "niacinamide",
+    "sodium-hyaluronate",
+    "ectoin",
+    "beta-glucan",
+    "ceramide-np",
+    "saccharide-isomerate"
+  ],
+  "texture_caption": "Transparent, water-based texture",
+  "key_ingredients": [
+    {
+      "key": "niacinamide",
+      "name": "Niacinamide",
+      "benefit": "Balances",
+      "descriptor": "Vitamin B3"
+    },
+    {
+      "key": "hyaluronic-acid",
+      "name": "Hyaluronic Acid",
+      "benefit": "Hydrates",
+      "descriptor": "As Sodium Hyaluronate"
+    },
+    {
+      "key": "ectoin",
+      "name": "Ectoin",
+      "benefit": "Resilience",
+      "descriptor": "Our signature ingredient"
+    }
+  ],
+  "quick_steps": [
+    {
+      "icon": "pump",
+      "label": "Pump"
+    },
+    {
+      "icon": "massage",
+      "label": "Pat"
+    },
+    {
+      "icon": "moisturize",
+      "label": "Moisturize"
+    }
+  ],
+  "made_for": [
+    {
+      "icon": "post-commute-cleansing",
+      "label": "Daily urban stress"
+    },
+    {
+      "icon": "hot-humid-days",
+      "label": "Hot, humid days"
+    },
+    {
+      "icon": "daily-buildup",
+      "label": "Dry air"
+    }
+  ],
+  "routine_heading": "Defend is where strength begins",
+  "routine_text": "Add Reset, Adapt and Protect to complete the routine.",
+  "tabs": [
+    "Craft",
+    "Defend",
+    "Essentials"
+  ],
+  "essentials_heading": "Urban Defense Serum, at a glance.",
+  "claims": [
+    {
+      "icon": "asset-31.png",
+      "label": "Non-sticky"
+    },
+    {
+      "icon": "asset-32.png",
+      "label": "Alcohol free"
+    },
+    {
+      "icon": "asset-33.png",
+      "label": "Mineral oil free"
+    },
+    {
+      "icon": "asset-28.png",
+      "label": "pH balanced"
+    },
+    {
+      "icon": "asset-29.png",
+      "label": "Fragrance free"
+    },
+    {
+      "icon": "asset-30.png",
+      "label": "Lightweight"
+    },
+    {
+      "icon": "cruelty-free",
+      "label": "Cruelty free"
+    }
+  ],
+  "howto_pills": [
+    "AM + PM",
+    "After cleansing, before moisturizer"
+  ],
+  "howto": [
+    {
+      "icon": "pump",
+      "title": "Pump",
+      "text": "Dispense 1–2 pumps onto clean, dry skin."
+    },
+    {
+      "icon": "massage",
+      "title": "Pat",
+      "text": "Gently press and pat into your face and neck until fully absorbed."
+    },
+    {
+      "icon": "moisturize",
+      "title": "Moisturize",
+      "text": "Follow with moisturizer."
+    }
+  ],
+  "inci": "Aqua, Propanediol, Niacinamide, Sodium Hyaluronate, Aloe Barbadensis Leaf Extract, Glycerin, Euxyl 9010 (Phenoxyethanol and Ethylhexylglycerin), Centella Asiatica Extract, Saccharide Isomerate (Pentavitin), Ectoin, Betaine, Trehalose, Ceramide NP (and) Ceramide AP (and) Ceramide EOP (and) Sodium Lauroyl Lactylate, Beta-Sitosterol, Beta-Glucan, Carbomer, Allantoin, Sodium PCA, Disodium EDTA, Citric Acid.",
+  "storage": "<b>Storage instructions</b><br/>Store in a cool, dry place. Protect from direct sunlight and high temperatures.<br/><br/><b>Caution</b><br/>Avoid contact with eyes. In case of contact, rinse thoroughly with water.<br/><br/><b>Note</b><br/>Perform a patch test before use. Discontinue if irritation occurs.<br/><br/><b>For external use only.</b>",
+  "scenes": [
+    {
+      "title": "Humid mornings",
+      "text": "A light layer after cleansing, comfortable before your moisturizer."
+    },
+    {
+      "title": "Busy commutes",
+      "text": "Lightweight hydration that keeps up with a long city day."
+    },
+    {
+      "title": "Late evenings",
+      "text": "Pat on after cleansing and wind down with calm, hydrated skin."
+    }
+  ],
+  "info": [
+    {
+      "icon": "product-type",
+      "label": "Product type",
+      "text": "Daily face serum"
+    },
+    {
+      "icon": "net-quantity",
+      "label": "Net quantity",
+      "text": "30 ml"
+    },
+    {
+      "icon": "shelf-life",
+      "label": "Shelf life",
+      "text": "24 months from date of manufacture"
+    },
+    {
+      "icon": "manufacturer",
+      "label": "Manufacturer",
+      "text": "QSD Formulations Pvt. Ltd. (An GMP Certified), Plot No. 1256, Industrial Estate, HSIIDC, Rai, Distt. Sonipat-131029 (Haryana)"
+    },
+    {
+      "icon": "marketed-by",
+      "label": "Marketed by",
+      "text": "EMBRAE CARE, Venkatesh Graffiti Glover, Mundhwa, Pune-411036, Maharashtra, India"
+    },
+    {
+      "icon": "manufacturing-licence-no",
+      "label": "Manufacturing licence no.",
+      "text": "COS8HR2024000012"
+    },
+    {
+      "icon": "country-of-origin",
+      "label": "Country of origin",
+      "text": "India"
+    },
+    {
+      "icon": "customer-care",
+      "label": "Customer care",
+      "text": "Email: care@embraecare.com<br/>Phone / WhatsApp: +91 86004 11991"
+    },
+    {
+      "icon": "quality-standards",
+      "label": "Quality standards",
+      "text": "GMP Certified, FDA Registered, ISO Certified"
+    }
+  ]
+}

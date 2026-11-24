@@ -1,0 +1,21 @@
+{%- assign s = section.settings -%}
+<section class="band reveal">
+  <svg class="lf l1" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg><svg class="lf l2" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+  {%- if s.eyebrow != blank %}<p class="eyebrow">{{ s.eyebrow | escape }}</p>{% endif -%}
+  {%- if s.heading != blank %}<h2 class="h1">{{ s.heading | escape }}</h2>{% endif -%}
+  {%- if s.text != blank %}<p class="lead">{{ s.text | escape }}</p>{% endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Quote band",
+  "tag": "div",
+  "class": "section-band",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Large heading" },
+    { "type": "textarea", "id": "text", "label": "Quote" }
+  ],
+  "presets": [{ "name": "Quote band" }]
+}
+{% endschema %}

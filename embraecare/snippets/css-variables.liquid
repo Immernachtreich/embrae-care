@@ -1,0 +1,20 @@
+{% doc %}
+  Outputs the brand colour tokens from theme settings so they override the defaults in embrae-base.css.
+
+  @example
+  {% render 'css-variables' %}
+{% enddoc %}
+{% style %}
+  :root {
+    --phyto: {{ settings.color_phyto }};
+    --phyto-deep: {{ settings.color_phyto_deep }};
+    --aqua: {{ settings.color_aqua }};
+    --neutral: {{ settings.color_neutral }};
+    --neutral-tint: {{ settings.color_neutral_tint }};
+    --off: {{ settings.color_off }};
+    --off2: {{ settings.color_off2 }};
+    --ink: {{ settings.color_ink }};
+    --skin: url({{ 'asset-00.jpg' | asset_url }});
+  }
+  .skip:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; clip: auto; z-index: 999; padding: 10px 14px; background: var(--white); color: var(--phyto); }
+{% endstyle %}

@@ -1,0 +1,207 @@
+{
+  "handle": "climate-adapt-moisturizer",
+  "step": "adapt",
+  "eyebrow": "Daily moisturizer",
+  "tagline": "A daily moisturizer designed to strengthen the skin barrier, replenish hydration, and leave skin soft, balanced and comfortable.",
+  "description": "Designed for everyday use, CLIMATE ADAPT MOISTURIZER helps strengthen the skin barrier and replenish hydration, leaving skin feeling soft, balanced and comfortable. Its breathable gel-cream texture provides climate-adaptive hydration for a comfortable daily moisturizing experience.",
+  "glance": [
+    [
+      "Size",
+      "50 g"
+    ],
+    [
+      "Texture / Finish",
+      "Creamy Gel Based"
+    ],
+    [
+      "When to use",
+      "AM + PM"
+    ]
+  ],
+  "image_alt": "EMBRAE Climate Adapt Moisturizer, 50 g gel-cream moisturizer",
+  "benefits": [
+    "Helps strengthen the skin barrier",
+    "Replenishes hydration",
+    "Breathable gel-cream texture",
+    "Leaves skin soft, balanced and comfortable"
+  ],
+  "gallery_ingredients": [
+    "squalane",
+    "saccharide-isomerate",
+    "ectoin",
+    "ceramide-np",
+    "sodium-hyaluronate",
+    "beta-glucan"
+  ],
+  "texture_caption": "Breathable gel-cream texture",
+  "key_ingredients": [
+    {
+      "key": "squalane",
+      "name": "Squalane",
+      "benefit": "Softens",
+      "descriptor": "Skin-softening emollient"
+    },
+    {
+      "key": "pentavitin",
+      "name": "Pentavitin",
+      "benefit": "Hydrates",
+      "descriptor": "Saccharide Isomerate"
+    },
+    {
+      "key": "ectoin",
+      "name": "Ectoin",
+      "benefit": "Resilience",
+      "descriptor": "Our signature ingredient"
+    }
+  ],
+  "quick_steps": [
+    {
+      "icon": "pump",
+      "label": "Pump"
+    },
+    {
+      "icon": "massage",
+      "label": "Smooth"
+    },
+    {
+      "icon": "massage-2",
+      "label": "Massage"
+    }
+  ],
+  "made_for": [
+    {
+      "icon": "hot-humid-days",
+      "label": "Hot, humid days"
+    },
+    {
+      "icon": "cool-dry-rooms",
+      "label": "Cool, dry rooms"
+    },
+    {
+      "icon": "changing-seasons",
+      "label": "Changing seasons"
+    }
+  ],
+  "routine_heading": "Adapt is where comfort lasts",
+  "routine_text": "Add Reset, Defend and Protect to complete the routine.",
+  "tabs": [
+    "Craft",
+    "Adapt",
+    "Essentials"
+  ],
+  "essentials_heading": "Climate Adapt Moisturizer, at a glance.",
+  "claims": [
+    {
+      "icon": "asset-12.png",
+      "label": "pH balanced"
+    },
+    {
+      "icon": "asset-13.png",
+      "label": "Mineral oil free"
+    },
+    {
+      "icon": "asset-14.png",
+      "label": "Fragrance free"
+    },
+    {
+      "icon": "asset-15.png",
+      "label": "Alcohol free (No ethanol)"
+    },
+    {
+      "icon": "asset-16.png",
+      "label": "Long lasting hydration"
+    },
+    {
+      "icon": "asset-17.png",
+      "label": "Barrier support formula"
+    },
+    {
+      "icon": "cruelty-free",
+      "label": "Cruelty free"
+    }
+  ],
+  "howto_pills": [
+    "AM + PM",
+    "After your serum"
+  ],
+  "howto": [
+    {
+      "icon": "pump",
+      "title": "Pump",
+      "text": "Dispense 1–2 pumps onto clean skin."
+    },
+    {
+      "icon": "massage",
+      "title": "Smooth",
+      "text": "Smooth evenly over face and neck."
+    },
+    {
+      "icon": "massage-2",
+      "title": "Massage",
+      "text": "Gently massage in upward circular motions until fully absorbed."
+    }
+  ],
+  "inci": "Aqua, Glycerin, Butylene Glycol, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Squalane, Dicaprylyl Carbonate, Saccharide Isomerate, Ceramide NP (and) Ceramide AP (and) Ceramide EOP (and) Sodium Lauroyl Lactylate, Beta-Sitosterol, Sodium Hyaluronate, Sodium Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Hydrogenated Polydecene, Trideceth-6, Sorbitan Laurate, Sodium Benzoate, Potassium Sorbate, Hamamelis Virginiana (Witch Hazel) Extract, Camellia Sinensis Leaf Extract, Beta-Glucan, Linoleic Acid, Allantoin, Ectoin, Dimethyl Isosorbide, Acetyl Tetrapeptide-11, Acetyl Tetrapeptide-9, Tocopherol, Polysorbate 80, Phytosphingosine, Disodium EDTA.",
+  "storage": "<b>Storage instructions</b><br/>Store below 30°C in a cool, dry place. Protect from direct sunlight and excessive heat. Keep the cap closed when not in use.<br/><br/><b>Caution</b><br/>Avoid contact with eyes. In case of contact, rinse thoroughly with water.<br/><br/><b>Note</b><br/>Perform a patch test before use. Discontinue if irritation occurs.<br/><br/><b>For external use only.</b>",
+  "scenes": [
+    {
+      "title": "Humid monsoons",
+      "text": "Breathable hydration that feels light in sticky weather."
+    },
+    {
+      "title": "Hot summers",
+      "text": "Light gel-cream comfort for warm, busy days."
+    },
+    {
+      "title": "Cool, dry evenings",
+      "text": "Replenishing comfort when the air turns dry."
+    }
+  ],
+  "info": [
+    {
+      "icon": "product-type",
+      "label": "Product type",
+      "text": "Daily face moisturizer"
+    },
+    {
+      "icon": "net-quantity",
+      "label": "Net quantity",
+      "text": "50 g"
+    },
+    {
+      "icon": "shelf-life",
+      "label": "Shelf life",
+      "text": "24 months from date of manufacture"
+    },
+    {
+      "icon": "manufacturer",
+      "label": "Manufacturer",
+      "text": "QSD Formulations Pvt. Ltd. (An GMP Certified), Plot No. 1256, Industrial Estate, HSIIDC, Rai, Distt. Sonipat-131029 (Haryana)"
+    },
+    {
+      "icon": "marketed-by",
+      "label": "Marketed by",
+      "text": "EMBRAE CARE, Venkatesh Graffiti Glover, Mundhwa, Pune-411036, Maharashtra, India"
+    },
+    {
+      "icon": "manufacturing-licence-no",
+      "label": "Manufacturing licence no.",
+      "text": "COS8HR2024000012"
+    },
+    {
+      "icon": "country-of-origin",
+      "label": "Country of origin",
+      "text": "India"
+    },
+    {
+      "icon": "customer-care",
+      "label": "Customer care",
+      "text": "Email: care@embraecare.com<br/>Phone / WhatsApp: +91 86004 11991"
+    },
+    {
+      "icon": "quality-standards",
+      "label": "Quality standards",
+      "text": "GMP Certified, FDA Registered, ISO Certified"
+    }
+  ]
+}

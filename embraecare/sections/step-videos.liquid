@@ -1,0 +1,85 @@
+{%- assign missing_video = false -%}
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank %}<p class="lead">{{ section.settings.text | escape }}</p>{% endif -%}
+    </div>
+    <div class="step-grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign s = block.settings
+          assign name = s.product.title | default: s.title
+        -%}
+        <div class="step reveal" {{ block.shopify_attributes }}>
+          <div class="badge">{% render 'step-icon', step: s.step %}</div>
+          <small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small>
+          <h3>{{ s.title | escape }}</h3>
+          <div class="scard">
+            {%- if s.video != blank -%}
+              <div class="vph v-{{ s.step }}">
+                {{ s.video | video_tag: autoplay: true, muted: true, loop: true, playsinline: true, controls: false, image_size: '600x', aria-label: s.caption }}
+                {%- if s.caption != blank %}<span class="vcap">{{ s.caption | escape }}</span>{% endif -%}
+              </div>
+            {%- else -%}
+              {%- assign missing_video = true -%}
+              <div class="vph v-{{ s.step }}" role="img" aria-label="{{ s.caption | escape }}">
+                <svg class="vleaf" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+                <span class="vtag">{{ 'sections.steps.creator_video' | t }}</span>
+                <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z"/></svg></span>
+                {%- if s.caption != blank %}<span class="vcap">{{ s.caption | escape }}</span>{% endif -%}
+              </div>
+            {%- endif -%}
+            <div class="sbody">
+              <div class="role">{{ s.role | escape }}</div>
+              <div class="pn">{{ name | escape }}</div>
+              {%- if s.text != blank %}<p>{{ s.text | escape }}</p>{% endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="steps-foot reveal">
+      {%- if section.settings.footer != blank %}<p class="eyebrow">{{ section.settings.footer | escape }}</p>{% endif -%}
+      {%- if missing_video and request.design_mode -%}
+        <p class="ph-note">{{ 'sections.steps.placeholder_note' | t }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Steps with videos",
+  "tag": "div",
+  "class": "section-steps",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What each step brings to your skin." },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "footer", "label": "Footer line", "default": "Real people. Real routines. Real experiences with EMBRAE." }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "settings": [
+      { "type": "select", "id": "step", "label": "Step (sets icon and colour)", "default": "reset", "options": [
+        { "value": "reset", "label": "Reset" },
+        { "value": "defend", "label": "Defend" },
+        { "value": "adapt", "label": "Adapt" },
+        { "value": "protect", "label": "Protect" }
+      ] },
+      { "type": "text", "id": "title", "label": "Step name", "default": "Reset" },
+      { "type": "text", "id": "role", "label": "Role", "default": "Cleanse & Prepare" },
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "video", "id": "video", "label": "Creator video", "info": "Upload in Content → Files. Portrait 9:16 works best; it plays muted on a loop." },
+      { "type": "text", "id": "caption", "label": "Video caption", "default": "Creator using Reset Cleanser" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Steps with videos", "blocks": [
+    { "type": "step", "settings": { "step": "reset", "title": "Reset", "role": "Cleanse & Prepare" } },
+    { "type": "step", "settings": { "step": "defend", "title": "Defend", "role": "Strengthen & Defend" } },
+    { "type": "step", "settings": { "step": "adapt", "title": "Adapt", "role": "Adapt & Reinforce" } },
+    { "type": "step", "settings": { "step": "protect", "title": "Protect", "role": "Shield & Protect" } }
+  ] }]
+}
+{% endschema %}

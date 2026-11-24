@@ -1,0 +1,113 @@
+{% doc %}
+  Hidden SVG sprite with the EMBRAE product illustrations (leaf, p-reset, p-defend, p-adapt, p-protect, p-pouch, lineup4, lineup2, lineup4pouch).
+  Rendered once in the layout; reference symbols with <svg viewBox="0 0 220 320"><use href="#p-reset"/></svg>.
+
+  @example
+  {% render 'svg-sprite' %}
+{% enddoc %}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <image id="wmimg" href="{{ 'embrae-logo.png' | asset_url }}" width="700" height="154"/>
+    <filter id="tintN" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.941  0 0 0 0 0.765  0 0 0 0 0.698  0 0 0 1 0"/></filter>
+    <linearGradient id="gDark" x1="0" x2="1"><stop offset="0" stop-color="#0E6A59"/><stop offset=".45" stop-color="#064F43"/><stop offset="1" stop-color="#03312A"/></linearGradient>
+    <linearGradient id="gGlass" x1="0" x2="1"><stop offset="0" stop-color="#0F6B5A"/><stop offset=".5" stop-color="#075044"/><stop offset="1" stop-color="#032F28"/></linearGradient>
+    <linearGradient id="gNeut" x1="0" x2="1"><stop offset="0" stop-color="#F8DACB"/><stop offset=".5" stop-color="#F0C3B2"/><stop offset="1" stop-color="#D9A18F"/></linearGradient>
+    <linearGradient id="gRub" x1="0" x2="1"><stop offset="0" stop-color="#1E3A34"/><stop offset=".5" stop-color="#0E211D"/><stop offset="1" stop-color="#060F0D"/></linearGradient>
+    <linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D8A78" stop-opacity=".55"/><stop offset="1" stop-color="#03312A" stop-opacity=".9"/></linearGradient>
+    <linearGradient id="gSlab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DCCD"/><stop offset="1" stop-color="#D3AD9C"/></linearGradient>
+    <linearGradient id="gRay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+
+    <symbol id="leaf" viewBox="0 0 100 200"><path d="M50 2C92 52 100 124 50 198 0 124 8 52 50 2Z" fill="currentColor"/><path d="M50 18V196" stroke="#000" stroke-opacity=".25" stroke-width="2" fill="none"/></symbol>
+
+    <!-- Reset: Reset Cleanser (pump bottle) -->
+    <symbol id="p-reset" viewBox="0 0 220 320">
+      <rect x="48" y="24" width="30" height="9" rx="4.5" fill="url(#gNeut)"/>
+      <rect x="64" y="22" width="68" height="14" rx="7" fill="url(#gNeut)"/>
+      <rect x="92" y="34" width="14" height="26" fill="url(#gNeut)"/>
+      <rect x="80" y="58" width="38" height="14" rx="3" fill="url(#gNeut)"/>
+      <rect x="58" y="70" width="84" height="226" rx="20" fill="url(#gDark)"/>
+      <rect x="68" y="86" width="7" height="188" rx="3.5" fill="#fff" opacity=".12"/>
+      <use href="#wmimg" transform="translate(73 132) scale(.0786)" filter="url(#tintN)"/>
+      <text x="100" y="172" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.4" font-weight="600" letter-spacing="1.6" fill="#F0C3B2">RESET</text>
+      <text x="100" y="182" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.4" font-weight="700" letter-spacing="1.6" fill="#F0C3B2">CLEANSER</text>
+      <rect x="86" y="198" width="28" height="1" fill="#62C0B0"/>
+      <text x="100" y="212" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="5" letter-spacing="1.2" fill="#62C0B0">100 ML</text>
+    </symbol>
+
+    <!-- Defend: Urban Defense Serum (dropper bottle) -->
+    <symbol id="p-defend" viewBox="0 0 220 320">
+      <rect x="96" y="12" width="28" height="56" rx="14" fill="url(#gRub)"/>
+      <rect x="86" y="62" width="48" height="28" rx="4" fill="url(#gNeut)"/>
+      <rect x="97" y="88" width="26" height="10" fill="url(#gGlass)"/>
+      <path d="M62 124Q62 100 90 96H130Q158 100 158 124V282Q158 302 136 302H84Q62 302 62 282Z" fill="url(#gGlass)"/>
+      <rect x="71" y="118" width="7" height="166" rx="3.5" fill="#fff" opacity=".14"/>
+      <use href="#wmimg" transform="translate(77 150) scale(.0657)" filter="url(#tintN)"/>
+      <text x="110" y="186" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.2" font-weight="600" letter-spacing="1.5" fill="#F0C3B2">URBAN DEFENSE</text>
+      <text x="110" y="196" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.2" font-weight="700" letter-spacing="1.5" fill="#F0C3B2">SERUM</text>
+      <rect x="98" y="212" width="24" height="1" fill="#62C0B0"/>
+      <text x="110" y="226" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="5" letter-spacing="1.2" fill="#62C0B0">30 ML</text>
+    </symbol>
+
+    <!-- Adapt: Climate Adapt Moisturizer (jar) -->
+    <symbol id="p-adapt" viewBox="0 0 220 320">
+      <rect x="34" y="172" width="152" height="40" rx="10" fill="url(#gNeut)"/>
+      <rect x="40" y="178" width="140" height="5" rx="2.5" fill="#fff" opacity=".35"/>
+      <rect x="42" y="208" width="136" height="92" rx="16" fill="url(#gDark)"/>
+      <rect x="52" y="218" width="7" height="70" rx="3.5" fill="#fff" opacity=".12"/>
+      <use href="#wmimg" transform="translate(70 234) scale(.0786)" filter="url(#tintN)"/>
+      <text x="110" y="262" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6" font-weight="600" letter-spacing="1.5" fill="#F0C3B2">CLIMATE ADAPT</text>
+      <text x="110" y="272" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6" font-weight="700" letter-spacing="1.5" fill="#F0C3B2">MOISTURIZER</text>
+      <ellipse cx="110" cy="300" rx="70" ry="3" fill="#000" opacity=".12"/>
+    </symbol>
+
+    <!-- Protect: Daily Shield SPF50 PA++++ (tube) -->
+    <symbol id="p-protect" viewBox="0 0 220 320">
+      <rect x="74" y="36" width="72" height="20" rx="3" fill="url(#gDark)"/>
+      <g stroke="#000" stroke-opacity=".28" stroke-width="1"><path d="M82 38V54M90 38V54M98 38V54M106 38V54M114 38V54M122 38V54M130 38V54M138 38V54"/></g>
+      <path d="M72 56H148L156 262H64Z" fill="url(#gDark)"/>
+      <rect x="82" y="72" width="6" height="170" rx="3" fill="#fff" opacity=".12"/>
+      <use href="#wmimg" transform="translate(78 100) scale(.0643)" filter="url(#tintN)"/>
+      <text x="110" y="134" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.2" font-weight="600" letter-spacing="1.5" fill="#F0C3B2">DAILY SHIELD</text>
+      <path d="M62 206L158 206L159 244L61 244Z" fill="#62C0B0"/>
+      <text x="110" y="222" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="9" font-weight="800" letter-spacing="1.2" fill="#064F43">SPF 50</text>
+      <text x="110" y="234" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="6.4" font-weight="700" letter-spacing="1.6" fill="#064F43">PA++++</text>
+      <rect x="86" y="262" width="48" height="36" rx="6" fill="url(#gNeut)"/>
+      <rect x="90" y="266" width="5" height="28" rx="2.5" fill="#fff" opacity=".4"/>
+    </symbol>
+    <filter id="tintG" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.024  0 0 0 0 0.31  0 0 0 0 0.263  0 0 0 1 0"/></filter>
+    <!-- Travel pouch -->
+    <symbol id="p-pouch" viewBox="0 0 240 200">
+      <ellipse cx="120" cy="192" rx="92" ry="6" fill="#000" opacity=".16"/>
+      <path d="M28 70Q28 46 52 46H188Q212 46 212 70V166Q212 188 190 188H50Q28 188 28 166Z" fill="url(#gNeut)"/>
+      <path d="M28 70Q28 46 52 46H188Q212 46 212 70V82H28Z" fill="#000" opacity=".06"/>
+      <rect x="28" y="46" width="184" height="15" rx="7" fill="#E2B7A5"/>
+      <path d="M34 53.5H206" stroke="#B98A78" stroke-width="1.6" stroke-dasharray="2.4 2.4"/>
+      <rect x="196" y="40" width="9" height="26" rx="4.5" fill="#064F43"/>
+      <circle cx="200.5" cy="70" r="4.6" fill="none" stroke="#064F43" stroke-width="2"/>
+      <rect x="38" y="76" width="6" height="94" rx="3" fill="#fff" opacity=".28"/>
+      <use href="#wmimg" transform="translate(66 114) scale(.1286)" filter="url(#tintG)"/>
+      <text x="120" y="150" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="7" font-weight="700" letter-spacing="2.4" fill="#064F43">TRAVEL POUCH</text>
+    </symbol>
+    <!-- Product line-ups -->
+    <symbol id="lineup4" viewBox="0 0 640 340">
+      <g fill="#000" opacity=".12"><ellipse cx="100" cy="322" rx="56" ry="5"/><ellipse cx="246" cy="322" rx="56" ry="5"/><ellipse cx="392" cy="322" rx="64" ry="5"/><ellipse cx="538" cy="322" rx="52" ry="5"/></g>
+      <svg x="0" y="51" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-reset"/></svg>
+      <svg x="146" y="45.5" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-defend"/></svg>
+      <svg x="292" y="47.3" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-adapt"/></svg>
+      <svg x="438" y="49.1" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-protect"/></svg>
+    </symbol>
+    <symbol id="lineup2" viewBox="0 0 340 340">
+      <g fill="#000" opacity=".12"><ellipse cx="100" cy="322" rx="56" ry="5"/><ellipse cx="240" cy="322" rx="64" ry="5"/></g>
+      <svg x="0" y="51" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-reset"/></svg>
+      <svg x="140" y="47.3" width="200" height="290.9" viewBox="0 0 220 320"><use href="#p-adapt"/></svg>
+    </symbol>
+    <symbol id="lineup4pouch" viewBox="0 0 640 340">
+      <g fill="#000" opacity=".12"><ellipse cx="88" cy="322" rx="46" ry="5"/><ellipse cx="192" cy="322" rx="46" ry="5"/><ellipse cx="296" cy="322" rx="52" ry="5"/><ellipse cx="400" cy="322" rx="42" ry="5"/></g>
+      <svg x="0" y="83.2" width="176" height="256" viewBox="0 0 220 320"><use href="#p-reset"/></svg>
+      <svg x="104" y="78.4" width="176" height="256" viewBox="0 0 220 320"><use href="#p-defend"/></svg>
+      <svg x="208" y="80" width="176" height="256" viewBox="0 0 220 320"><use href="#p-adapt"/></svg>
+      <svg x="312" y="81.6" width="176" height="256" viewBox="0 0 220 320"><use href="#p-protect"/></svg>
+      <svg x="430" y="155" width="210" height="175" viewBox="0 0 240 200"><use href="#p-pouch"/></svg>
+    </symbol>
+  </defs>
+</svg>

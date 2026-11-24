@@ -1,0 +1,55 @@
+{%- assign s = section.settings -%}
+{%- capture body -%}
+  <div class="prose reveal">
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      {%- case block.type -%}
+        {%- when 'text' -%}{{ b.text }}
+        {%- when 'pull' -%}<div class="pull" {{ block.shopify_attributes }}>{{ b.text | escape }}</div>
+        {%- when 'emphasis' -%}<p {{ block.shopify_attributes }}><span class="em">{{ b.text | escape }}</span></p>
+        {%- when 'signature' -%}<div class="sign" {{ block.shopify_attributes }}><b>{{ b.name | escape }}</b><span>{{ b.role | escape }}</span></div>
+        {%- when 'closing' -%}<p class="closing" style="text-align:left" {{ block.shopify_attributes }}>{{ b.text | escape }}</p>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+{%- endcapture -%}
+<section class="pg{% if s.tint %} tint{% endif %}"{% if s.no_top %} style="padding-top:0"{% endif %}>
+  <div class="wrap">
+    {%- if s.portrait_side -%}
+      <div class="fnd"><div class="side reveal">{% render 'ph-media', image: s.image, key: s.placeholder, tone: s.tone, label: s.image_label %}</div>
+      {{ body }}</div>
+    {%- else -%}
+      {{ body }}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Prose",
+  "tag": "div",
+  "class": "section-prose",
+  "settings": [
+    { "type": "checkbox", "id": "tint", "label": "Tinted background", "default": false },
+    { "type": "checkbox", "id": "no_top", "label": "No top padding", "default": false },
+    { "type": "header", "content": "Side image (founder layout)" },
+    { "type": "checkbox", "id": "portrait_side", "label": "Show image beside the text", "default": false },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_label", "label": "Image description" },
+    { "type": "text", "id": "placeholder", "label": "Placeholder illustration key" },
+    { "type": "select", "id": "tone", "label": "Placeholder tone", "default": "b", "options": [
+      { "value": "a", "label": "A" }, { "value": "b", "label": "B" }, { "value": "c", "label": "C" }, { "value": "d", "label": "D" }
+    ] }
+  ],
+  "blocks": [
+    { "type": "text", "name": "Paragraphs", "settings": [{ "type": "richtext", "id": "text", "label": "Text" }] },
+    { "type": "pull", "name": "Pull quote", "settings": [{ "type": "textarea", "id": "text", "label": "Quote" }] },
+    { "type": "emphasis", "name": "Emphasis line", "settings": [{ "type": "text", "id": "text", "label": "Text" }] },
+    { "type": "signature", "name": "Signature", "settings": [
+      { "type": "text", "id": "name", "label": "Name" }, { "type": "text", "id": "role", "label": "Role" }
+    ] },
+    { "type": "closing", "name": "Closing line", "settings": [{ "type": "text", "id": "text", "label": "Text" }] }
+  ],
+  "presets": [{ "name": "Prose", "blocks": [{ "type": "text" }] }]
+}
+{% endschema %}

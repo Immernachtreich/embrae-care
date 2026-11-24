@@ -1,0 +1,467 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-slider",
+      "settings": {
+        "label": "EMBRAE highlights",
+        "interval": 5
+      },
+      "blocks": {
+        "hero-1": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "asset-00.jpg",
+            "focus": 30,
+            "image_alt": "Woman with natural-looking skin smiling as she applies skincare",
+            "eyebrow": "EMBRAE",
+            "heading": "Skincare that understands your day.",
+            "text": "Designed for the realities of everyday Indian life, our science-led skincare helps support your skin barrier through heat, humidity and daily environmental stress.",
+            "button_label": "Discover EMBRAE →",
+            "button_link": "/pages/our-story",
+            "art": "none"
+          }
+        },
+        "hero-2": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "asset-01.jpg",
+            "focus": 35,
+            "image_alt": "EMBRAE Urban Defense Serum with botanicals",
+            "eyebrow": "Urban Defense Serum",
+            "heading": "Strengthen skin against daily urban stressors.",
+            "text": "A daily serum designed to strengthen the skin barrier, build lasting resilience, and leave skin calm, hydrated and balanced.",
+            "button_label": "Shop Urban Defense Serum →",
+            "button_link": "/products/urban-defense-serum",
+            "art": "p-defend"
+          }
+        },
+        "hero-3": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "asset-03.jpg",
+            "focus": 35,
+            "image_alt": "EMBRAE skincare products with botanicals",
+            "eyebrow": "Complete routine offer",
+            "heading": "A complete routine. A little extra, on us.",
+            "text": "Get all four EMBRAE essentials with a complimentary EMBRAE Travel Pouch, and save ₹297.",
+            "offer_price": "₹4,199",
+            "offer_compare": "₹4,496 bought individually",
+            "button_label": "Shop Daily Urban Defense Routine →",
+            "button_link": "/products/daily-urban-defense-routine",
+            "art": "lineup4pouch",
+            "chip": "Free\ntravel\npouch"
+          }
+        }
+      },
+      "block_order": [
+        "hero-1",
+        "hero-2",
+        "hero-3"
+      ]
+    },
+    "strip": {
+      "type": "value-strip",
+      "settings": {
+        "label": "Why EMBRAE"
+      },
+      "blocks": {
+        "strip-1": {
+          "type": "item",
+          "settings": {
+            "title": "Four step system"
+          }
+        },
+        "strip-2": {
+          "type": "item",
+          "settings": {
+            "title": "Barrier conscious"
+          }
+        },
+        "strip-3": {
+          "type": "item",
+          "settings": {
+            "title": "Climate responsive"
+          }
+        },
+        "strip-4": {
+          "type": "item",
+          "settings": {
+            "title": "Purposeful care"
+          }
+        }
+      },
+      "block_order": [
+        "strip-1",
+        "strip-2",
+        "strip-3",
+        "strip-4"
+      ]
+    },
+    "environment": {
+      "type": "climate-grid",
+      "settings": {
+        "heading": "Your day has many climates. Your skin feels every one.",
+        "text": "From the morning commute to an air-conditioned office, from midday sun to late-night screens, your skin navigates changing conditions throughout the day. EMBRAE brings a considered, science-led approach to everyday skincare.",
+        "label": "Six everyday challenges your skin faces"
+      },
+      "blocks": {
+        "environment-1": {
+          "type": "stressor",
+          "settings": {
+            "icon": "pollution",
+            "title": "Pollution",
+            "text": "Everyday urban exposure can leave skin feeling less comfortable."
+          }
+        },
+        "environment-2": {
+          "type": "stressor",
+          "settings": {
+            "icon": "uv",
+            "title": "UV Rays",
+            "text": "Sun exposure is part of daily life, even when skies are cloudy."
+          }
+        },
+        "environment-3": {
+          "type": "stressor",
+          "settings": {
+            "icon": "heat",
+            "title": "Heat",
+            "text": "Hot, humid conditions can leave skin feeling warm and oily."
+          }
+        },
+        "environment-4": {
+          "type": "stressor",
+          "settings": {
+            "icon": "dry-air",
+            "title": "Dry Air",
+            "text": "Air-conditioning and dry environments can contribute to skin dryness."
+          }
+        },
+        "environment-5": {
+          "type": "stressor",
+          "settings": {
+            "icon": "blue-light",
+            "title": "Blue Light",
+            "text": "Long hours in front of screens are part of modern routines."
+          }
+        },
+        "environment-6": {
+          "type": "stressor",
+          "settings": {
+            "icon": "stress",
+            "title": "Stress",
+            "text": "Busy schedules and everyday demands are part of your skin’s wider context."
+          }
+        }
+      },
+      "block_order": [
+        "environment-1",
+        "environment-2",
+        "environment-3",
+        "environment-4",
+        "environment-5",
+        "environment-6"
+      ]
+    },
+    "system": {
+      "type": "embrae-system",
+      "settings": {
+        "heading": "The EMBRAE System",
+        "eyebrow": "Four steps. One considered routine.",
+        "button_label": "Shop the EMBRAE System",
+        "button_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "system-1": {
+          "type": "product",
+          "settings": {
+            "product": "reset-cleanser",
+            "step": "reset",
+            "text": "Cleanse and prepare. A gentle first step that resets skin.",
+            "button_label": "Shop cleanser →"
+          }
+        },
+        "system-2": {
+          "type": "product",
+          "settings": {
+            "product": "urban-defense-serum",
+            "step": "defend",
+            "text": "Strengthen and defend against everyday environmental stressors.",
+            "button_label": "Shop serum →"
+          }
+        },
+        "system-3": {
+          "type": "product",
+          "settings": {
+            "product": "climate-adapt-moisturizer",
+            "step": "adapt",
+            "text": "Adapt and reinforce. Daily moisture that moves with your climate.",
+            "button_label": "Shop moisturizer →"
+          }
+        },
+        "system-4": {
+          "type": "product",
+          "settings": {
+            "product": "daily-shield-sunscreen",
+            "step": "protect",
+            "text": "Shield and protect with daily SPF 50 PA++++ sun protection.",
+            "button_label": "Shop sunscreen →"
+          }
+        }
+      },
+      "block_order": [
+        "system-1",
+        "system-2",
+        "system-3",
+        "system-4"
+      ]
+    },
+    "steps": {
+      "type": "step-videos",
+      "settings": {
+        "heading": "What each step brings to your skin.",
+        "text": "Four purposeful steps, each designed to play a distinct role in your everyday skincare routine.",
+        "footer": "Real people. Real routines. Real experiences with EMBRAE."
+      },
+      "blocks": {
+        "steps-1": {
+          "type": "step",
+          "settings": {
+            "step": "reset",
+            "title": "Reset",
+            "role": "Cleanse & Prepare",
+            "product": "reset-cleanser",
+            "caption": "Creator using Reset Cleanser",
+            "text": "Wash away the day’s buildup and impurities, so your skin feels fresh, clean and ready for what’s next."
+          }
+        },
+        "steps-2": {
+          "type": "step",
+          "settings": {
+            "step": "defend",
+            "title": "Defend",
+            "role": "Strengthen & Defend",
+            "product": "urban-defense-serum",
+            "caption": "Creator using Urban Defense Serum",
+            "text": "Give your skin barrier daily support to help your skin feel hydrated, balanced and resilient."
+          }
+        },
+        "steps-3": {
+          "type": "step",
+          "settings": {
+            "step": "adapt",
+            "title": "Adapt",
+            "role": "Adapt & Reinforce",
+            "product": "climate-adapt-moisturizer",
+            "caption": "Creator using Climate Adapt Moisturizer",
+            "text": "Replenish the moisture your skin needs to feel soft, comfortable and cared for through changing conditions."
+          }
+        },
+        "steps-4": {
+          "type": "step",
+          "settings": {
+            "step": "protect",
+            "title": "Protect",
+            "role": "Shield & Protect",
+            "product": "daily-shield-sunscreen",
+            "caption": "Creator using Daily Shield Sunscreen",
+            "text": "Make daily sun protection the final step in your morning routine, with SPF 50 PA++++ protection."
+          }
+        }
+      },
+      "block_order": [
+        "steps-1",
+        "steps-2",
+        "steps-3",
+        "steps-4"
+      ]
+    },
+    "daynight": {
+      "type": "day-night",
+      "settings": {
+        "heading": "From first light to lights out.",
+        "text": "Four steps to start your day. Three to wind it down.",
+        "day_label": "MORNING ROUTINE",
+        "night_label": "NIGHT ROUTINE"
+      },
+      "blocks": {
+        "daynight-1": {
+          "type": "day",
+          "settings": {
+            "product": "reset-cleanser",
+            "step": "reset",
+            "step_label": "Reset",
+            "text": "Washes away overnight buildup.",
+            "button_label": "Shop cleanser →"
+          }
+        },
+        "daynight-2": {
+          "type": "day",
+          "settings": {
+            "product": "urban-defense-serum",
+            "step": "defend",
+            "step_label": "Defend",
+            "text": "Supports your skin barrier and hydration.",
+            "button_label": "Shop serum →"
+          }
+        },
+        "daynight-3": {
+          "type": "day",
+          "settings": {
+            "product": "climate-adapt-moisturizer",
+            "step": "adapt",
+            "step_label": "Adapt",
+            "text": "Locks in moisture for all day comfort.",
+            "button_label": "Shop moisturizer →"
+          }
+        },
+        "daynight-4": {
+          "type": "day",
+          "settings": {
+            "product": "daily-shield-sunscreen",
+            "step": "protect",
+            "step_label": "Protect",
+            "text": "Daily broad-spectrum sun protection.",
+            "button_label": "Shop sunscreen →"
+          }
+        },
+        "daynight-5": {
+          "type": "night",
+          "settings": {
+            "product": "reset-cleanser",
+            "step": "reset",
+            "step_label": "Reset",
+            "text": "Washes away the day’s buildup.",
+            "button_label": "Shop cleanser →"
+          }
+        },
+        "daynight-6": {
+          "type": "night",
+          "settings": {
+            "product": "urban-defense-serum",
+            "step": "defend",
+            "step_label": "Defend",
+            "text": "Supports your skin barrier and hydration overnight.",
+            "button_label": "Shop serum →"
+          }
+        },
+        "daynight-7": {
+          "type": "night",
+          "settings": {
+            "product": "climate-adapt-moisturizer",
+            "step": "adapt",
+            "step_label": "Adapt",
+            "text": "Keeps skin feeling comfortable through the night.",
+            "button_label": "Shop moisturizer →"
+          }
+        }
+      },
+      "block_order": [
+        "daynight-1",
+        "daynight-2",
+        "daynight-3",
+        "daynight-4",
+        "daynight-5",
+        "daynight-6",
+        "daynight-7"
+      ]
+    },
+    "quiz": {
+      "type": "quiz-teaser",
+      "settings": {
+        "heading": "Let’s find your routine.",
+        "text": "Your skin, your environment and your routine are all connected. Answer a few simple questions and we’ll help you find where to start with EMBRAE.",
+        "button_label": "Take the skin quiz →",
+        "button_link": "/pages/skin-quiz"
+      }
+    },
+    "ingredients": {
+      "type": "ingredients-feature",
+      "settings": {
+        "heading": "Know what’s inside.",
+        "text": "A closer look at the purposeful ingredients behind EMBRAE formulations.\nWe believe skincare should be easy to understand. Explore the key ingredients we use, why they’re there, and which EMBRAE products contain them.",
+        "feature_eyebrow": "EMBRAE’S SIGNATURE INGREDIENT",
+        "feature_title": "ECTOIN",
+        "feature_text": "Ectoin is EMBRAE’s signature ingredient, selected for its role in helping skin stay hydrated, comfortable and resilient through everyday environmental stress.",
+        "button_label": "Explore our ingredients →",
+        "button_link": "/pages/our-ingredients"
+      },
+      "blocks": {
+        "ingredients-1": {
+          "type": "ingredient",
+          "settings": {
+            "icon": "niacinamide",
+            "title": "Niacinamide",
+            "text": "Supports the skin barrier and helps maintain a more balanced-looking complexion.",
+            "link": "/pages/our-ingredients#letter-N"
+          }
+        },
+        "ingredients-2": {
+          "type": "ingredient",
+          "settings": {
+            "icon": "ceramides",
+            "title": "Ceramides",
+            "text": "Help reinforce the skin’s natural barrier and reduce moisture loss.",
+            "link": "/pages/our-ingredients#letter-C"
+          }
+        },
+        "ingredients-3": {
+          "type": "ingredient",
+          "settings": {
+            "icon": "hyaluronic",
+            "title": "Hyaluronic Acid",
+            "text": "Attracts and holds moisture to help skin feel hydrated, plump and supple.",
+            "link": "/pages/our-ingredients#letter-S"
+          }
+        },
+        "ingredients-4": {
+          "type": "ingredient",
+          "settings": {
+            "icon": "panthenol",
+            "title": "Panthenol",
+            "text": "Helps replenish hydration and keep skin feeling soft and comfortable.",
+            "link": "/pages/our-ingredients#letter-P"
+          }
+        },
+        "ingredients-5": {
+          "type": "ingredient",
+          "settings": {
+            "icon": "beta-glucan",
+            "title": "Beta-Glucan",
+            "text": "Helps hydrate and support a comfortable, healthy-looking skin barrier.",
+            "link": "/pages/our-ingredients#letter-B"
+          }
+        }
+      },
+      "block_order": [
+        "ingredients-1",
+        "ingredients-2",
+        "ingredients-3",
+        "ingredients-4",
+        "ingredients-5"
+      ]
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "A complete routine. A little extra, on us.",
+        "text": "Get all four EMBRAE essentials with a complimentary EMBRAE Travel Pouch, and save ₹297.",
+        "offer_price": "₹4,199",
+        "offer_compare": "₹4,496 bought individually",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "strip",
+    "environment",
+    "system",
+    "steps",
+    "daynight",
+    "quiz",
+    "ingredients",
+    "offer"
+  ]
+}

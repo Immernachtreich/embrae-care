@@ -1,0 +1,51 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {},
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {}
+        },
+        "shop": {
+          "type": "links",
+          "settings": {
+            "heading": "Shop All Products",
+            "menu": "footer-shop"
+          }
+        },
+        "discover": {
+          "type": "links",
+          "settings": {
+            "heading": "Discover",
+            "menu": "footer-discover"
+          }
+        },
+        "policies": {
+          "type": "links",
+          "settings": {
+            "heading": "Policies",
+            "menu": "footer-policies"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "shop",
+        "discover",
+        "policies",
+        "contact"
+      ]
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

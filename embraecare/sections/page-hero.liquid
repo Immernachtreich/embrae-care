@@ -1,0 +1,32 @@
+{%- assign s = section.settings -%}
+<section class="hx">
+  {% render 'ph-media', image: s.image, key: s.placeholder, tone: s.tone, label: s.image_label %}
+  <div class="wrap">
+    {%- if s.eyebrow != blank %}<p class="eyebrow">{{ s.eyebrow | escape }}</p>{% endif -%}
+    <h1 class="h1">{{ s.heading | escape }}</h1>
+    {%- if s.text != blank %}<p class="lead">{{ s.text | escape }}</p>{% endif -%}
+    {%- if s.button_label != blank %}<a class="btn on-dark" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a>{% endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page hero",
+  "tag": "div",
+  "class": "section-hx",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Replaces the placeholder illustration." },
+    { "type": "text", "id": "image_label", "label": "Image description" },
+    { "type": "text", "id": "placeholder", "label": "Placeholder illustration key", "info": "From snippets/ph-art.liquid; used until an image is chosen." },
+    { "type": "select", "id": "tone", "label": "Placeholder tone", "default": "a", "options": [
+      { "value": "a", "label": "A" }, { "value": "b", "label": "B" }, { "value": "c", "label": "C" }, { "value": "d", "label": "D" }
+    ] },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Page title" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "text", "id": "button_link", "label": "Button link", "info": "A URL or an anchor such as #quiz" }
+  ],
+  "presets": [{ "name": "Page hero" }]
+}
+{% endschema %}

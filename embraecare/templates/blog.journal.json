@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "intro": {
+      "type": "page-intro",
+      "settings": {
+        "style": "jr-top",
+        "heading": "The Journal",
+        "text": "Clear, calm notes on skin, routines and everyday city days."
+      }
+    },
+    "latest": {
+      "type": "journal-index",
+      "settings": {
+        "side_heading": "Also new",
+        "side_count": 4,
+        "grid_heading": "Fresh from the Journal",
+        "grid_text": "New notes on skin, routines and everyday city days.",
+        "grid_visible": 6,
+        "more_label": "Discover more notes",
+        "read_label": "Read the note →"
+      }
+    },
+    "most": {
+      "type": "journal-curated",
+      "settings": {
+        "style": "most",
+        "heading": "Most read",
+        "text": "The articles our readers come back to."
+      },
+      "blocks": {
+        "most-1": {
+          "type": "article",
+          "settings": {
+            "article": "journal/what-a-long-hot-commute-does-to-your-skin"
+          }
+        },
+        "most-2": {
+          "type": "article",
+          "settings": {
+            "article": "journal/why-skin-feels-oily-and-dry-at-the-same-time"
+          }
+        },
+        "most-3": {
+          "type": "article",
+          "settings": {
+            "article": "journal/reset-defend-adapt-protect-the-four-steps-explained"
+          }
+        },
+        "most-4": {
+          "type": "article",
+          "settings": {
+            "article": "journal/why-sunscreen-feels-heavy-in-humid-weather"
+          }
+        },
+        "most-5": {
+          "type": "article",
+          "settings": {
+            "article": "journal/how-to-patch-test-a-new-product"
+          }
+        }
+      },
+      "block_order": [
+        "most-1",
+        "most-2",
+        "most-3",
+        "most-4",
+        "most-5"
+      ]
+    },
+    "picked": {
+      "type": "journal-curated",
+      "settings": {
+        "style": "picked",
+        "heading": "Picked for you",
+        "text": "Three good places to begin, chosen by us.",
+        "read_label": "Read the note →"
+      },
+      "blocks": {
+        "picked-1": {
+          "type": "article",
+          "settings": {
+            "article": "journal/simple-routine-or-ten-steps",
+            "label": "New to a routine"
+          }
+        },
+        "picked-2": {
+          "type": "article",
+          "settings": {
+            "article": "journal/reset-defend-adapt-protect-the-four-steps-explained",
+            "label": "Know the steps"
+          }
+        },
+        "picked-3": {
+          "type": "article",
+          "settings": {
+            "article": "journal/how-to-patch-test-a-new-product",
+            "label": "Before you begin"
+          }
+        }
+      },
+      "block_order": [
+        "picked-1",
+        "picked-2",
+        "picked-3"
+      ]
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Less to figure out. More to feel good about.",
+        "text": "Meet the four-step Urban Defense System, built around heat, humidity and long days.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "latest",
+    "most",
+    "picked",
+    "offer"
+  ]
+}

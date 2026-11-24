@@ -1,0 +1,128 @@
+{%- liquid
+  assign mf = product.metafields.embrae
+  assign step = mf.step.value | default: 'reset'
+-%}
+<section class="pd-sec" id="inside">
+  <div class="wrap">
+    <div class="itabs" role="tablist" aria-label="{{ 'products.about' | t: title: product.title }}">
+      <button class="itab" type="button" role="tab" id="it1" aria-selected="true" aria-controls="ip1">{{ section.settings.craft_label | escape }}</button>
+      <button class="itab" type="button" role="tab" id="it2" aria-selected="false" aria-controls="ip2">{{ step | capitalize }}</button>
+      <button class="itab" type="button" role="tab" id="it3" aria-selected="false" aria-controls="ip3">{{ section.settings.essentials_label | escape }}</button>
+    </div>
+    <div class="ipanel on" id="ip1" role="tabpanel" aria-labelledby="it1">
+      {%- case step -%}
+        {%- when 'defend' %}{% render 'pdp-art-defend', part: 'craft' %}
+        {%- when 'adapt' %}{% render 'pdp-art-adapt', part: 'craft' %}
+        {%- when 'protect' %}{% render 'pdp-art-protect', part: 'craft' %}
+        {%- else %}{% render 'pdp-art-reset', part: 'craft' %}
+      {%- endcase -%}
+    </div>
+    <div class="ipanel" id="ip2" role="tabpanel" aria-labelledby="it2">
+      {%- case step -%}
+        {%- when 'defend' %}{% render 'pdp-art-defend', part: 'tab' %}
+        {%- when 'adapt' %}{% render 'pdp-art-adapt', part: 'tab' %}
+        {%- when 'protect' %}{% render 'pdp-art-protect', part: 'tab' %}
+        {%- else %}{% render 'pdp-art-reset', part: 'tab' %}
+      {%- endcase -%}
+    </div>
+    <div class="ipanel" id="ip3" role="tabpanel" aria-labelledby="it3">
+      <div class="sec-head reveal"><h2 class="h2">{{ 'products.at_a_glance' | t: title: product.title }}</h2></div>
+      {%- if mf.claims != blank -%}
+        <ul class="isrow reveal">
+          {%- for c in mf.claims.value -%}
+            <li><span class="md ic">{% render 'pdp-icon', name: c.icon.value %}</span><b>{{ c.label.value | escape }}</b></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <div class="acc">
+        {%- if mf.howto != blank -%}
+          <details open id="howto"><summary>{{ 'products.how_to_use' | t }}</summary><div class="ab"><div class="hw">
+            <div class="hw-h"><div class="hw-pills">{% for p in mf.howto_pills.value %}<span>{{ p | escape }}</span>{% endfor %}</div></div>
+            <div class="hw-s">
+              {%- for h in mf.howto.value -%}
+                <div class="hw-c"><span class="hw-ic">{% render 'pdp-icon', name: h.icon.value %}<em>{{ forloop.index }}</em></span><div class="hw-b"><h4>{{ h.title.value | escape }}</h4><p>{{ h.text.value }}</p></div></div>
+              {%- endfor -%}
+            </div>
+          </div></div></details>
+        {%- endif -%}
+        {%- if mf.inci != blank -%}
+          <details open id="fullIng"><summary>{{ 'products.full_ingredients' | t }}</summary><div class="ab"><p class="inci-p">{{ mf.inci.value | escape }}</p></div></details>
+        {%- endif -%}
+        {%- if mf.storage != blank -%}
+          <details><summary>{{ 'products.storage' | t }}</summary><div class="ab">{{ mf.storage.value | newline_to_br }}</div></details>
+        {%- endif -%}
+        {%- if section.settings.shipping != blank -%}
+          <details><summary>{{ 'products.shipping_returns' | t }}</summary><div class="ab">{{ section.settings.shipping }}</div></details>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% javascript %}
+  (function () {
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function cl(x) { return Math.max(0, Math.min(1, x)); }
+    function init(root) {
+      var sec = root.querySelector('#inside'); if (!sec || sec._pdp) return; sec._pdp = true;
+      // Craft / step / Essentials tabs
+      var it = [].slice.call(sec.querySelectorAll('.itab'));
+      it.forEach(function (b) { b.addEventListener('click', function () { it.forEach(function (x) { x.setAttribute('aria-selected', x === b); document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on', x === b); }); }); });
+      // drag-compare widgets
+      [].forEach.call(sec.querySelectorAll('[data-cmp]'), function (c) {
+        var r = c.querySelector('.rg'); if (!r) return;
+        function u() { c.style.setProperty('--pos', r.value + '%'); }
+        r.addEventListener('input', u); u();
+        var h = c.querySelector('.hint'); r.addEventListener('pointerdown', function () { if (h) h.style.opacity = 0; });
+      });
+      // serum craft stepper
+      var cr = sec.querySelector('#cr');
+      if (cr) {
+        var ds = [].slice.call(cr.querySelectorAll('.d')), cur = 1;
+        var setS = function (n) { cur = n; cr.className = cr.className.replace(/\bs[123]\b/, 's' + n); ds.forEach(function (b, i) { var on = i + 1 === n; b.classList.toggle('on', on); b.classList.toggle('done', i + 1 < n); b.setAttribute('aria-selected', on); }); };
+        ds.forEach(function (b) { b.addEventListener('click', function () { setS(+b.getAttribute('data-s')); }); });
+        cr.addEventListener('animationend', function (e) { if (rm) return; if (e.animationName === 'crprog' || e.animationName === 'crend') setS(cur % 3 + 1); });
+      }
+      // moisturizer / sunscreen day-arc rail
+      var ad = sec.querySelector('#ad'), st = sec.querySelector('#adst');
+      if (ad && st) {
+        var touch = window.matchMedia && matchMedia('(hover: none), (pointer: coarse)').matches;
+        var tgt = 0, now = 0, raf = 0, used = false, sweep = !touch, sunEl = sec.querySelector('#adsun');
+        if (touch) ad.classList.add('touch');
+        var paint = function () { if (sunEl) sunEl.setAttribute('transform', 'translate(' + (120 + 760 * now).toFixed(1) + ' ' + (410 - 320 * Math.sin(Math.PI * now)).toFixed(1) + ')'); st.style.setProperty('--p', now.toFixed(4)); st.style.setProperty('--oh', cl(1 - now * 2).toFixed(3)); st.style.setProperty('--od', (1 - Math.abs(now - .5) * 2).toFixed(3)); st.style.setProperty('--oc', cl(now * 2 - 1).toFixed(3)); };
+        var loop = function () { now += (tgt - now) * .12; if (Math.abs(tgt - now) < .0004) now = tgt; paint(); raf = (now !== tgt) ? requestAnimationFrame(loop) : 0; };
+        var go = function (v) { tgt = cl(v); if (!raf) raf = requestAnimationFrame(loop); };
+        var mark = function () { if (!used) { used = true; sweep = false; st.classList.add('used'); } };
+        if (touch) {
+          var tick = false;
+          var onScroll = function () { if (tick) return; tick = true; requestAnimationFrame(function () { tick = false; var r = st.getBoundingClientRect(), vh = window.innerHeight; var v = (.85 * vh - r.top) / (.7 * vh + r.height); if (r.bottom > 0 && r.top < vh) { mark(); go(v); } }); };
+          window.addEventListener('scroll', onScroll, { passive: true }); window.addEventListener('resize', onScroll); onScroll();
+        } else {
+          st.addEventListener('pointermove', function (e) { var r = st.getBoundingClientRect(); mark(); go((e.clientX - r.left) / r.width * 1.16 - .08); });
+        }
+        paint();
+        if (!touch && 'IntersectionObserver' in window && !rm) {
+          var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting && !used) { io.disconnect(); setTimeout(function () { if (!sweep) return; go(1); setTimeout(function () { if (sweep) go(0); }, 3200); }, 400); } }, { threshold: .5 });
+          io.observe(st);
+        }
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+    document.addEventListener('shopify:section:load', function (e) { init(e.target); });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product: inside tabs",
+  "tag": "div",
+  "class": "section-pdp-inside",
+  "settings": [
+    { "type": "text", "id": "craft_label", "label": "First tab label", "default": "Craft" },
+    { "type": "text", "id": "essentials_label", "label": "Last tab label", "default": "Essentials" },
+    { "type": "richtext", "id": "shipping", "label": "Shipping and returns", "default": "<p>Free shipping on orders above ₹999.</p><p>For returns and refunds, please read our <a href=\"/policies/refund-policy\">Return &amp; Refund Policy</a>.</p>" }
+  ],
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "Product: inside tabs" }]
+}
+{% endschema %}

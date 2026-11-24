@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "s1": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "our-story-1",
+        "tone": "b",
+        "image_label": "Hero image: an everyday moment",
+        "eyebrow": "",
+        "heading": "Our Story",
+        "text": "Skincare made for the life you actually live.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s2": {
+      "type": "page-split",
+      "settings": {
+        "placeholder": "our-story-2",
+        "tone": "a",
+        "image_label": "Lifestyle: changing days",
+        "wide": true,
+        "reverse": false,
+        "eyebrow": "",
+        "heading": "",
+        "text": "<p>Your days change. Your surroundings change. Your skin experiences it all.</p><p>Heat, humidity, pollution, air conditioning, travel and changing seasons all shape how skin feels from one day to the next.</p><p>EMBRAE was created to make everyday skincare feel simpler, more thoughtful and easier to live with.</p>",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s3": {
+      "type": "page-band",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Made to adapt.",
+        "text": ""
+      }
+    },
+    "s4": {
+      "type": "page-split",
+      "settings": {
+        "placeholder": "our-story-3",
+        "tone": "d",
+        "image_label": "Lifestyle: care within daily life",
+        "wide": false,
+        "reverse": true,
+        "eyebrow": "",
+        "heading": "",
+        "text": "<p>EMBRAE began with one simple intention: to make everyday skincare easier to live with.</p><p>Not by asking people to do more. But by helping them understand what matters. By creating products with a clear purpose. By building a routine that feels natural to follow. And by making space for something that is often overlooked: the feeling of taking care of yourself.</p><p>That is why EMBRAE is a routine first, and a collection of products second. Four steps, each with a clear role, so there is less to figure out and more room to simply care for yourself.</p>",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s5": {
+      "type": "page-cards",
+      "settings": {
+        "tint": true,
+        "no_top": false,
+        "style": "st4",
+        "heading": "Four steps. One considered routine.",
+        "button_label": "Shop Now →",
+        "button_link": "/pages/the-embrae-system"
+      },
+      "blocks": {
+        "s5-1": {
+          "type": "card",
+          "settings": {
+            "title": "Reset",
+            "text": "Cleanse & Prepare",
+            "link_label": "Shop Reset Now →",
+            "link": "/products/reset-cleanser"
+          }
+        },
+        "s5-2": {
+          "type": "card",
+          "settings": {
+            "title": "Defend",
+            "text": "Strengthen & Defend",
+            "link_label": "Shop Defend Now →",
+            "link": "/products/urban-defense-serum"
+          }
+        },
+        "s5-3": {
+          "type": "card",
+          "settings": {
+            "title": "Adapt",
+            "text": "Adapt & Reinforce",
+            "link_label": "Shop Adapt Now →",
+            "link": "/products/climate-adapt-moisturizer"
+          }
+        },
+        "s5-4": {
+          "type": "card",
+          "settings": {
+            "title": "Protect",
+            "text": "Shield & Protect",
+            "link_label": "Shop Protect Now →",
+            "link": "/products/daily-shield-sunscreen"
+          }
+        }
+      },
+      "block_order": [
+        "s5-1",
+        "s5-2",
+        "s5-3",
+        "s5-4"
+      ]
+    },
+    "s6": {
+      "type": "page-prose",
+      "settings": {
+        "tint": false,
+        "no_top": false
+      },
+      "blocks": {
+        "s6-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EMBRAE is rooted in the idea of embracing yourself: your changing days, your individuality, and the small moments of care that help you feel like yourself again.</p><p>Because life doesn’t always slow down for us. Sometimes, care has to find its place within the life we’re already living.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s6-1"
+      ]
+    },
+    "s7": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Ready when you are.",
+        "text": "The story, as a routine you can start today.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7"
+  ]
+}

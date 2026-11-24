@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "s1": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "why-we-exist-1",
+        "tone": "c",
+        "image_label": "Hero image: city morning light",
+        "eyebrow": "",
+        "heading": "Why We Exist",
+        "text": "Your skin doesn’t live in a perfect world.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s2": {
+      "type": "page-prose",
+      "settings": {
+        "tint": false,
+        "no_top": false
+      },
+      "blocks": {
+        "s2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Some days begin in heat and humidity. Some take you through polluted commutes, long hours in air conditioning and constant movement between indoors and out. Then there are changing seasons, travel, late nights, busy schedules and everything else life brings along.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s2-1"
+      ]
+    },
+    "s3": {
+      "type": "page-cards",
+      "settings": {
+        "tint": true,
+        "no_top": false,
+        "style": "mg",
+        "heading": "Your skin experiences all of it."
+      },
+      "blocks": {
+        "s3-1": {
+          "type": "card",
+          "settings": {
+            "title": "Heat and humidity",
+            "text": "Some days begin in heat and humidity.",
+            "link_label": "",
+            "link": "",
+            "placeholder": "why-we-exist-2",
+            "tone": "a",
+            "image_label": "Image: Heat and humidity"
+          }
+        },
+        "s3-2": {
+          "type": "card",
+          "settings": {
+            "title": "Polluted commutes",
+            "text": "Long commutes and constant movement between indoors and out.",
+            "link_label": "",
+            "link": "",
+            "placeholder": "why-we-exist-3",
+            "tone": "d",
+            "image_label": "Image: Polluted commutes"
+          }
+        },
+        "s3-3": {
+          "type": "card",
+          "settings": {
+            "title": "Air conditioning",
+            "text": "Long hours in air conditioning.",
+            "link_label": "",
+            "link": "",
+            "placeholder": "why-we-exist-4",
+            "tone": "b",
+            "image_label": "Image: Air conditioning"
+          }
+        },
+        "s3-4": {
+          "type": "card",
+          "settings": {
+            "title": "Changing seasons",
+            "text": "Summer heat, monsoon humidity and winter dryness.",
+            "link_label": "",
+            "link": "",
+            "placeholder": "why-we-exist-5",
+            "tone": "c",
+            "image_label": "Image: Changing seasons"
+          }
+        }
+      },
+      "block_order": [
+        "s3-1",
+        "s3-2",
+        "s3-3",
+        "s3-4"
+      ]
+    },
+    "s4": {
+      "type": "page-prose",
+      "settings": {
+        "tint": false,
+        "no_top": false
+      },
+      "blocks": {
+        "s4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Yet skincare is often built around the idea that every day, every environment and every skin need is the same. We didn’t think that made sense.</p><p>And along the way, routines tend to grow longer. More products, more steps, and not always a clear reason for each one.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s4-1"
+      ]
+    },
+    "s5": {
+      "type": "page-band",
+      "settings": {
+        "eyebrow": "EMBRAE was born from a simple idea",
+        "heading": "",
+        "text": "Skincare should fit into your life, not make your life fit around skincare."
+      }
+    },
+    "s6": {
+      "type": "page-split",
+      "settings": {
+        "placeholder": "why-we-exist-6",
+        "tone": "b",
+        "image_label": "Lifestyle: a few minutes for yourself",
+        "wide": true,
+        "reverse": true,
+        "eyebrow": "The EMBRAE idea",
+        "heading": "",
+        "text": "<p>We wanted to create care that feels considered without feeling complicated. Products with a clear purpose. A routine that is easy to understand. Care that you can actually return to, day after day.</p><p>That is why we begin with how you actually live: the heat, the commute, the long days indoors, the travel in between. From there, everything is shaped around purpose and simplicity, so your routine feels clear and easy to come back to.</p><p>Because when life is already full, your skincare routine shouldn’t feel like another responsibility. It should feel like a few minutes that belong to you.</p>",
+        "button_label": "Shop Now →",
+        "button_link": "/pages/the-embrae-system"
+      }
+    },
+    "s7": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Care that fits your day.",
+        "text": "Meet the four-step Urban Defense System, built around heat, humidity and long days.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7"
+  ]
+}

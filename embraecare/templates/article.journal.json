@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-main",
+      "settings": {
+        "toc_label": "In this note",
+        "reset": "reset-cleanser",
+        "defend": "urban-defense-serum",
+        "adapt": "climate-adapt-moisturizer",
+        "protect": "daily-shield-sunscreen",
+        "bundle": "daily-urban-defense-routine"
+      }
+    },
+    "extras": {
+      "type": "article-extras",
+      "settings": {
+        "quiz_eyebrow": "Not sure where to start?",
+        "quiz_heading": "Find your routine in ten short questions.",
+        "quiz_button": "Take the Skin Quiz →",
+        "quiz_link": "/pages/skin-quiz",
+        "bundle": "daily-urban-defense-routine",
+        "routine_eyebrow": "Make it a routine",
+        "routine_heading": "The Daily Urban Defense Routine",
+        "routine_text": "All four steps, Reset, Defend, Adapt and Protect, with a free EMBRAE Travel Pouch. [price] instead of [value], so you save [saving].",
+        "routine_button": "Shop Daily Urban Defense Routine →",
+        "related_heading": "More from the Journal"
+      }
+    },
+    "offer": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Less to figure out. More to feel good about.",
+        "text": "Meet the four-step Urban Defense System, built around heat, humidity and long days.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "extras",
+    "offer"
+  ]
+}

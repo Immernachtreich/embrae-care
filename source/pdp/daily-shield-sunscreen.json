@@ -1,0 +1,207 @@
+{
+  "handle": "daily-shield-sunscreen",
+  "step": "protect",
+  "eyebrow": "Daily sunscreen",
+  "tagline": "A daily sunscreen designed to provide high UV protection while supporting the skin barrier and keeping skin comfortable.",
+  "description": "Designed for everyday use, DAILY SHIELD SUNSCREEN provides broad-spectrum UVA and UVB protection with SPF 50 PA++++. Its sweat-resistant cream-gel formula is designed for comfortable daily wear, with a non-greasy finish.",
+  "glance": [
+    [
+      "Size",
+      "50 g"
+    ],
+    [
+      "Texture / Finish",
+      "Cream-Gel"
+    ],
+    [
+      "When to use",
+      "AM only"
+    ]
+  ],
+  "image_alt": "EMBRAE Daily Shield Sunscreen SPF 50 PA++++, 50 g cream-gel sunscreen",
+  "benefits": [
+    "Broad spectrum UVA and UVB protection",
+    "SPF 50 PA++++ sun protection",
+    "Sweat-resistant cream-gel formula",
+    "Non-greasy finish"
+  ],
+  "gallery_ingredients": [
+    "rice-water",
+    "ceramide-np",
+    "ectoin",
+    "niacinamide",
+    "sodium-hyaluronate",
+    "allantoin"
+  ],
+  "texture_caption": "Cream-gel texture",
+  "key_ingredients": [
+    {
+      "key": "rice-water",
+      "name": "Rice Water",
+      "benefit": "Comforts",
+      "descriptor": "Rice extract"
+    },
+    {
+      "key": "ceramides",
+      "name": "Ceramides",
+      "benefit": "Barrier",
+      "descriptor": "Ceramide NP, AP and EOP"
+    },
+    {
+      "key": "ectoin",
+      "name": "Ectoin",
+      "benefit": "Resilience",
+      "descriptor": "Our signature ingredient"
+    }
+  ],
+  "quick_steps": [
+    {
+      "icon": "apply",
+      "label": "Apply"
+    },
+    {
+      "icon": "blend",
+      "label": "Blend"
+    },
+    {
+      "icon": "reapply",
+      "label": "Reapply"
+    }
+  ],
+  "made_for": [
+    {
+      "icon": "hot-humid-days",
+      "label": "Sunny days"
+    },
+    {
+      "icon": "sweaty-days",
+      "label": "Sweaty days"
+    },
+    {
+      "icon": "long-days-outside",
+      "label": "Long days outside"
+    }
+  ],
+  "routine_heading": "Protect is where the day begins",
+  "routine_text": "Add Reset, Defend and Adapt to complete the routine.",
+  "tabs": [
+    "Craft",
+    "Protect",
+    "Essentials"
+  ],
+  "essentials_heading": "Daily Shield Sunscreen SPF 50 PA++++, at a glance.",
+  "claims": [
+    {
+      "icon": "asset-19.png",
+      "label": "Sweat resistant"
+    },
+    {
+      "icon": "asset-18.png",
+      "label": "Lightweight"
+    },
+    {
+      "icon": "asset-20.png",
+      "label": "Water resistant"
+    },
+    {
+      "icon": "asset-21.png",
+      "label": "No white cast"
+    },
+    {
+      "icon": "asset-22.png",
+      "label": "Non-sticky"
+    },
+    {
+      "icon": "asset-23.png",
+      "label": "Fragrance free"
+    },
+    {
+      "icon": "cruelty-free",
+      "label": "Cruelty free"
+    }
+  ],
+  "howto_pills": [
+    "AM only",
+    "Final step"
+  ],
+  "howto": [
+    {
+      "icon": "apply",
+      "title": "Apply",
+      "text": "Dispense an adequate amount and apply generously and evenly to face and neck 15 minutes before sun exposure."
+    },
+    {
+      "icon": "blend",
+      "title": "Blend",
+      "text": "Gently blend until fully absorbed."
+    },
+    {
+      "icon": "reapply",
+      "title": "Reapply",
+      "text": "Reapply every 2 hours if exposed to sun."
+    }
+  ],
+  "inci": "Purified Water, Ethylhexyl Methoxycinnamate, Octyl Methoxycinnamate, Glycerin, Diethylamino Hydroxybenzoyl Hexyl Benzoate, Aloe Barbadensis Leaf Extract, Oryza Sativa (Rice) Extract, C12-15 Alkyl Benzoate, Propylene Glycol, Cucumis Sativus (Cucumber) Fruit Extract, Niacinamide, Sodium Hyaluronate, Acrylates Copolymer, Triethanolamine, Ethyl Ascorbic Acid, Methylene Bis-Benzotriazolyl Tetramethylbutylphenol, Ceramide EOP, Ceramide NP, Ceramide AP, Disodium EDTA, Allantoin, Alpha-Arbutin, Ectoin.",
+  "storage": "<b>Storage instructions</b><br/>Store below 30°C in a cool, dry place. Protect from direct sunlight and excessive heat. Keep the cap closed when not in use.<br/><br/><b>Caution</b><br/>Avoid contact with eyes. In case of contact, rinse thoroughly with water.<br/><br/><b>Note</b><br/>Perform a patch test before use. Discontinue if irritation occurs.<br/><br/><b>For external use only.</b>",
+  "scenes": [
+    {
+      "title": "Sunny commutes",
+      "text": "Broad spectrum protection for the daily commute."
+    },
+    {
+      "title": "Sweaty summers",
+      "text": "A sweat-resistant cream-gel for hot, busy days."
+    },
+    {
+      "title": "Long days outside",
+      "text": "Reapply every 2 hours if exposed to sun."
+    }
+  ],
+  "info": [
+    {
+      "icon": "product-type",
+      "label": "Product type",
+      "text": "Daily face sunscreen"
+    },
+    {
+      "icon": "net-quantity",
+      "label": "Net quantity",
+      "text": "50 g"
+    },
+    {
+      "icon": "shelf-life",
+      "label": "Shelf life",
+      "text": "24 months from date of manufacture"
+    },
+    {
+      "icon": "manufacturer",
+      "label": "Manufacturer",
+      "text": "QSD Formulations Pvt. Ltd. (An GMP Certified), Plot No. 1256, Industrial Estate, HSIIDC, Rai, Distt. Sonipat-131029 (Haryana)"
+    },
+    {
+      "icon": "marketed-by",
+      "label": "Marketed by",
+      "text": "EMBRAE CARE, Venkatesh Graffiti Glover, Mundhwa, Pune-411036, Maharashtra, India"
+    },
+    {
+      "icon": "manufacturing-licence-no",
+      "label": "Manufacturing licence no.",
+      "text": "COS8HR2024000012"
+    },
+    {
+      "icon": "country-of-origin",
+      "label": "Country of origin",
+      "text": "India"
+    },
+    {
+      "icon": "customer-care",
+      "label": "Customer care",
+      "text": "Email: care@embraecare.com<br/>Phone / WhatsApp: +91 86004 11991"
+    },
+    {
+      "icon": "quality-standards",
+      "label": "Quality standards",
+      "text": "GMP Certified, FDA Registered, ISO Certified"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "sections": {
+    "hero": {
+      "type": "system-hero",
+      "settings": {
+        "eyebrow": "The EMBRAE System",
+        "heading": "Four steps.",
+        "subheading": "One Urban Defense Routine",
+        "text": "A simple daily routine made for Indian city life: the heat, the humidity, the long commute and the air-conditioned office. Each step has one clear role, so you always know what comes next.",
+        "button_label": "Start with Reset ↓",
+        "button_link": "#reset"
+      }
+    },
+    "day": {
+      "type": "system-day-night",
+      "settings": {
+        "eyebrow": "One routine, day and night",
+        "heading": "Simple enough to repeat every day.",
+        "text": "Four steps in the morning. Three at night. A considered routine that fits into everyday life.",
+        "morning": "Morning",
+        "morning_steps": "4 steps",
+        "night": "Night",
+        "night_steps": "3 steps",
+        "morning_only": "Morning only"
+      }
+    },
+    "steps": {
+      "type": "system-steps",
+      "settings": {
+        "nav_label": "The four steps",
+        "final_label": "Complete your routine",
+        "final_link": "#routine"
+      },
+      "blocks": {
+        "steps-1": {
+          "type": "step",
+          "settings": {
+            "step": "reset",
+            "product": "reset-cleanser",
+            "tag": "Cleanse & Prepare",
+            "role": "Gently cleanse away daily buildup and impurities, leaving skin feeling fresh, comfortable and ready for the steps that follow.",
+            "feels": "Clear gel wash",
+            "use": "Morning and night",
+            "fits": "First step in your routine",
+            "points": "Removes daily environmental buildup and impurities.\nCleanses without unnecessarily stripping the skin.\nLeaves skin feeling clean, balanced and refreshed.",
+            "ingredients": "Niacinamide | Helps support the skin barrier and maintain a balanced-looking complexion.\nPanthenol | Helps support hydration and leave skin feeling comfortable.\nEctoin | EMBRAE’s signature ingredient, selected to support skin hydration and resilience.",
+            "how": "Pump 1 to 2 times into wet hands.\nMassage over a damp face and neck for 30 to 60 seconds, avoiding the eye area.\nRinse thoroughly with water and pat dry.",
+            "note": "",
+            "idea": "A day in the city can leave skin feeling weighed down by dust, sweat and daily buildup. Reset is designed to cleanse without unnecessarily stripping the skin, leaving it feeling fresh, comfortable and ready for the steps that follow.",
+            "tint_1": "#E4F3EF",
+            "tint_2": "#F6E6DD"
+          }
+        },
+        "steps-2": {
+          "type": "step",
+          "settings": {
+            "step": "defend",
+            "product": "urban-defense-serum",
+            "tag": "Strengthen & Defend",
+            "role": "Support your skin barrier and help your skin feel hydrated, calm and balanced through everyday environmental stress.",
+            "feels": "Lightweight, fast-absorbing serum",
+            "use": "Morning and night",
+            "fits": "After cleansing, before moisturizer",
+            "points": "Helps support the skin barrier.\nHelps maintain hydration and a balanced-looking complexion.\nDesigned for a lightweight feel in humid conditions.",
+            "ingredients": "Niacinamide | Helps support the skin barrier and maintain a balanced-looking complexion.\nHyaluronic Acid | Supplied as Sodium Hyaluronate. Helps attract and retain moisture for hydrated, comfortable-feeling skin.\nEctoin | EMBRAE’s signature ingredient, selected to support skin hydration and resilience.",
+            "how": "Dispense 1 to 2 pumps onto clean, dry skin.\nGently press and pat over face and neck until fully absorbed.\nFollow with moisturizer.",
+            "note": "",
+            "idea": "From crowded commutes to hot, humid afternoons, everyday Indian life puts your skin through a lot. Defend helps support your skin barrier against everyday environmental stressors with lightweight skincare designed for daily use.",
+            "tint_1": "#EEF1EC",
+            "tint_2": "#E2F0EB"
+          }
+        },
+        "steps-3": {
+          "type": "step",
+          "settings": {
+            "step": "adapt",
+            "product": "climate-adapt-moisturizer",
+            "tag": "Adapt & Reinforce",
+            "role": "Replenish the moisture your skin needs to feel soft, comfortable and balanced as your environment changes.",
+            "feels": "Breathable gel-cream",
+            "use": "Morning and night",
+            "fits": "After serum",
+            "points": "Helps support the skin barrier.\nReplenishes moisture as environmental conditions change.\nLeaves skin feeling soft, balanced and comfortable.",
+            "ingredients": "Squalane | Helps moisturize the skin, leaving it feeling soft and comfortable.\nPentavitin | Listed as Saccharide Isomerate. A humectant that helps attract and retain moisture.\nEctoin | EMBRAE’s signature ingredient, selected to support skin hydration and resilience.",
+            "how": "Dispense 1 to 2 pumps onto clean skin.\nSmooth evenly over face and neck, gently massaging in upward circular motions until fully absorbed.\nIn the morning, sunscreen comes next.",
+            "note": "Contains sweet almond oil.",
+            "idea": "One day can take your skin from outdoor heat to an air-conditioned office and back into humid conditions. Adapt helps replenish daily moisture and keep skin feeling comfortable as your environment changes.",
+            "tint_1": "#F8E3D9",
+            "tint_2": "#EAF4F0"
+          }
+        },
+        "steps-4": {
+          "type": "step",
+          "settings": {
+            "step": "protect",
+            "product": "daily-shield-sunscreen",
+            "tag": "Shield & Protect",
+            "role": "Make daily sun protection the final step in your morning routine, with SPF 50 PA++++ protection.",
+            "feels": "Cream-gel, non-greasy finish",
+            "use": "Morning, as the final step",
+            "fits": "After moisturizer",
+            "points": "Provides SPF 50 PA++++ sun protection against UV rays.\nOffers a cream-gel texture with a non-greasy finish.\nDesigned for comfortable everyday wear.",
+            "ingredients": "Rice Extract | Derived from rice and included in the sunscreen formulation.\nCeramides | Ceramide NP, AP and EOP. Used as part of EMBRAE’s ceramide system to support barrier care.\nEctoin | EMBRAE’s signature ingredient, selected to support skin hydration and resilience.",
+            "how": "Apply generously and evenly to face and neck, 15 minutes before sun exposure.\nGently blend until fully absorbed.\nReapply every 2 hours if exposed to sun. Use daily as the final step of your AM routine.",
+            "note": "Sunscreen is one part of sun protection and does not provide total protection. Use alongside shade and protective clothing.",
+            "idea": "In India, sun exposure is part of everyday life, not just the peak of summer. Protect makes daily sun protection an essential final step in your morning routine, helping you care for your skin before stepping out.",
+            "tint_1": "#FBEBD9",
+            "tint_2": "#E4F3EF"
+          }
+        }
+      },
+      "block_order": [
+        "steps-1",
+        "steps-2",
+        "steps-3",
+        "steps-4"
+      ]
+    },
+    "routine": {
+      "type": "pdp-offer-banner",
+      "settings": {
+        "heading": "All four steps. One complete routine.",
+        "text": "Get Reset, Defend, Adapt and Protect together with a complimentary EMBRAE Travel Pouch, and save ₹297.",
+        "offer_price": "₹4,199",
+        "offer_compare": "₹4,496 individually",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "chip": "Free\ntravel\npouch",
+        "separator": false,
+        "style": "sy-fin",
+        "anchor": "routine"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "day",
+    "steps",
+    "routine"
+  ]
+}

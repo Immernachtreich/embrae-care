@@ -1,0 +1,66 @@
+{%- liquid
+  assign s = section.settings
+  assign side_count = s.side_count
+  assign grid_offset = side_count | plus: 1
+-%}
+{%- comment -%} Featured: the newest note, then the next few beside it; the grid continues with the rest, newest first. {%- endcomment -%}
+<section class="jr-feat">
+  <div class="wrap jr-hero">
+    {%- for a in blog.articles limit: 1 -%}
+      <a class="jr-lead reveal" href="{{ a.url }}" data-stage="{{ a.metafields.embrae.stage.value }}"><div class="jr-img jr-li">{% render 'journal-thumb', post: a, ctx: 'lead' %}<span class="jr-ph">{{ 'blogs.article.image_placeholder' | t }}</span></div><div class="jr-lt"><div class="jr-m">{% render 'journal-date', date: a.published_at, class: 'jr-d' %}<span>{{ a.metafields.embrae.read_time.value | escape }}</span></div><h2>{{ a.title | escape }}</h2><p>{{ a.excerpt | strip_html | strip }}</p><span class="jr-rd">{{ s.read_label | escape }}</span></div></a>
+    {%- endfor -%}
+    <div class="jr-side reveal"><p class="jr-sh">{{ s.side_heading | escape }}</p>
+      {%- for a in blog.articles offset: 1 limit: side_count -%}
+        <a class="jr-si" href="{{ a.url }}" data-stage="{{ a.metafields.embrae.stage.value }}"><div class="jr-img jr-th">{% render 'journal-thumb', post: a, ctx: 'thumb' %}</div><div class="jr-sb"><div class="jr-m">{% render 'journal-date', date: a.published_at, class: 'jr-d' %}<span>{{ a.metafields.embrae.read_time.value | escape }}</span></div><h3>{{ a.title | escape }}</h3></div></a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<section class="pg jr-fresh">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 class="h2">{{ s.grid_heading | escape }}</h2>{% if s.grid_text != blank %}<p class="lead2">{{ s.grid_text | escape }}</p>{% endif %}</div>
+    <div class="jr-grid" id="jr-grid">
+      {%- for a in blog.articles offset: grid_offset limit: 50 -%}
+        <article class="jr-card" data-stage="{{ a.metafields.embrae.stage.value }}"{% if forloop.index > s.grid_visible %} hidden{% endif %}><a class="jr-a" href="{{ a.url }}"><div class="jr-img ph-j">{% render 'journal-thumb', post: a, ctx: 'card' %}<span class="jr-ph">{{ 'blogs.article.image_placeholder' | t }}</span></div><div class="jr-m">{% render 'journal-date', date: a.published_at, class: 'jr-d' %}<span>{{ a.metafields.embrae.read_time.value | escape }}</span></div><h3>{{ a.title | escape }}</h3><p>{{ a.excerpt | strip_html | strip }}</p><span class="jr-rd">{{ s.read_label | escape }}</span></a></article>
+        {%- if forloop.last and forloop.length > s.grid_visible -%}{%- assign has_more = true -%}{%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if has_more %}<div class="jr-more"><button class="btn" id="jr-more" type="button">{{ s.more_label | escape }}</button></div>{% endif -%}
+  </div>
+</section>
+
+{% javascript %}
+  (function () {
+    function init() {
+      var b = document.getElementById('jr-more'); if (!b || b._jr) return; b._jr = true;
+      b.addEventListener('click', function () {
+        var h = [].slice.call(document.querySelectorAll('#jr-grid .jr-card[hidden]')).slice(0, 3);
+        h.forEach(function (c) { c.hidden = false; c.classList.add('pop'); });
+        if (!document.querySelector('#jr-grid .jr-card[hidden]')) b.parentNode.hidden = true;
+        if (window.dataLayer) window.dataLayer.push({ event: 'journal_load_more' });
+      });
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('shopify:section:load', init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Journal: latest notes",
+  "tag": "div",
+  "class": "section-journal-index",
+  "settings": [
+    { "type": "paragraph", "content": "Shows the blog's articles, newest first: one featured, a few beside it, then the rest in the grid." },
+    { "type": "text", "id": "side_heading", "label": "Beside-featured heading", "default": "Also new" },
+    { "type": "range", "id": "side_count", "label": "Notes beside the featured one", "min": 0, "max": 6, "step": 1, "default": 4 },
+    { "type": "text", "id": "grid_heading", "label": "Grid heading", "default": "Fresh from the Journal" },
+    { "type": "text", "id": "grid_text", "label": "Grid text" },
+    { "type": "range", "id": "grid_visible", "label": "Grid notes shown before “more”", "min": 3, "max": 24, "step": 1, "default": 6 },
+    { "type": "text", "id": "more_label", "label": "More button", "default": "Discover more notes" },
+    { "type": "text", "id": "read_label", "label": "Read link", "default": "Read the note →" }
+  ],
+  "enabled_on": { "templates": ["blog"] },
+  "presets": [{ "name": "Journal: latest notes" }]
+}
+{% endschema %}

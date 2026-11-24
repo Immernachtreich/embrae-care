@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "s1": {
+      "type": "page-hero",
+      "settings": {
+        "placeholder": "a-note-from-the-founder-1",
+        "tone": "c",
+        "image_label": "Hero image: founder at work",
+        "eyebrow": "",
+        "heading": "A Note from the Founder",
+        "text": "Built from real life.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "s2": {
+      "type": "page-prose",
+      "settings": {
+        "tint": false,
+        "no_top": false,
+        "portrait_side": true,
+        "placeholder": "a-note-from-the-founder-2",
+        "tone": "b",
+        "image_label": "Founder portrait"
+      },
+      "blocks": {
+        "s2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For nearly a decade, I worked in the corporate world. My days were filled with meetings, work, travel, commutes, responsibilities and the constant feeling of having somewhere else to be.</p><p>I always knew I wanted to build something of my own, something where I could create, make decisions and bring an idea to life. Before EMBRAE, I explored a few different ideas. Skincare was the one that kept pulling me back, because it was something I genuinely cared about.</p><p>Living across different urban environments made me notice how differently my skin could feel from one place to another.</p><p>Humidity, heat, pollution, long commutes, air conditioning and stress each brought their own rhythm, and my skin experienced all of it.</p><p>I was already taking care of my skin. But finding products that actually felt right for my sensitive skin and for the realities of Indian weather wasn’t always easy. I tried different products and gradually built longer routines, thinking perhaps the answer was to do more. Too many products, and not always a clear idea of what each one was for.</p><p>But somewhere along the way, something felt wrong.</p>"
+          }
+        },
+        "s2-2": {
+          "type": "pull",
+          "settings": {
+            "text": "Skincare was supposed to be care. Why did it feel like another task?"
+          }
+        },
+        "s2-3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>That question stayed with me.</p><p>I started researching, learning about ingredients, formulation and how skincare products are created. I spent time understanding Indian skincare consumers and the realities of urban life. The more I learned, the clearer it became that I didn’t want to create just another skincare brand.</p><p>Somewhere in that learning, I came across Ectoin. It became an important part of how we approach formulation, and EMBRAE’s signature ingredient.</p><p>I wanted to create something I would genuinely want to use myself: simple, purposeful skincare that makes sense in real life.</p><p>That is where EMBRAE began.</p><p>The real work came next: speaking with manufacturers and vendors, reviewing samples, negotiating, and refining again and again. It is the first time I have built a brand from the ground up, and it has asked for a lot of learning, patience and courage, especially when things felt uncertain.</p><p>I want EMBRAE to be a brand that listens closely to the people who use it, keeps learning, never compromises on quality, and grows slowly and transparently. Something built to last. And if a customer tells me that EMBRAE made her skincare simpler, and helped with the problem she was facing, I will know we are on the right path.</p><p>For me, EMBRAE is about more than skincare. It’s about making space for yourself, even in the middle of everything life asks of you.</p><p>Because self-care doesn’t have to be complicated. Sometimes, it can simply mean taking a few minutes for yourself.</p>"
+          }
+        },
+        "s2-4": {
+          "type": "emphasis",
+          "settings": {
+            "text": "Self-care is not selfish."
+          }
+        },
+        "s2-5": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EMBRAE is rooted in the idea of embracing yourself through changing days, changing environments and everything life brings with it.</p><p>Because you don’t always need to do more. Sometimes, you just need a moment to care for yourself.</p>"
+          }
+        },
+        "s2-6": {
+          "type": "signature",
+          "settings": {
+            "name": "Isha Gupta",
+            "role": "Founder, EMBRAE"
+          }
+        },
+        "s2-7": {
+          "type": "closing",
+          "settings": {
+            "text": "Embrace the feeling."
+          }
+        }
+      },
+      "block_order": [
+        "s2-1",
+        "s2-2",
+        "s2-3",
+        "s2-4",
+        "s2-5",
+        "s2-6",
+        "s2-7"
+      ]
+    },
+    "s3": {
+      "type": "routine-offer",
+      "settings": {
+        "heading": "Skincare for real life.",
+        "text": "The simple, purposeful routine EMBRAE was built to be.",
+        "offer_price": "",
+        "offer_compare": "",
+        "button_label": "Shop Daily Urban Defense Routine →",
+        "button_link": "/products/daily-urban-defense-routine",
+        "compact": true
+      }
+    }
+  },
+  "order": [
+    "s1",
+    "s2",
+    "s3"
+  ]
+}

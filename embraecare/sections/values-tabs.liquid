@@ -1,0 +1,72 @@
+{%- assign s = section.settings -%}
+<section class="pg">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 class="h2">{{ s.heading | escape }}</h2></div>
+    <div class="vt reveal">
+      <div class="vt-tabs" role="tablist" aria-label="{{ s.label | escape }}">
+        {%- for block in section.blocks -%}
+          <button class="vt-tab" type="button" role="tab" id="vt{{ forloop.index0 }}" aria-controls="vp{{ forloop.index0 }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" {{ block.shopify_attributes }}><small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small><b>{{ block.settings.name | escape }}</b></button>
+        {%- endfor -%}
+      </div>
+      <div>
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          <div class="vt-panel{% if forloop.first %} on{% endif %}" role="tabpanel" id="vp{{ forloop.index0 }}" aria-labelledby="vt{{ forloop.index0 }}">
+            {% render 'ph-media', image: b.image, key: b.placeholder, tone: b.tone, label: b.image_label %}
+            <div class="tx"><h3>{{ b.heading | escape }}</h3><p>{{ b.text | escape }}</p>{% if b.routine != blank %}<div class="inpr"><b>{{ s.routine_label | escape }}</b>{{ b.routine | escape }}</div>{% endif %}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- if s.button_label != blank %}<div class="cta-c reveal"><a class="btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a></div>{% endif -%}
+  </div>
+</section>
+
+{% javascript %}
+  (function () {
+    function init() {
+      var t = [].slice.call(document.querySelectorAll('.vt-tab')), p = [].slice.call(document.querySelectorAll('.vt-panel'));
+      if (!t.length || t[0]._vt) return; t[0]._vt = true;
+      function go(i, f) { t.forEach(function (b, k) { b.setAttribute('aria-selected', k === i); b.tabIndex = k === i ? 0 : -1; p[k].classList.toggle('on', k === i); }); if (f) t[i].focus(); }
+      t.forEach(function (b, i) {
+        b.addEventListener('click', function () { go(i); });
+        b.addEventListener('mouseenter', function () { if (matchMedia('(hover:hover)').matches) go(i); });
+        b.addEventListener('keydown', function (e) { var n = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0; if (n) { e.preventDefault(); go((i + n + t.length) % t.length, 1); } });
+      });
+      go(0);
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('shopify:section:load', init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Values tabs",
+  "tag": "div",
+  "class": "section-values",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "label", "label": "Tab list label (screen readers)", "default": "EMBRAE values" },
+    { "type": "text", "id": "routine_label", "label": "Routine note label", "default": "In your routine" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    { "type": "value", "name": "Value", "settings": [
+      { "type": "text", "id": "name", "label": "Tab name" },
+      { "type": "text", "id": "heading", "label": "Heading" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "text", "id": "routine", "label": "In your routine" },
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "image_label", "label": "Image description" },
+      { "type": "text", "id": "placeholder", "label": "Placeholder illustration key" },
+      { "type": "select", "id": "tone", "label": "Placeholder tone", "default": "a", "options": [
+        { "value": "a", "label": "A" }, { "value": "b", "label": "B" }, { "value": "c", "label": "C" }, { "value": "d", "label": "D" }
+      ] }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Values tabs" }]
+}
+{% endschema %}

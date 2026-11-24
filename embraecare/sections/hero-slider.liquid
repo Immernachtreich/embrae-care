@@ -1,0 +1,105 @@
+<section class="hero" id="hero-{{ section.id }}" aria-roledescription="carousel" aria-label="{{ section.settings.label | escape }}" data-hero data-interval="{{ section.settings.interval | times: 1000 }}">
+  <div class="slides" aria-live="off">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign s = block.settings
+        if s.image != blank
+          assign bg = s.image | image_url: width: 2400
+        else
+          assign bg = s.placeholder | asset_url
+        endif
+      -%}
+      <div class="slide{% if forloop.first %} on{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ 'sections.hero.slide_position' | t: index: forloop.index, count: forloop.length }}" {{ block.shopify_attributes }}>
+        <div class="s-bg" role="img" aria-label="{{ s.image.alt | default: s.image_alt | escape }}" style="background-image:url({{ bg }});background-position:center {{ s.focus }}%"></div>
+        <div class="wrap slide-in">
+          <div class="s-copy">
+            {%- if s.eyebrow != blank %}<p class="eyebrow tag">{{ s.eyebrow | escape }}</p>{% endif -%}
+            {%- if forloop.first -%}
+              <h1 class="h1">{{ s.heading | escape }}</h1>
+            {%- else -%}
+              <h2 class="h1">{{ s.heading | escape }}</h2>
+            {%- endif -%}
+            {%- if s.text != blank %}<p class="lead">{{ s.text | escape }}</p>{% endif -%}
+            {%- if s.offer_price != blank -%}
+              <p class="offer-line"><b>{{ s.offer_price | escape }}</b> {% if s.offer_compare != blank %}<s>{{ s.offer_compare | escape }}</s>{% endif %}</p>
+            {%- endif -%}
+            {%- if s.button_label != blank -%}
+              <a class="btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a>
+            {%- endif -%}
+          </div>
+          <div class="s-art"{% if s.art == 'none' %} aria-hidden="true"{% endif %}>
+            {%- case s.art -%}
+              {%- when 'none' -%}
+              {%- when 'lineup4pouch', 'lineup4' -%}
+                <div class="stage"></div>
+                {%- if s.chip != blank %}<div class="pouch-chip">{{ s.chip | escape | newline_to_br }}</div>{% endif -%}
+                <svg class="line" viewBox="0 0 640 340" role="img" aria-label="{{ s.heading | escape }}"><use href="#{{ s.art }}"/></svg>
+              {%- else -%}
+                <div class="stage"></div>
+                <svg class="line one" viewBox="0 0 220 320" role="img" aria-label="{{ s.eyebrow | escape }}"><use href="#{{ s.art }}"/></svg>
+            {%- endcase -%}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- if section.blocks.size > 1 -%}
+    <div class="hdots" role="tablist" aria-label="{{ 'sections.hero.choose_slide' | t }}">
+      {%- for block in section.blocks -%}
+        <button role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'sections.hero.go_to_slide' | t: index: forloop.index, count: forloop.length }}"{% if forloop.first %} class="on"{% endif %}></button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  <a class="hero-down" href="#hero-next-{{ section.id }}" aria-label="{{ 'sections.hero.scroll_down' | t }}"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></a>
+</section>
+<span id="hero-next-{{ section.id }}"></span>
+
+{% schema %}
+{
+  "name": "Hero slider",
+  "tag": "div",
+  "class": "section-hero",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Carousel label (screen readers)", "default": "EMBRAE highlights" },
+    { "type": "range", "id": "interval", "label": "Seconds per slide", "min": 3, "max": 12, "step": 1, "default": 5 }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Background image" },
+        { "type": "select", "id": "placeholder", "label": "Placeholder background (used when no image is chosen)", "default": "asset-00.jpg",
+          "options": [
+            { "value": "asset-00.jpg", "label": "Skin" },
+            { "value": "asset-01.jpg", "label": "Serum with botanicals" },
+            { "value": "asset-02.jpg", "label": "Botanicals" },
+            { "value": "asset-03.jpg", "label": "Products with botanicals" }
+          ] },
+        { "type": "text", "id": "image_alt", "label": "Placeholder image description" },
+        { "type": "range", "id": "focus", "label": "Image vertical position", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 35 },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Skincare that understands your day." },
+        { "type": "textarea", "id": "text", "label": "Text" },
+        { "type": "text", "id": "offer_price", "label": "Offer price", "info": "e.g. ₹4,199" },
+        { "type": "text", "id": "offer_compare", "label": "Offer comparison", "info": "Shown struck through, e.g. ₹4,496 bought individually" },
+        { "type": "text", "id": "button_label", "label": "Button label" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        { "type": "select", "id": "art", "label": "Product art", "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "p-reset", "label": "Reset Cleanser" },
+            { "value": "p-defend", "label": "Urban Defense Serum" },
+            { "value": "p-adapt", "label": "Climate Adapt Moisturizer" },
+            { "value": "p-protect", "label": "Daily Shield Sunscreen" },
+            { "value": "lineup4", "label": "All four products" },
+            { "value": "lineup4pouch", "label": "All four products with pouch" }
+          ] },
+        { "type": "textarea", "id": "chip", "label": "Badge on lineup art", "info": "One word per line, e.g. Free / travel / pouch" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Hero slider", "blocks": [{ "type": "slide" }] }]
+}
+{% endschema %}

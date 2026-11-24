@@ -1,0 +1,88 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "EMBRAE",
+    "theme_version": "0.1.0",
+    "theme_author": "EMBRAE",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "Brand colours",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_phyto",
+        "label": "Phyto Green (primary)",
+        "default": "#064F43"
+      },
+      {
+        "type": "color",
+        "id": "color_phyto_deep",
+        "label": "Phyto Green deep",
+        "default": "#04382F"
+      },
+      {
+        "type": "color",
+        "id": "color_aqua",
+        "label": "Aqua (accent)",
+        "default": "#62C0B0"
+      },
+      {
+        "type": "color",
+        "id": "color_neutral",
+        "label": "Skin Neutral",
+        "default": "#F0C3B2"
+      },
+      {
+        "type": "color",
+        "id": "color_neutral_tint",
+        "label": "Skin Neutral tint",
+        "default": "#F8E3D9"
+      },
+      {
+        "type": "color",
+        "id": "color_off",
+        "label": "Off-white",
+        "default": "#FAF7F3"
+      },
+      {
+        "type": "color",
+        "id": "color_off2",
+        "label": "Warm grey",
+        "default": "#F3EEE8"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Body text",
+        "default": "#25322F"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_x",
+        "label": "X"
+      }
+    ]
+  }
+]

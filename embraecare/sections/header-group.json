@@ -1,0 +1,76 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "FREE SHIPPING ON ORDERS ABOVE ₹999",
+        "link": ""
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {},
+      "blocks": {
+        "shop": {
+          "type": "menu",
+          "settings": {
+            "title": "Shop",
+            "url": "shopify://pages/the-embrae-system",
+            "menu": "shop"
+          }
+        },
+        "system": {
+          "type": "menu",
+          "settings": {
+            "title": "The EMBRAE System",
+            "url": "shopify://pages/the-embrae-system",
+            "menu": "the-embrae-system",
+            "tile_1_title": "Reset",
+            "tile_1_subtitle": "Cleanse & Prepare",
+            "tile_1_url": "shopify://products/reset-cleanser",
+            "tile_1_art": "p-reset",
+            "tile_2_title": "Defend",
+            "tile_2_subtitle": "Strengthen & Defend",
+            "tile_2_url": "shopify://products/urban-defense-serum",
+            "tile_2_art": "p-defend",
+            "tile_3_title": "Adapt",
+            "tile_3_subtitle": "Adapt & Reinforce",
+            "tile_3_url": "shopify://products/climate-adapt-moisturizer",
+            "tile_3_art": "p-adapt",
+            "tile_4_title": "Protect",
+            "tile_4_subtitle": "Shield & Protect",
+            "tile_4_url": "shopify://products/daily-shield-sunscreen",
+            "tile_4_art": "p-protect"
+          }
+        },
+        "about": {
+          "type": "menu",
+          "settings": {
+            "title": "About EMBRAE",
+            "url": "shopify://pages/our-story",
+            "menu": "about-embrae",
+            "tile_1_title": "The Story",
+            "tile_1_subtitle": "Behind EMBRAE",
+            "tile_1_url": "shopify://pages/our-story",
+            "tile_1_art": "photo-story",
+            "tile_2_title": "Our Commitments",
+            "tile_2_subtitle": "People, skin, planet in balance",
+            "tile_2_url": "shopify://pages/our-values",
+            "tile_2_art": "photo-values"
+          }
+        }
+      },
+      "block_order": [
+        "shop",
+        "system",
+        "about"
+      ]
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

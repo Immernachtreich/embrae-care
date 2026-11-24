@@ -1,0 +1,19 @@
+{% doc %}
+  Renders a stroke icon used by the header, footer and cart drawer.
+
+  @param {string} name - One of: menu, account, search, cart, close, instagram, youtube, facebook, x
+
+  @example
+  {% render 'icon', name: 'cart' %}
+{% enddoc %}
+{%- case name -%}
+  {%- when 'menu' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+  {%- when 'account' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.6 20c.9-3.7 3.8-5.6 7.4-5.6s6.5 1.9 7.4 5.6"/></svg>
+  {%- when 'search' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+  {%- when 'cart' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+  {%- when 'close' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  {%- when 'instagram' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg>
+  {%- when 'youtube' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.8" y="6" width="18.4" height="12" rx="3.6"/><path d="M10.2 9.4v5.2l4.5-2.6z"/></svg>
+  {%- when 'facebook' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 8.5h2V5.4h-2.4C11.3 5.4 10 6.8 10 9v2H8v3h2v6h3v-6h2.2l.4-3H13V9.3c0-.5.3-.8 1-.8Z"/></svg>
+  {%- when 'x' -%}<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg>
+{%- endcase -%}

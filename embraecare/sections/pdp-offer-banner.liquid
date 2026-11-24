@@ -1,0 +1,37 @@
+{%- assign s = section.settings -%}
+<section class="pd-banner{% if s.style != blank %} {{ s.style }}{% endif %}" id="{{ s.anchor | default: 'offer' }}">
+  <svg class="env" style="left:-90px;top:20px;transform:rotate(25deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg><svg class="env" style="right:-80px;top:120px;transform:rotate(-160deg)" viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg>
+  <div class="wrap reveal">
+    <span class="wm" role="img" aria-label="EMBRAE"></span>
+    <h2>{{ s.heading | escape }}</h2>
+    {%- if s.text != blank %}<p class="l">{{ s.text | escape }}</p>{% endif -%}
+    {%- if s.offer_price != blank -%}
+      <p class="offer-line"><b>{{ s.offer_price | escape }}</b>{% if s.offer_compare != blank %}{% if s.separator %} <span class="ol-sep" aria-hidden="true">|</span>{% endif %} <s>{{ s.offer_compare | escape }}</s>{% endif %}</p>
+    {%- endif -%}
+    {%- if s.button_label != blank %}<a class="btn light" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a>{% endif -%}
+    <div class="pd-ban-art" aria-hidden="true"><div class="stg"></div>{% if s.chip != blank %}<div class="pouch-chip">{{ s.chip | escape | newline_to_br }}</div>{% endif %}<svg class="l" viewBox="0 0 640 340"><use href="#lineup4pouch"/></svg></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Routine offer banner",
+  "tag": "div",
+  "class": "section-pd-banner",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A complete routine. A little extra, on us." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Get all four essentials with a complimentary EMBRAE Travel Pouch and save ₹297." },
+    { "type": "text", "id": "offer_price", "label": "Offer price", "default": "₹4,199" },
+    { "type": "text", "id": "offer_compare", "label": "Offer comparison", "default": "₹4,496 individually" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Daily Urban Defense Routine →" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "textarea", "id": "chip", "label": "Badge on art", "default": "Complimentary\nEMBRAE\nTravel Pouch" },
+    { "type": "checkbox", "id": "separator", "label": "Show | between prices", "default": true },
+    { "type": "select", "id": "style", "label": "Style", "default": "", "options": [
+      { "value": "", "label": "Product page" }, { "value": "sy-fin", "label": "System page closing" }
+    ] },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "offer", "info": "Lets other links jump here, e.g. #routine" }
+  ],
+  "presets": [{ "name": "Routine offer banner" }]
+}
+{% endschema %}

@@ -38,6 +38,7 @@
   content="{{ og_description | escape }}"
 >
 
+{%- assign page_image = page_image | default: settings.share_image -%}
 {%- if page_image -%}
   <meta
     property="og:image"
@@ -58,9 +59,6 @@
 {%- endif -%}
 
 {%- if request.page_type == 'product' -%}
-  <script type="application/ld+json">
-    {{ product | structured_data }}
-  </script>
 
   <meta
     property="og:price:amount"
@@ -89,7 +87,12 @@
   {{ page_title }}
   {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
   {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- liquid
+    # source titles end in "| EMBRAE"; compare case-insensitively so the brand isn't appended twice
+    assign title_lc = page_title | downcase
+    assign shop_lc = shop.name | downcase
+  -%}
+  {%- unless title_lc contains shop_lc %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
 <link
@@ -103,3 +106,5 @@
     content="{{ page_description | escape }}"
   >
 {% endif %}
+
+{% render 'structured-data' %}

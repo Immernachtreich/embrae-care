@@ -166,6 +166,28 @@ Full plan (8 phases, 27 steps): `~/.claude-personal/plans/refer-embrae-website-h
     - The quiz was tested end to end in headless Chromium: 10 answers, its result, add to cart (3 products, ₹3,197) and the drawer opening.
     - The FAQ HTML matches the source for all 99 questions.
 
+- **Phase 7: SEO (2026-11-26, pushed to 189665706142). Theme side done; the store settings checklist is waiting on the user.**
+  - `snippets/meta-tags.liquid` changes:
+    - The title brand check is now case-insensitive. Source titles end in "| EMBRAE" and the shop is named "Embrae", so " – Embrae" used to be appended twice.
+    - `og:image` falls back to the new theme setting `share_image`.
+    - Product JSON-LD moved behind the setting `product_schema`, off by default. The SEO brief says to add Product schema only once real reviews exist (the bundle: once it's live), and never to mark up a rating.
+  - `snippets/structured-data.liquid`:
+    - Home: Organization and WebSite, with SearchAction, `sameAs` from the social settings, and `contactPoint` from the settings `org_email`/`org_phone`.
+    - FAQ page: FAQPage built from all 99 `embrae_faq` entries.
+    - Journal articles: BlogPosting.
+  - New theme settings group "SEO and sharing": `share_image`, `org_email`, `org_phone`, `product_schema`.
+  - `tools/setup_seo.py` fills empty `global.title_tag`/`description_tag` fields from `source/seo`. It only writes fields that are blank. It filled `why-we-exist`, `our-philosophy`, `our-story`, `a-note-from-the-founder`, `faqs` and the `journal` blog. These are store-level, so the live theme shows the new titles too.
+  - `qa/seo-audit.py` (`STORE_PASSWORD=… python3 qa/seo-audit.py`) checks every page: title matches `source/seo`, a meta description exists, exactly one H1, the JSON-LD parses, and there's no Liquid error. Result: 27 of 28 pages pass. The home page fails only because its title and description are store settings.
+  - Gotcha: `theme push` prints "could not be pushed" on a rejected file, so check for "pushed successfully" rather than "pushed". Also, `{…}` braces inside a `{{ }}` output tag break the Liquid parser; build the string with `capture` instead.
+  - **Store settings for the user to do in the admin.** There's no API for some of these, and the rest need the user's content plus extra scopes:
+    1. Online Store → Preferences: set the home title to "EMBRAE | Skincare designed for real Indian life", and the meta description from `source/seo/index.json`.
+    2. Settings → Policies: Refund, Terms and Shipping return 404, and the footer links to them. Only Privacy exists. The user must supply or approve the text.
+    3. Settings → Shipping: an India zone, free shipping on orders of ₹999 and above, and a rate for smaller orders (amount needed from the user).
+    4. Settings → Taxes: GST registration. Prices already include tax, which matches "MRP inclusive of all taxes".
+    5. Settings → General → Store currency → Currency formatting: currently "Rs. {{amount}}", which checkout and emails also use. Suggested "₹{{amount_no_decimals}}".
+    6. Settings → Payments: an India gateway (for example Razorpay, PayU or Shopify Payments if available) and a test order.
+    7. Theme settings → Social links (the footer and `sameAs`) and a default share image.
+
 ## Open decisions (ask the user)
 1. Social media URLs for the footer: Theme settings → Social links.
 2. Still pending from the user:
@@ -179,13 +201,6 @@ Full plan (8 phases, 27 steps): `~/.claude-personal/plans/refer-embrae-website-h
 
 ## Next steps
 - Phases 0–6 are done.
-- **Phase 7:** SEO and India store setup.
-  - Confirm the SEO titles and descriptions for the home page and the products (pages and articles already have theirs).
-  - Structured data.
-  - Redirects from any old URLs.
-  - Store currency format.
-  - GST and tax settings.
-  - Shipping zone with free shipping above ₹999.
-  - Policies, so `/policies/refund-policy` resolves.
+- **Phase 7:** the theme side is done. The store-settings checklist above waits on the user.
 - **Phase 8:** QA and launch. Accessibility pass, Lighthouse, a cross-browser check, and a checkout test with a test payment gateway. Then publish with the user's go-ahead, because publishing replaces the live theme.
 - After each change: run `theme check`, then `theme push` to theme 189665706142. **Never push to the live theme.**

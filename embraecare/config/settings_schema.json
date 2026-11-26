@@ -84,5 +84,35 @@
         "label": "X"
       }
     ]
+  },
+  {
+    "name": "SEO and sharing",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Default social sharing image",
+        "info": "Used when a page has no image of its own. 1200 × 628 px works best."
+      },
+      {
+        "type": "text",
+        "id": "org_email",
+        "label": "Customer care email (structured data)",
+        "default": "care@embraecare.com"
+      },
+      {
+        "type": "text",
+        "id": "org_phone",
+        "label": "Customer care phone (structured data)",
+        "default": "+91 86004 11991"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_schema",
+        "label": "Product structured data",
+        "default": false,
+        "info": "Off by default per the SEO brief: turn on once real reviews exist (the bundle: once it is live). Never marks up a rating."
+      }
+    ]
   }
 ]

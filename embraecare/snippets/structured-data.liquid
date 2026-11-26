@@ -1,0 +1,69 @@
+{% doc %}
+  JSON-LD for search engines: Organization and WebSite on the home page, FAQPage on the FAQ page,
+  BlogPosting on journal articles, and Product (only when the theme setting is on).
+{% enddoc %}
+{%- liquid
+  assign logo = 'embrae-logo.png' | asset_url | prepend: 'https:'
+  assign social = ''
+  assign nets = 'instagram,youtube,facebook,x' | split: ','
+  for net in nets
+    assign k = 'social_' | append: net
+    if settings[k] != blank
+      assign social = social | append: settings[k] | append: '|'
+    endif
+  endfor
+  assign social = social | split: '|'
+-%}
+{%- capture search_target %}{{ request.origin }}{{ routes.search_url }}?q={search_term_string}{% endcapture -%}
+{%- if request.page_type == 'index' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": {{ request.origin | append: '/#organization' | json }},
+          "name": "EMBRAE",
+          "url": {{ request.origin | append: routes.root_url | json }},
+          "logo": {{ logo | json }},
+          "sameAs": {{ social | json }},
+          "contactPoint": [{ "@type": "ContactPoint", "contactType": "customer service", "email": {{ settings.org_email | json }}, "telephone": {{ settings.org_phone | json }}, "areaServed": "IN" }]
+        },
+        {
+          "@type": "WebSite",
+          "@id": {{ request.origin | append: '/#website' | json }},
+          "name": "EMBRAE",
+          "url": {{ request.origin | append: routes.root_url | json }},
+          "publisher": { "@id": {{ request.origin | append: '/#organization' | json }} },
+          "potentialAction": { "@type": "SearchAction", "target": {{ search_target | json }}, "query-input": "required name=search_term_string" }
+        }
+      ]
+    }
+  </script>
+{%- elsif request.page_type == 'page' and template.suffix == 'faq' -%}
+  {%- capture faq_items -%}
+    {%- paginate metaobjects.embrae_faq.values by 250 -%}
+      {%- for f in metaobjects.embrae_faq.values -%}
+        {"@type":"Question","name":{{ f.question.value | json }},"acceptedAnswer":{"@type":"Answer","text":{{ f.answer | metafield_tag | strip_html | strip | json }}}}{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    {%- endpaginate -%}
+  {%- endcapture -%}
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ faq_items }}]}</script>
+{%- elsif request.page_type == 'article' and template.suffix == 'journal' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ article.title | json }},
+      "description": {{ article.excerpt_or_content | strip_html | strip | truncate: 300 | json }},
+      "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "author": { "@type": "Organization", "name": {{ article.author | json }} },
+      "publisher": { "@type": "Organization", "name": "EMBRAE", "logo": { "@type": "ImageObject", "url": {{ logo | json }} } },
+      {%- if article.image %}"image": {{ article.image | image_url: width: 1600 | prepend: 'https:' | json }},{% endif %}
+      "mainEntityOfPage": {{ canonical_url | json }}
+    }
+  </script>
+{%- elsif request.page_type == 'product' and settings.product_schema -%}
+  <script type="application/ld+json">{{ product | structured_data }}</script>
+{%- endif -%}

@@ -1,0 +1,80 @@
+{
+  "/products/urban-defense-serum": {
+    "scores": {
+      "performance": 89,
+      "accessibility": 94,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": "2.2 s",
+    "CLS": "0",
+    "TBT": "330 ms",
+    "FCP": "2.2 s",
+    "opp": [
+      "redirects ~750ms"
+    ],
+    "fails": [
+      "first-contentful-paint",
+      "total-blocking-time",
+      "max-potential-fid",
+      "redirects",
+      "mainthread-work-breakdown",
+      "color-contrast",
+      "frame-title",
+      "unused-css-rules",
+      "bf-cache",
+      "cache-insight",
+      "document-latency-insight",
+      "legacy-javascript-insight",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ],
+    "boot": [
+      "4121ms https://embraecare.myshopify.com/products/urban-defense-serum",
+      "793ms Unattributable",
+      "691ms https://embraecare.myshopify.com/cdn/wpm/b15451528w2c618d7fpfa16f52dm59493539m.js",
+      "150ms https://embraecare.myshopify.com/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.16.1.min.js",
+      "100ms https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_D6uR2xyb.esm.js",
+      "75ms https://embraecare.myshopify.com/cdn/wpm/s15451528w2c618d7fpfa16f52dm59493539m.js"
+    ]
+  },
+  "/pages/our-ingredients": {
+    "scores": {
+      "performance": 85,
+      "accessibility": 93,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": "2.6 s",
+    "CLS": "0",
+    "TBT": "490 ms",
+    "FCP": "1.1 s",
+    "opp": [
+      "redirects ~750ms"
+    ],
+    "fails": [
+      "largest-contentful-paint",
+      "total-blocking-time",
+      "max-potential-fid",
+      "redirects",
+      "mainthread-work-breakdown",
+      "color-contrast",
+      "frame-title",
+      "bf-cache",
+      "cache-insight",
+      "document-latency-insight",
+      "forced-reflow-insight",
+      "legacy-javascript-insight",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ],
+    "boot": [
+      "961ms Unattributable",
+      "721ms https://embraecare.myshopify.com/pages/our-ingredients",
+      "437ms https://embraecare.myshopify.com/cdn/wpm/b15451528w2c618d7fpfa16f52dm59493539m.js",
+      "211ms https://embraecare.myshopify.com/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.16.1.min.js",
+      "114ms https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_D6uR2xyb.esm.js",
+      "73ms https://embraecare.myshopify.com/cdn/wpm/s15451528w2c618d7fpfa16f52dm59493539m.js"
+    ]
+  }
+}

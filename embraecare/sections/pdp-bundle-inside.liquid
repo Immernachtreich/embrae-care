@@ -40,7 +40,7 @@
               assign pv = b.product.selected_or_first_available_variant
               assign stp = b.product.metafields.embrae.step.value | default: 'reset'
             -%}
-            <button type="button" class="vu-c{% if forloop.first %} on{% endif %}" data-s="{{ forloop.index0 }}" aria-label="{{ 'products.watch_step' | t: index: forloop.index, title: b.product.title }}">
+            <button type="button" class="vu-c{% if forloop.first %} on{% endif %}" data-s="{{ forloop.index0 }}">
               <small>{{ 'products.step_n' | t: index: forloop.index }}. {{ stp | capitalize }}</small>
               <span class="vu-ca"><svg viewBox="0 0 220 320" aria-hidden="true"><use href="#p-{{ stp }}"/></svg></span>
               <b>{{ b.product.title | default: 'Choose a product' | escape }}</b>

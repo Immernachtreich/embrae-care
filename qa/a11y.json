@@ -1,0 +1,293 @@
+{
+  "color-contrast": {
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "pages": {
+      "/": 55,
+      "/blogs/journal": 20,
+      "/blogs/journal/gel-or-cream-choosing-a-moisturizer-for-humid-weather": 21,
+      "/blogs/journal/how-to-patch-test-a-new-product": 21,
+      "/blogs/journal/monsoon-skin-care-keep-it-simple": 21,
+      "/blogs/journal/reset-defend-adapt-protect-the-four-steps-explained": 25,
+      "/blogs/journal/simple-routine-or-ten-steps": 25,
+      "/blogs/journal/what-a-long-hot-commute-does-to-your-skin": 21,
+      "/blogs/journal/what-goes-first-serum-or-moisturizer": 25,
+      "/blogs/journal/why-skin-feels-oily-and-dry-at-the-same-time": 21,
+      "/blogs/journal/why-sunscreen-feels-heavy-in-humid-weather": 21,
+      "/blogs/journal/why-we-begin-with-a-gentle-cleanser": 21,
+      "/blogs/journal/why-your-face-feels-tight-in-an-air-conditioned-office": 27,
+      "/blogs/journal/your-first-week-with-the-embrae-routine": 21,
+      "/pages/a-note-from-the-founder": 12,
+      "/pages/faqs": 28,
+      "/pages/our-ingredients": 83,
+      "/pages/our-philosophy": 24,
+      "/pages/our-story": 20,
+      "/pages/our-values": 27,
+      "/pages/skin-quiz": 26,
+      "/pages/the-embrae-system": 56,
+      "/pages/why-we-exist": 14,
+      "/products/climate-adapt-moisturizer": 40,
+      "/products/daily-shield-sunscreen": 40,
+      "/products/daily-urban-defense-routine": 42,
+      "/products/reset-cleanser": 40,
+      "/products/urban-defense-serum": 40
+    },
+    "samples": {
+      ".strip-item:nth-child(1) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+      ".strip-item:nth-child(2) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+      ".strip-item:nth-child(3) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+      ".jr-sh": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".jr-pk:nth-child(1) > .jr-pt > small": "Fix any of the following: |   Element has insufficient color contrast of 4.38 (foreground color: #62c0b0, background color: #064f43, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".jr-pk:nth-child(2) > .jr-pt > small": "Fix any of the following: |   Element has insufficient color contrast of 4.29 (foreground color: #60beae, background color: #064f43, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".ar-toc > p": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".ar-kh": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".ar-bt > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".ar-quiz > div > small": "Fix any of the following: |   Element has insufficient color contrast of 1.87 (foreground color: #62c0b0, background color: #f3eee8, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "div:nth-child(1) > .ar-rh": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "div:nth-child(2) > .ar-rh": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "li:nth-child(1) > span": "Fix any of the following: |   Element has insufficient color contrast of 4.38 (foreground color: #62c0b0, background color: #064f43, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "li:nth-child(2) > span": "Fix any of the following: |   Element has insufficient color contrast of 4.38 (foreground color: #62c0b0, background color: #064f43, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "li:nth-child(3) > span": "Fix any of the following: |   Element has insufficient color contrast of 4.38 (foreground color: #62c0b0, background color: #064f43, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".fq-grp:nth-child(1) > .fq-cat": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".fq-grp:nth-child(2) > .fq-cat": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".fq-grp:nth-child(3) > .fq-cat": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "label[for=\"ix-q\"]": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "label[for=\"ix-p\"]": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "#letter-A > .ix-stick > .ix-head > span:nth-child(2)": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "article[data-p=\"reset defend protect\"] > .ix-n.ix-c > p > span": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pr:nth-child(1) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pr:nth-child(2) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pr:nth-child(3) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.03 (foreground color: #62c0b0, background color: #faf7f3, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "div:nth-child(1) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "div:nth-child(2) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "div:nth-child(3) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "#vt0 > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "#vt1 > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "#vt1 > b": "Fix any of the following: |   Element has insufficient color contrast of 2.62 (foreground color: #83a7a1, background color: #ffffff, font size: 17.3pt (23px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".qh-step:nth-child(1) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".qh-step:nth-child(2) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".qh-step:nth-child(3) > small": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "a[data-for=\"reset\"]": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "a[data-for=\"reset\"] > b": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "a[data-for=\"defend\"]": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "a[data-for=\"adapt\"]": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".tx > .eyebrow": "Fix any of the following: |   Element has insufficient color contrast of 2.16 (foreground color: #62c0b0, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pd-crumb": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pd-crumb > a[href=\"/\"]": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+      ".pd-crumb > a[href$=\"the-embrae-system\"]": "Fix any of the following: |   Element has insufficient color contrast of 3.83 (foreground color: #7c8482, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+    },
+    "pairs": {
+      "#62c0b0 on #ffffff (2.16) 8.3pt (11px) bold": [
+        ".strip-item:nth-child(1) > small",
+        ".strip-item:nth-child(2) > small",
+        ".strip-item:nth-child(3) > small",
+        ".strip-item:nth-child(4) > small"
+      ],
+      "#62c0b0 on #064f43 (4.38) 8.6pt (11.5px) normal": [
+        ".env-label",
+        ".jr-pk:nth-child(1) > .jr-pt > small",
+        ".jr-pk:nth-child(1) > .jr-pt > small",
+        ".ar-ut > small"
+      ],
+      "#7c8482 on #ffffff (3.83) 9.0pt (12px) normal": [
+        ".pcard:nth-child(1) > .pbody > .size",
+        ".pcard:nth-child(2) > .pbody > .size",
+        ".pcard:nth-child(3) > .pbody > .size",
+        ".pcard:nth-child(4) > .pbody > .size"
+      ],
+      "#878e8d on #ffffff (3.34) 8.3pt (11px) normal": [
+        ".pcard:nth-child(1) > .pbody > .mrp",
+        ".pcard:nth-child(2) > .pbody > .mrp",
+        ".pcard:nth-child(3) > .pbody > .mrp",
+        ".pcard:nth-child(4) > .pbody > .mrp"
+      ],
+      "#62c0b0 on #faf7f3 (2.03) 8.3pt (11px) bold": [
+        ".step.reveal.in:nth-child(1) > small",
+        ".step.reveal.in:nth-child(2) > small",
+        ".step.reveal.in:nth-child(3) > small",
+        ".step.reveal.in:nth-child(4) > small"
+      ],
+      "#7c8482 on #ffffff (3.83) 8.3pt (11px) normal": [
+        ".step.reveal.in:nth-child(1) > .scard > .sbody > .pn",
+        ".step.reveal.in:nth-child(2) > .scard > .sbody > .pn",
+        ".step.reveal.in:nth-child(3) > .scard > .sbody > .pn",
+        ".step.reveal.in:nth-child(4) > .scard > .sbody > .pn"
+      ],
+      "#7a817d on #faf7f3 (3.73) 10.5pt (14px) normal": [
+        ".reveal.in > .offer-line > s",
+        ".reveal.in > .offer-line > s"
+      ],
+      "#62c0b0 on #064f43 (4.38) 7.9pt (10.5px) normal": [
+        "li:nth-child(1) > span",
+        "li:nth-child(2) > span",
+        "li:nth-child(3) > span",
+        "div:nth-child(1) > h4[role=\"heading\"][aria-level=\"2\"]"
+      ],
+      "#92afa7 on #064f43 (4.03) 8.3pt (11px) normal": [
+        ".copy",
+        ".copy",
+        ".copy",
+        ".copy"
+      ],
+      "#62c0b0 on #ffffff (2.16) 8.6pt (11.5px) normal": [
+        ".jr-sh",
+        ".jr-sh",
+        ".ar-toc > p",
+        ".ar-toc > p"
+      ],
+      "#60beae on #064f43 (4.29) 8.6pt (11.5px) normal": [
+        ".jr-pk:nth-child(2) > .jr-pt > small"
+      ],
+      "#5cb8a8 on #064f43 (4.02) 8.6pt (11.5px) normal": [
+        ".jr-pk:nth-child(3) > .jr-pt > small"
+      ],
+      "#61bfaf on #064f43 (4.34) 8.6pt (11.5px) normal": [
+        ".jr-pk:nth-child(2) > .jr-pt > small"
+      ],
+      "#5cb9a9 on #064f43 (4.06) 8.6pt (11.5px) normal": [
+        ".jr-pk:nth-child(3) > .jr-pt > small"
+      ],
+      "#62c0b0 on #faf7f3 (2.03) 8.6pt (11.5px) normal": [
+        ".ar-kh",
+        ".ar-kh",
+        ".ar-kh",
+        ".ar-kh"
+      ],
+      "#62c0b0 on #ffffff (2.16) 7.9pt (10.5px) normal": [
+        ".ar-bt > small",
+        ".ar-bt > small",
+        ".ar-bt > small",
+        ".ar-bt > small"
+      ],
+      "#62c0b0 on #f3eee8 (1.87) 8.6pt (11.5px) normal": [
+        ".ar-quiz > div > small",
+        ".ar-quiz > div > small",
+        ".ar-quiz > div > small",
+        ".ar-quiz > div > small"
+      ],
+      "#62c0b0 on #ffffff (2.16) 9.0pt (12px) normal": [
+        ".fq-grp:nth-child(1) > .fq-cat",
+        ".fq-grp:nth-child(2) > .fq-cat",
+        ".fq-grp:nth-child(3) > .fq-cat",
+        ".fq-grp:nth-child(4) > .fq-cat"
+      ],
+      "#83a7a1 on #ffffff (2.62) 17.3pt (23px) normal": [
+        "#vt1 > b",
+        "#vt2 > b",
+        "#vt3 > b",
+        "#vt4 > b"
+      ],
+      "#83a7a1 on #ffffff (2.62) 12.8pt (17px) normal": [
+        "#vt1 > b"
+      ],
+      "#62c0b0 on #ffffff (2.16) 9.8pt (13px) normal": [
+        ".qh-step:nth-child(1) > small",
+        ".qh-step:nth-child(2) > small",
+        ".qh-step:nth-child(3) > small",
+        ".qh-step:nth-child(1) > small"
+      ],
+      "#7c8482 on #ffffff (3.83) 8.6pt (11.5px) normal": [
+        "a[data-for=\"reset\"]",
+        "a[data-for=\"defend\"]",
+        "a[data-for=\"adapt\"]",
+        "a[data-for=\"protect\"]"
+      ],
+      "#62c0b0 on #ffffff (2.16) 7.9pt (10.5px) bold": [
+        "#reset > .wrap > .gr > .ct.reveal.in > .glance > div:nth-child(1) > small",
+        "#reset > .wrap > .gr > .ct.reveal.in > .glance > div:nth-child(2) > small",
+        "#reset > .wrap > .gr > .ct.reveal.in > .glance > div:nth-child(3) > small",
+        "#defend > .wrap > .gr > .ct.reveal.in > .glance > div:nth-child(1) > small"
+      ],
+      "#62c0b0 on #064f43 (4.38) 8.3pt (11px) bold": [
+        "#reset > .wrap > .gr > .ct.reveal.in > .idea > small",
+        "#defend > .wrap > .gr > .ct.reveal.in > .idea > small",
+        "#adapt > .wrap > .gr > .ct.reveal.in > .idea > small",
+        "#protect > .wrap > .gr > .ct.reveal.in > .idea > small"
+      ],
+      "#7c8482 on #ffffff (3.83) 7.5pt (10px) normal": [
+        "a[data-for=\"reset\"]",
+        "a[data-for=\"defend\"]",
+        "a[data-for=\"adapt\"]",
+        "a[data-for=\"protect\"]"
+      ],
+      "#62c0b0 on #ffffff (2.16) 13.5pt (18px) normal": [
+        ".tx > .eyebrow"
+      ],
+      "#62c0b0 on #ffffff (2.16) 12.0pt (16px) normal": [
+        ".tx > .eyebrow"
+      ],
+      "#60aea1 on #5d8d85 (1.43) 7.1pt (9.5px) bold": [
+        ".t2 > .tx",
+        ".t2 > .tx",
+        ".tx",
+        ".t2 > .tx"
+      ],
+      "#7c8482 on #ffffff (3.83) 9.4pt (12.5px) normal": [
+        ".pd-price > small",
+        ".pd-price > small",
+        ".pd-price > small",
+        ".pd-price > small"
+      ],
+      "#878e8d on #ffffff (3.34) 7.5pt (10px) normal": [
+        ".glance > div:nth-child(1) > small",
+        ".glance > div:nth-child(2) > small",
+        "div:nth-child(3) > small",
+        ".glance > div:nth-child(1) > small"
+      ],
+      "#929997 on #ffffff (2.9) 9.0pt (12px) normal": [
+        "#sg2-template--28221542203550__main",
+        "#sg2-template--28221542203550__main",
+        "#sg2-template--28221542203550__main",
+        "#sg2-template--28221542203550__main"
+      ],
+      "#767d79 on #faf7f3 (3.94) 8.6pt (11.5px) normal": [
+        ".ao:nth-child(3) > .aot > small",
+        ".ao:nth-child(4) > .aot > small",
+        ".ao:nth-child(5) > .aot > small",
+        ".ao:nth-child(3) > .aot > small"
+      ],
+      "#7c8482 on #faf7f3 (3.58) 8.3pt (11px) normal": [
+        ".rv-l > small",
+        ".rv-l > small",
+        ".rv-l > small",
+        ".rv-l > small"
+      ],
+      "#78807e on #faf7f3 (3.79) 9.4pt (12.5px) normal": [
+        ".lay-note",
+        ".lay-note",
+        ".lay-note",
+        ".lay-note"
+      ],
+      "#99d6cc on #5d8d85 (2.28) 7.1pt (9.5px) bold": [
+        ".t2 > .tx",
+        ".t2 > .tx",
+        ".tx",
+        ".t2 > .tx"
+      ],
+      "#878e8d on #ffffff (3.34) 7.1pt (9.5px) normal": [
+        ".glance > div:nth-child(1) > small",
+        ".glance > div:nth-child(2) > small",
+        "div:nth-child(3) > small",
+        ".glance > div:nth-child(1) > small"
+      ],
+      "#7a817d on #faf7f3 (3.73) 8.3pt (11px) normal": [
+        ".rv-l > small",
+        ".rv-l > small",
+        ".rv-l > small",
+        ".rv-l > small"
+      ],
+      "#767d79 on #faf7f3 (3.94) 9.4pt (12.5px) normal": [
+        ".lay-note",
+        ".lay-note",
+        ".lay-note",
+        ".lay-note"
+      ],
+      "#7a817d on #faf7f3 (3.73) 9.0pt (12px) normal": [
+        ".bd-ir:nth-child(1) > .aot > small",
+        ".bd-ir:nth-child(2) > .aot > small",
+        ".bd-ir:nth-child(3) > .aot > small",
+        ".bd-ir:nth-child(4) > .aot > small"
+      ]
+    }
+  }
+}

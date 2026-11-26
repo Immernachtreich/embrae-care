@@ -181,6 +181,7 @@
       "next_label": "Next step: {{ step }}"
     },
     "quiz": {
+      "progress": "Quiz progress",
       "back": "Back",
       "skip": "Skip this question",
       "continue": "Continue"
@@ -191,5 +192,8 @@
       "by": "By {{ author }}",
       "image_placeholder": "Image placeholder"
     }
+  },
+  "general": {
+    "announcement": "Announcement"
   }
 }

@@ -22,15 +22,15 @@
             {%- if b.role != blank %}<p class="role">{{ b.role | escape }}</p>{% endif %}
             <div class="glance"><div><small>{{ 'sections.system.feels_like' | t }}</small><b>{{ b.feels | escape }}</b></div><div><small>{{ 'sections.system.use' | t }}</small><b>{{ b.use | escape }}</b></div><div><small>{{ 'sections.system.where' | t }}</small><b>{{ b.fits | escape }}</b></div></div>
             {%- if b.points != blank -%}
-              <h4>{{ 'sections.system.what_it_does' | t }}</h4>
+              <h4 role="heading" aria-level="3">{{ 'sections.system.what_it_does' | t }}</h4>
               <ul class="pts">{% assign lines = b.points | newline_to_br | split: '<br />' %}{% for l in lines %}{% assign l = l | strip %}{% if l != blank %}<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{{ l | escape }}</li>{% endif %}{% endfor %}</ul>
             {%- endif -%}
             {%- if b.ingredients != blank -%}
-              <h4>{{ 'sections.system.ingredients' | t }}</h4>
+              <h4 role="heading" aria-level="3">{{ 'sections.system.ingredients' | t }}</h4>
               <div class="ings">{% assign lines = b.ingredients | newline_to_br | split: '<br />' %}{% for l in lines %}{% assign parts = l | strip | split: '|' %}{% if parts.size > 0 %}<div class="ing"><b>{{ parts[0] | strip | escape }}</b><p>{{ parts[1] | strip | escape }}</p></div>{% endif %}{% endfor %}</div>
             {%- endif -%}
             {%- if b.how != blank -%}
-              <h4>{{ 'products.how_to_use' | t }}</h4>
+              <h4 role="heading" aria-level="3">{{ 'products.how_to_use' | t }}</h4>
               <ol class="how">{% assign lines = b.how | newline_to_br | split: '<br />' %}{% for l in lines %}{% assign l = l | strip %}{% if l != blank %}<li>{{ l | escape }}</li>{% endif %}{% endfor %}</ol>
             {%- endif -%}
             {%- if b.note != blank %}<p class="note">{{ b.note | escape }}</p>{% endif -%}
@@ -40,7 +40,7 @@
         </div>
         {%- if next -%}
           {%- assign next_name = next.settings.step | capitalize -%}
-          <a class="nxt" href="#{{ next.settings.step }}" aria-label="{{ 'sections.system.next_label' | t: step: next_name }}">{{ 'sections.system.next' | t: step: next_name }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+          <a class="nxt" href="#{{ next.settings.step }}">{{ 'sections.system.next' | t: step: next_name }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
         {%- elsif section.settings.final_label != blank -%}
           <a class="nxt" href="{{ section.settings.final_link | default: '#routine' }}" aria-label="{{ section.settings.final_label | escape }}">{{ section.settings.final_label | escape }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
         {%- endif -%}

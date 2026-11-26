@@ -7,7 +7,7 @@
   <div class="wrap qz-in"><div class="qcard">
     <div class="qz-screen on" id="qz-qs" aria-live="polite">
       <div class="qz-top"><button class="qz-back" type="button" id="qz-back">{{ 'sections.quiz.back' | t }}</button><span id="qz-count"></span></div>
-      <div class="qz-bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="qz-pg"><i id="qz-fill"></i></div>
+      <div class="qz-bar" role="progressbar" aria-label="{{ 'sections.quiz.progress' | t }}" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="qz-pg"><i id="qz-fill"></i></div>
       <fieldset style="border:0;min-width:0"><legend class="qz-q" id="qz-qt"></legend><p class="qz-h" id="qz-qh"></p>
         <div class="qz-opts" id="qz-opts" role="radiogroup" aria-labelledby="qz-qt"></div></fieldset>
       <p class="qz-need" id="qz-need" role="alert"></p>

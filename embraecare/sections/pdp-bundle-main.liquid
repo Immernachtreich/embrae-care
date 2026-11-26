@@ -77,7 +77,7 @@
           {%- endfor -%}
         </div>
         <div class="rb" data-routine data-base="{{ variant.price }}" data-title="{{ product.title | escape }}">
-          <h3>{{ 'products.whats_inside' | t }}</h3>
+          <h3 role="heading" aria-level="2">{{ 'products.whats_inside' | t }}</h3>
           <div class="bd-in">
             {%- for p in included -%}
               {%- assign pv = p.selected_or_first_available_variant -%}

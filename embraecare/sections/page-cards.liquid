@@ -22,7 +22,7 @@
       {%- when 'pr' -%}
         <div class="pr-grid reveal" style="margin-top:0">
           {%- for block in section.blocks -%}
-            <div class="pr" {{ block.shopify_attributes }}><span class="ic"><svg viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg></span><small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small><h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></div>
+            <div class="pr" {{ block.shopify_attributes }}><span class="ic"><svg viewBox="0 0 100 200" aria-hidden="true"><use href="#leaf"/></svg></span><small>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</small><h3{% if s.heading == blank %} role="heading" aria-level="2"{% endif %}>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></div>
           {%- endfor -%}
         </div>
     {%- endcase -%}
